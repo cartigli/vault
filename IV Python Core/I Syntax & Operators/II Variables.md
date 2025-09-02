@@ -14,7 +14,7 @@ x = 10 {good}
 x = [10] {will return [10] if print(x) is run, not 10}
 	[] are used for lists of numbers 
 
-in Python, there are Integers, Floats, and Boolean Values [[III Integers, Floats, and Boolean]]
+in Python, there are Integers, Floats, and Boolean Values [[IV Python Core/I Syntax & Operators/III Integers, Floats, and Boolean]]
 	x1 = 5 {integer}
 	[type(var)] = tells us the type of value the variable {x1} is
 		type(x1) {returns 'int' for integer}

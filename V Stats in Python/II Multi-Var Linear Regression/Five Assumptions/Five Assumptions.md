@@ -1,6 +1,6 @@
 assumptions before any regression model analysis
 
-[[I Linearity]]
+[[V Stats in Python/II Multi-Var Linear Regression/Five Assumptions/I Linearity]]
 			linear regression, linear in nature, simplest regression, variables are multiplied by coefficients 
 
 [ No Endogeneity ]

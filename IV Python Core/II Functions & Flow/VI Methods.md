@@ -1,4 +1,4 @@
-Methods of Modifying Lists [[IV Lists]] ^13e50a
+Methods of Modifying Lists [[IV Python Core/II Functions & Flow/IV Lists]] ^13e50a
 
 object: Parameters = ['ok', 'yes', 'no']
 dot operator: '.': invokes a command
@@ -32,6 +32,6 @@ object.index('Element-Argument') outputs the index value of the Element entered 
 	>list
 	>1,2,3,4
 
-.get() - [[VIII Dictionaries#^ad4081]]
+.get() - [[IV Python Core/II Functions & Flow/VIII Dictionaries#^ad4081]]
 
 command(argument) is not the same as object.operation(argument)

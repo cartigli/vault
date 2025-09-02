@@ -1,5 +1,5 @@
 in Python, there are Integers, Floats, and Boolean Values
-	x1 = 5 {integer} [[II Variables#^654d29]]
+	x1 = 5 {integer} [[IV Python Core/I Syntax & Operators/II Variables#^654d29]]
 	[type(var)] = tells us the type of value the variable {x1} is
 		type(x1) {returns 'int' for integer}
 		x2 = 4.22 {then type(x2) returns 'float' for decimal}
@@ -25,7 +25,7 @@ in Python, there are Integers, Floats, and Boolean Values
 [str()] ^string
 	string value
 	type(x) when x = 'boot' would return str
-	[[IV Strings]]
+	[[IV Python Core/I Syntax & Operators/IV Strings]]
 
 [type()] ^type
 	tells you the type of variable specified

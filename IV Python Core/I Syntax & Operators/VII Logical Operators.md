@@ -1,4 +1,4 @@
-Logical Operators: [Not, And, Or]  [[VI Comparison Operators#^booleanOperators]]
+Logical Operators: [Not, And, Or]  [[IV Python Core/I Syntax & Operators/VI Comparison Operators#^booleanOperators]]
 	Boolean operators; return True or False 
 
 And checks if the statements on either side are true

@@ -1,4 +1,4 @@
-Can be used to achieve the same output as the [[I For Loops]], but the syntax is slightly refined
+Can be used to achieve the same output as the [[IV Python Core/III Conditions & Iterations/I For Loops]], but the syntax is slightly refined
 ex
 ```python
 x = 0

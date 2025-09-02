@@ -29,7 +29,7 @@ BigList {returns [[ 'Thomas', 'Mark', 'John', 'Mary' ][ 'Josh', 'Alan' ]]}
 	{the two lists 'glued' together
 
 [Methods for Modifying Lists]
-see [[VI Methods]] for more details
+see [[IV Python Core/II Functions & Flow/VI Methods]] for more details
 	.sort(): organizes elements of a list
 	.append(): adds an item to the end of a list
 	.extend(): adds items from one list to the end of the specified list

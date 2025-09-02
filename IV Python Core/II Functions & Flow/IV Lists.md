@@ -2,13 +2,13 @@ Lists are defined with a name and populated with Elements inside a bracket pair;
 
 Disciples = ['John', 'Luke', 'Mathew', 'David']
 Disciples {returns ['John', 'Luke', 'Mathew', 'David']}
-	{can be any data type: [[III Integers, Floats, and Boolean]]}
+	{can be any data type: [[IV Python Core/I Syntax & Operators/III Integers, Floats, and Boolean]]}
 
 [ ] indicates the elements of a list/sequence
 '' indicates the items composing of the list/sequence
 	"list_name"[index_of_list] {returns the specified element}
 
-[Indexing Lists]  [[VI Methods#^e2bf2b]]
+[Indexing Lists]  [[IV Python Core/II Functions & Flow/VI Methods#^e2bf2b]]
 Disciples[3] {would return 'David'}
 	{accessed the list's value by 'indexing the value 3'}
 Disciples[-1] {would return 'David'}
