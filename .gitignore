@@ -4,3 +4,6 @@ TheVault/Glomerate/
 TheVault/Miscellaneous/
 .DS_Store
 **/.DS_Store
+.obsidian/community-plugins.json
+community-plugins.json
+.obsidian/plugins/execute-code/
