@@ -4,24 +4,67 @@
     "type": "split",
     "children": [
       {
-        "id": "2aa0d87eda2fddf9",
+        "id": "fe77924fbacdc76e",
         "type": "tabs",
         "children": [
           {
-            "id": "7d603444ef2830f0",
+            "id": "0a95a66cc5f88200",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/0 Snippets/add, python.md",
+                "file": "xsorted()/VI ML/III Matrices & Tensors/I Matrices.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "I Matrices"
+            }
+          },
+          {
+            "id": "60f809cb2e9c423c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "xsorted()/VI ML/III Matrices & Tensors/II Scalars and Vectors.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "II Scalars and Vectors"
+            }
+          },
+          {
+            "id": "37c680750b69e0df",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "xsorted()/VI ML/III Matrices & Tensors/III Algebra and Geometry.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "III Algebra and Geometry"
+            }
+          },
+          {
+            "id": "f03c6d2d5283b578",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "xsorted()/VI ML/III Matrices & Tensors/graph demon python.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "add, python"
+              "title": "graph demon python"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -139,43 +182,43 @@
       "graph:Open graph view": false
     }
   },
-  "active": "81403f575f74443d",
+  "active": "f03c6d2d5283b578",
   "lastOpenFiles": [
-    "xsorted()/0 Snippets",
-    "xsorted()/VI ML in Python/VII Cluster Analysis/XI HeatMaping ; Seaborn {{ S }}.md",
-    "xsorted()/VI ML in Python/VII Cluster Analysis/X Clustering Clusters.md",
-    "xsorted()/VI ML in Python/VII Cluster Analysis/VIII Real Practice.md",
-    "xsorted()/VI ML in Python/VII Cluster Analysis/VII KMeans Cluster Practice {{ S }}.md",
-    "xsorted()/VI ML in Python/VII Cluster Analysis/VI Add, Info KMeans Clustering.md",
-    "xsorted()/VI ML in Python/VII Cluster Analysis/V Choosing Cluster Count {{ S }}.md",
-    "xsorted()/VI ML in Python/VII Cluster Analysis/IV Choosing Cluster Count.md",
-    "xsorted()/VI ML in Python/VII Cluster Analysis/III K-Means Categorical Clustering {{ S }}.md",
-    "xsorted()/VI ML in Python/VII Cluster Analysis/II K-Means Clustering {{ S }}.md",
-    "xsorted()/VI ML in Python/VII Cluster Analysis/I Cluster Analysis Intro.md",
-    "xsorted()/VI ML in Python/VII Cluster Analysis",
-    "xsorted()/VI ML in Python",
-    "xsorted()/V Stats in Python/VI Case Study {{ S }}/VI Summ of {{ S's }}.md",
-    "xsorted()/V Stats in Python/VI Case Study {{ S }}/V Testing the Model.md",
-    "xsorted()/V Stats in Python/VI Case Study {{ S }}/IV Regression and Summary.md",
+    "xsorted()/VI ML/III Matrices & Tensors/III Algebra and Geometry.md",
+    "xsorted()/VI ML/III Matrices & Tensors/graph demon python.md",
+    "xsorted()/VI ML/III Matrices & Tensors/II Scalars and Vectors.md",
+    "xsorted()/VI ML/III Matrices & Tensors/I Matrices.md",
+    "xsorted()/V Stats in Python/III Regression with Sklearn/II Linear Regression {{ S }}.md",
+    "xsorted()/VI ML/II chat/III Case Study/Actual Process.md",
+    "xsorted()/VI ML/II chat/III Case Study/Multinomial and Bernoulli N.B.s.md",
+    "xVault/Glomerate/comput/tools/zip zstd.md",
+    "xVault/Glomerate/comput/tools/tar.md",
+    "xsorted()/VI ML/III Matrices & Tensors",
+    "xsorted()/VI ML/II chat",
+    "Untitled",
+    "xVault/Glomerate/comput/tools/du df.md",
+    "xVault/Glomerate/comput/tools/mac/colima-docker-config.md",
+    "xVault/Glomerate/comput/tools/mac/compose.cmd’s.md",
+    "xVault/Glomerate/comput/tools/mac/ffmpeg.md",
+    "xVault/Glomerate/comput/tools/mac/jdupes.md",
+    "xVault/Glomerate/comput/tools/mac/tailscale.md",
+    "xVault/Glomerate/comput/tools/mac/osxphotos.md",
+    "xVault/Glomerate/comput/tools/mac/general.cmds.md",
+    "xVault/Glomerate/comput/tools/linux.md",
+    "xVault/Glomerate/comput/tools/ub server cli.md",
+    "xVault/Glomerate/comput/tools/github.md",
+    "xsorted()/VI ML/II chat/III Case Study/IV The Data w.Gemini.md",
     "xsorted()/V Stats in Python/VI Case Study {{ S }}/III Preprocess & Dummy Var's.md",
-    "xsorted()/V Stats in Python/VI Case Study {{ S }}/II Check OLS Assumptions.md",
-    "xsorted()/V Stats in Python/VI Case Study {{ S }}/I Cars; Preprocess.md",
+    "xsorted()/VI ML/II chat/III Case Study/III Imbalanced Datasets.md",
+    "xsorted()/VI ML/II chat/III Case Study/II Vectorization, Tokenization.md",
+    "xsorted()/VI ML/II chat/III Case Study/I Senti Anal Case.md",
+    "xsorted()/VI ML/II chat/III Case Study",
+    "xsorted()/VI ML/II chat/II GPT Preprocessing.chopped/V Regex Gemini.md",
+    "xsorted()/VI ML/II chat/II GPT Preprocessing.chopped",
+    "xsorted()/0 Snippets",
+    "xsorted()/VI ML/I Cluster Analysis",
+    "xsorted()/VI ML",
     "xsorted()/V Stats in Python/VI Case Study {{ S }}",
-    "xsorted()/V Stats in Python/IV Standardizing Data/V Under.Overfit; Train.Test Split {{ S }}.md",
-    "xsorted()/V Stats in Python/IV Standardizing Data/IV Predict, with Standard, Data {{ S }}.md",
-    "xsorted()/V Stats in Python/IV Standardizing Data/III Feat, Select - Standard, Data {{ S }}.md",
-    "xsorted()/V Stats in Python/IV Standardizing Data/II Feature Scaling Regression {{ S }}.md",
-    "xsorted()/V Stats in Python/IV Standardizing Data/I Feature Scaling { Standardization }.md",
-    "xsorted()/V Stats in Python/IV Standardizing Data",
-    "xsorted()/V Stats in Python/V Logistic Regressions/VI DIY Logistic Reg Test {{ S }}.md",
-    "xsorted()/V Stats in Python/V Logistic Regressions/V Testing the Model {{ S }}.md",
-    "xsorted()/V Stats in Python/V Logistic Regressions/IV Accuracy w.Log Reg {{ S }}.md",
-    "xsorted()/V Stats in Python/V Logistic Regressions/III Log Reg Summary Comprehension.md",
-    "xsorted()/V Stats in Python/V Logistic Regressions",
-    "xsorted()/V Stats in Python/III Regression with Sklearn",
-    "xsorted()/V Stats in Python/II Multi-Var Regression/Five Assumptions",
-    "xsorted()/V Stats in Python/II Multi-Var Regression",
-    "xsorted()/V Stats in Python/I Linear Regression",
-    "z/V Stats in Py/Untitled"
+    "xsorted()/V Stats in Python/IV Standardizing Data"
   ]
 }

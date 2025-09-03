@@ -8,7 +8,7 @@ sns.set()
 
 from sklearn.linear_model import LinearRegression # new | import the linear model from sklearn instead of the statsmodels lib
 
-data = pd.read_csv('C:/Users/carto/Downloads/1.01.+Simple+linear+regression.csv') # use panda to read data from csv sheet
+data = pd.read_csv('/Volumes/HomeXx/compuir/1.01. Simple linear regression.csv') # use panda to read data from csv sheet
 
 print(data.head()) # will show the top 5 Elements
 print('\n')

@@ -58,7 +58,7 @@
   "csArgs": "",
   "csFileExtension": "csx",
   "csInject": "",
-  "pythonPath": "/Volumes/HomeXx/compuir/obsid/bin/python3",
+  "pythonPath": "/Volumes/HomeXx/py_env/bin/python3",
   "pythonArgs": "",
   "pythonEmbedPlots": true,
   "pythonFileExtension": "py",
