@@ -4,52 +4,81 @@
     "type": "split",
     "children": [
       {
-        "id": "fe77924fbacdc76e",
+        "id": "84c031be13cb825b",
         "type": "tabs",
         "children": [
           {
-            "id": "37c680750b69e0df",
+            "id": "1d70ff95994ed88d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/VI ML/III Matrices & Tensors/III Algebra and Geometry.md",
+                "file": "xsorted()/VI ML/III Matrices & Tensors/V Matrices in code.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "III Algebra and Geometry"
+              "title": "V Matrices in code"
             }
           },
           {
-            "id": "f03c6d2d5283b578",
+            "id": "203079c85ce80391",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/VI ML/III Matrices & Tensors/III.V graph demon python.md",
-                "mode": "preview",
+                "file": "xsorted()/VI ML/III Matrices & Tensors/IV Math with Matrices  '. ).md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "III.V graph demon python"
+              "title": "IV Math with Matrices  '. )"
             }
           },
           {
-            "id": "2e64dd66103842e2",
+            "id": "aea12053c0bdfaaa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/VI ML/III Matrices & Tensors/III.V graph demon python.md",
+                "file": "xsorted()/VI ML/III Matrices & Tensors/VII Transpositions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "VII Transpositions"
+            }
+          },
+          {
+            "id": "5a372cad79f9fe2a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "xsorted()/VI ML/III Matrices & Tensors/VIII M.Multiplication.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "VIII M.Multiplication"
+            }
+          },
+          {
+            "id": "28ca51667a09fac8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "xsorted()/VI ML/III Matrices & Tensors/X M.Multiplication II.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "III.V graph demon python"
+              "title": "X M.Multiplication II"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -81,12 +110,12 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "path:\"z/IV Py Core/\" ",
+                "query": "functions",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabeticalReverse"
               },
               "icon": "lucide-search",
               "title": "Search"
@@ -96,7 +125,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 269.5
+    "width": 269.5,
+    "collapsed": true
   },
   "right": {
     "id": "cc49a367b9d619d7",
@@ -167,13 +197,26 @@
       "graph:Open graph view": false
     }
   },
-  "active": "37c680750b69e0df",
+  "active": "28ca51667a09fac8",
   "lastOpenFiles": [
+    "xsorted()/VI ML/III Matrices & Tensors/IV Math with Matrices  '. ).md",
+    "xsorted()/VI ML/III Matrices & Tensors/VII Transpositions.md",
+    "xsorted()/VI ML/III Matrices & Tensors/VIII M.Multiplication.md",
+    "xsorted()/VI ML/III Matrices & Tensors/X M.Multiplication II.md",
+    "xsorted()/VI ML/III Matrices & Tensors/VI Tensors.md",
+    "xsorted()/VI ML/III Matrices & Tensors/V Matrices in code.md",
+    "xsorted()/IV Python Core/III Conditions & Iterations/X Modules & Packages.md",
+    "xsorted()/IV Python Core/II Functions & Flow/VII Tuples.md",
+    "xsorted()/IV Python Core/II Functions & Flow/V List Slicing.md",
+    "xsorted()/IV Python Core/II Functions & Flow/VI Methods.md",
+    "xsorted()/IV Python Core/II Functions & Flow/IV Lists.md",
+    "xsorted()/IV Python Core/II Functions & Flow/III Defining Functions.md",
+    "xsorted()/IV Python Core/II Functions & Flow/II Built-In Functions.md",
     "xsorted()/VI ML/III Matrices & Tensors/III.V graph demon python.md",
+    "xsorted()/VI ML/III Matrices & Tensors/III Algebra and Geometry.md",
     "xsorted()/VI ML/III Matrices & Tensors/mac obsid env addr.md",
     "xsorted()/VI ML/III Matrices & Tensors/I Matrices.md",
     "xsorted()/VI ML/III Matrices & Tensors/II Scalars and Vectors.md",
-    "xsorted()/VI ML/III Matrices & Tensors/III Algebra and Geometry.md",
     "xsorted()/V Stats in Python/III Regression with Sklearn/II Linear Regression {{ S }}.md",
     "xsorted()/VI ML/II chat/III Case Study/Actual Process.md",
     "xsorted()/VI ML/II chat/III Case Study/Multinomial and Bernoulli N.B.s.md",
@@ -185,19 +228,6 @@
     "xVault/Glomerate/comput/tools/du df.md",
     "xVault/Glomerate/comput/tools/mac/colima-docker-config.md",
     "xVault/Glomerate/comput/tools/mac/compose.cmd’s.md",
-    "xVault/Glomerate/comput/tools/mac/ffmpeg.md",
-    "xVault/Glomerate/comput/tools/mac/jdupes.md",
-    "xVault/Glomerate/comput/tools/mac/tailscale.md",
-    "xVault/Glomerate/comput/tools/mac/osxphotos.md",
-    "xVault/Glomerate/comput/tools/mac/general.cmds.md",
-    "xVault/Glomerate/comput/tools/linux.md",
-    "xVault/Glomerate/comput/tools/ub server cli.md",
-    "xVault/Glomerate/comput/tools/github.md",
-    "xsorted()/VI ML/II chat/III Case Study/IV The Data w.Gemini.md",
-    "xsorted()/V Stats in Python/VI Case Study {{ S }}/III Preprocess & Dummy Var's.md",
-    "xsorted()/VI ML/II chat/III Case Study/III Imbalanced Datasets.md",
-    "xsorted()/VI ML/II chat/III Case Study/II Vectorization, Tokenization.md",
-    "xsorted()/VI ML/II chat/III Case Study/I Senti Anal Case.md",
     "xsorted()/VI ML/II chat/III Case Study",
     "xsorted()/VI ML/II chat/II GPT Preprocessing.chopped",
     "xsorted()/0 Snippets",
