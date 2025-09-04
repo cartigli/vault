@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
 
 #generate training data ; linear relationship within
@@ -35,13 +36,16 @@ targets = 7 * xs + -14 * zs + 5 + noise # add noise
 print(targets.shape)
 
 #the dude glossed over this and it is unecessary but i think its interesting
-#targets = targets.reshape(observations,)
-#fig = plt.figure()
-#ax = fig.add_subplot(111,projection='3d')
-#ax.plot(xs,zs,targets)
-#ax.view_init(azim=100)
-#plt.show()
-#plt.close() # the library is outdated
+targets_flat = targets.reshape(observations,)
+xs_flat = xs.reshape(observations,)
+zs_flat = zs.reshape(observations,)
+fig = plt.figure()
+ax = fig.add_subplot(111,projection='3d')
+#ax.plot(xs_flat,zs_flat,targets_flat)
+ax.scatter(xs_flat, zs_flat, targets, c=targets, cmap='viridis', alpha=0.6, s=1)
+ax.view_init(azim=100)
+plt.show()
+plt.close() # the library is outdated
 
 #it was supposed to show our data on a 3d plane ; I think in preparation for some dimensional collapse we'll do soon
 
@@ -55,7 +59,7 @@ biases = np.random.uniform(-i_range, i_range, size = 1)
 print(f"Weights and Biases:\n{weights},{biases}\nAnd their shape:\nWeights Shape:{weights.shape} \nAnd Biases Shape:{biases.shape}")
 
 learning_rate=0.1
-
+```
 
 
 

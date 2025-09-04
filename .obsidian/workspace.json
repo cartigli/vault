@@ -28,7 +28,7 @@
               "type": "markdown",
               "state": {
                 "file": "xsorted()/VI ML/N.N. w.Numpy/I {{ S }}.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -171,10 +171,10 @@
   },
   "active": "0d5faa7812db9b53",
   "lastOpenFiles": [
-    "xsorted()/VI ML/N.N. w.Numpy/I Linear ML Model in {{ S }}.md",
-    "xsorted()/VI ML/N.N. w.Numpy/I {{ S }}.md",
-    "xsorted()/VI ML/N.N. w.Numpy/Untitled.md",
     "xsorted()/VI ML/IV Cost & Design/VI G.D. Calculations & Formulas.md",
+    "xsorted()/VI ML/N.N. w.Numpy/I {{ S }}.md",
+    "xsorted()/VI ML/N.N. w.Numpy/I Linear ML Model in {{ S }}.md",
+    "xsorted()/VI ML/N.N. w.Numpy/Untitled.md",
     "xsorted()/VI ML/IV Cost & Design/V Gradient Descent.md",
     "xsorted()/VI ML/N.N. w.Numpy/Untitled",
     "xsorted()/VI ML/IV Cost & Design/Wowwww ; Jupyter twin.md",
