@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/VI ML/N.N. w.Numpy/I {{ S }}.md",
+                "file": "xsorted()/VI ML/V N.N. w.Numpy/I {{ S }}.md",
                 "mode": "source",
                 "source": false
               },
@@ -171,16 +171,17 @@
   },
   "active": "0d5faa7812db9b53",
   "lastOpenFiles": [
+    "xsorted()/VI ML/V N.N. w.Numpy/Cute ML.md",
+    "xsorted()/VI ML/V N.N. w.Numpy/I {{ S }}.md",
     "xsorted()/VI ML/IV Cost & Design/VI G.D. Calculations & Formulas.md",
-    "xsorted()/VI ML/N.N. w.Numpy/I {{ S }}.md",
-    "xsorted()/VI ML/N.N. w.Numpy/I Linear ML Model in {{ S }}.md",
-    "xsorted()/VI ML/N.N. w.Numpy/Untitled.md",
+    "xsorted()/VI ML/V N.N. w.Numpy/I Linear ML Model in {{ S }}.md",
+    "xsorted()/VI ML/V N.N. w.Numpy/Untitled.md",
     "xsorted()/VI ML/IV Cost & Design/V Gradient Descent.md",
     "xsorted()/VI ML/N.N. w.Numpy/Untitled",
     "xsorted()/VI ML/IV Cost & Design/Wowwww ; Jupyter twin.md",
     "xsorted()/VI ML/IV Cost & Design/III Linear ML.md",
     "xsorted()/VI ML/IV Cost & Design/IV Objective Function.md",
-    "xsorted()/VI ML/N.N. w.Numpy",
+    "xsorted()/VI ML/V N.N. w.Numpy",
     "xVault/miscellaneous/keysncodes.md",
     "xsorted()/VI ML/I Cluster Analysis/II K-Means Clustering {{ S }}.md",
     "xsorted()/VI ML/IV Cost & Design/II Types of ML.md",
@@ -200,7 +201,6 @@
     "xsorted()/IV Python Core/II Functions & Flow/VII Tuples.md",
     "xsorted()/IV Python Core/II Functions & Flow/V List Slicing.md",
     "xsorted()/IV Python Core/II Functions & Flow/VI Methods.md",
-    "xsorted()/IV Python Core/II Functions & Flow/IV Lists.md",
     "xsorted()/VI ML/III Matrices, Tensors",
     "xsorted()/VI ML/II chat",
     "xsorted()/VI ML/II chat/III Case Study",

@@ -20,38 +20,26 @@ xs = np.random.uniform(-10,10,(observations,1))
 zs = np.random.uniform(-10,10,(observations,1))
 
 
-#format into one unut for passing to the model:
-#theory states our training data should be shape n x k 
-#observations by variables ; 10,000 x 2 ; x & z
 
+
+#format into one unut for passing to the model: training data should be shape n x k 
 inputs = np.column_stack((xs,zs)) # stacks columns ; 10,000 rows by 2 columns
-print(inputs.shape)
+print(f"\nInput\'s shape:{inputs.shape}")
+
 
 #noise for data leniency
 noise = np.random.uniform(-1,1,(observations,1))
 
 #we need to generate targets
-#we are going to set the optimal weights to be 7 for x's and -14 for z's ; this makes a linear relationship throughout the model the optimal function for the machine. Also, our data is dual-variable, not multi, so 3 dimensional data would not be able to be input, assessed, or optimized.
+#we are going to set the optimal weights to be 7 for x's and -14 for z's 
+#this makes a linear relationship for the targets
 targets = 7 * xs + -14 * zs + 5 + noise # add noise
-print(targets.shape)
+print(f"\nTarget\'s shape:{targets.shape}")
 
-#the dude glossed over this and it is unecessary but i think its interesting
-targets_flat = targets.reshape(observations,)
-xs_flat = xs.reshape(observations,)
-zs_flat = zs.reshape(observations,)
-fig = plt.figure()
-ax = fig.add_subplot(111,projection='3d')
-#ax.plot(xs_flat,zs_flat,targets_flat)
-ax.scatter(xs_flat, zs_flat, targets, c=targets, cmap='viridis', alpha=0.6, s=1)
-ax.view_init(azim=100)
-plt.show()
-plt.close() # the library is outdated
-
-#it was supposed to show our data on a 3d plane ; I think in preparation for some dimensional collapse we'll do soon
 
 
 #Generate the weights - i_range is range for weights & biases
-i_range = 0.1
+i_range = 0.1 # inputs x 2 is the range of values they can initially take
 
 weights = np.random.uniform(-i_range, i_range, size = (2,1))
 biases = np.random.uniform(-i_range, i_range, size = 1)
