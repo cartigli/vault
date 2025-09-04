@@ -1,9 +1,10 @@
 {
-  "theme": "obsidian",
+  "theme": "moonstone",
   "accentColor": "#7a152e",
   "interfaceFontFamily": "Times New Roman",
   "monospaceFontFamily": "",
   "showViewHeader": false,
   "showRibbon": false,
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [],
+  "textFontFamily": "Times New Roman"
 }
