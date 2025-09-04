@@ -8,73 +8,73 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1d70ff95994ed88d",
+            "id": "8d3053d857db6c59",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/VI ML/III Matrices & Tensors/V Matrices in code.md",
+                "file": "xsorted()/VI ML/I Cluster Analysis/II K-Means Clustering {{ S }}.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "V Matrices in code"
+              "title": "II K-Means Clustering {{ S }}"
             }
           },
           {
-            "id": "203079c85ce80391",
+            "id": "3ed9833dfe41f09f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/VI ML/III Matrices & Tensors/IV Math with Matrices  '. ).md",
+                "file": "xsorted()/VI ML/IV NN/II Types of ML.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IV Math with Matrices  '. )"
+              "title": "II Types of ML"
             }
           },
           {
-            "id": "aea12053c0bdfaaa",
+            "id": "6b2efec98fa77c2f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/VI ML/III Matrices & Tensors/VII Transpositions.md",
+                "file": "xsorted()/VI ML/IV Cost & Design/III Linear ML.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "VII Transpositions"
+              "title": "III Linear ML"
             }
           },
           {
-            "id": "5a372cad79f9fe2a",
+            "id": "c393ec97f0fd147c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/VI ML/III Matrices & Tensors/VIII M.Multiplication.md",
+                "file": "xsorted()/VI ML/IV Cost & Design/V Gradient Descent.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "VIII M.Multiplication"
+              "title": "V Gradient Descent"
             }
           },
           {
-            "id": "28ca51667a09fac8",
+            "id": "430f57dcb90841bd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/VI ML/III Matrices & Tensors/X M.Multiplication II.md",
-                "mode": "preview",
+                "file": "xsorted()/VI ML/IV Cost & Design/VI Gradient Descent II.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "X M.Multiplication II"
+              "title": "VI Gradient Descent II"
             }
           }
         ],
@@ -197,14 +197,30 @@
       "graph:Open graph view": false
     }
   },
-  "active": "28ca51667a09fac8",
+  "active": "430f57dcb90841bd",
   "lastOpenFiles": [
-    "xsorted()/VI ML/III Matrices & Tensors/IV Math with Matrices  '. ).md",
-    "xsorted()/VI ML/III Matrices & Tensors/VII Transpositions.md",
-    "xsorted()/VI ML/III Matrices & Tensors/VIII M.Multiplication.md",
-    "xsorted()/VI ML/III Matrices & Tensors/X M.Multiplication II.md",
-    "xsorted()/VI ML/III Matrices & Tensors/VI Tensors.md",
-    "xsorted()/VI ML/III Matrices & Tensors/V Matrices in code.md",
+    "xsorted()/VI ML/IV Cost & Design/Untitled.md",
+    "xsorted()/VI ML/IV Cost & Design/VI Gradient Descent II.md",
+    "xsorted()/VI ML/IV Cost & Design/V Gradient Descent.md",
+    "xsorted()/VI ML/IV Cost & Design/IV Objective Function.md",
+    "xsorted()/VI ML/N.N. w.Numpy",
+    "xVault/miscellaneous/keysncodes.md",
+    "xsorted()/VI ML/IV Cost & Design/III Linear ML.md",
+    "xsorted()/VI ML/I Cluster Analysis/II K-Means Clustering {{ S }}.md",
+    "xsorted()/VI ML/IV Cost & Design/II Types of ML.md",
+    "xsorted()/VI ML/IV Cost & Design/I Neural Network Intro.md",
+    "xVault/miscellaneous/flicks et films.md",
+    "Untitled",
+    "xsorted()/VI ML/IV Cost & Design/3d plot.md",
+    "xsorted()/VI ML/IV Cost & Design/Wowwww ; Jupyter twin.md",
+    "xsorted()/VI ML/III Matrices, Tensors/XI M.Illumination Connection.md",
+    "xsorted()/VI ML/IV Cost & Design",
+    "xsorted()/VI ML/III Matrices, Tensors/X M.Multiplication II.md",
+    "xsorted()/VI ML/III Matrices, Tensors/IV Math with Matrices  '. ).md",
+    "xsorted()/VI ML/III Matrices, Tensors/VII Transpositions.md",
+    "xsorted()/VI ML/III Matrices, Tensors/VIII M.Multiplication.md",
+    "xsorted()/VI ML/III Matrices, Tensors/VI Tensors.md",
+    "xsorted()/VI ML/III Matrices, Tensors/V Matrices in code.md",
     "xsorted()/IV Python Core/III Conditions & Iterations/X Modules & Packages.md",
     "xsorted()/IV Python Core/II Functions & Flow/VII Tuples.md",
     "xsorted()/IV Python Core/II Functions & Flow/V List Slicing.md",
@@ -212,28 +228,12 @@
     "xsorted()/IV Python Core/II Functions & Flow/IV Lists.md",
     "xsorted()/IV Python Core/II Functions & Flow/III Defining Functions.md",
     "xsorted()/IV Python Core/II Functions & Flow/II Built-In Functions.md",
-    "xsorted()/VI ML/III Matrices & Tensors/III.V graph demon python.md",
-    "xsorted()/VI ML/III Matrices & Tensors/III Algebra and Geometry.md",
-    "xsorted()/VI ML/III Matrices & Tensors/mac obsid env addr.md",
-    "xsorted()/VI ML/III Matrices & Tensors/I Matrices.md",
-    "xsorted()/VI ML/III Matrices & Tensors/II Scalars and Vectors.md",
-    "xsorted()/V Stats in Python/III Regression with Sklearn/II Linear Regression {{ S }}.md",
-    "xsorted()/VI ML/II chat/III Case Study/Actual Process.md",
-    "xsorted()/VI ML/II chat/III Case Study/Multinomial and Bernoulli N.B.s.md",
-    "xVault/Glomerate/comput/tools/zip zstd.md",
-    "xVault/Glomerate/comput/tools/tar.md",
-    "xsorted()/VI ML/III Matrices & Tensors",
+    "xsorted()/VI ML/III Matrices, Tensors",
     "xsorted()/VI ML/II chat",
-    "Untitled",
-    "xVault/Glomerate/comput/tools/du df.md",
-    "xVault/Glomerate/comput/tools/mac/colima-docker-config.md",
-    "xVault/Glomerate/comput/tools/mac/compose.cmd’s.md",
     "xsorted()/VI ML/II chat/III Case Study",
     "xsorted()/VI ML/II chat/II GPT Preprocessing.chopped",
     "xsorted()/0 Snippets",
     "xsorted()/VI ML/I Cluster Analysis",
-    "xsorted()/VI ML",
-    "xsorted()/V Stats in Python/VI Case Study {{ S }}",
-    "xsorted()/V Stats in Python/IV Standardizing Data"
+    "xsorted()/VI ML"
   ]
 }
