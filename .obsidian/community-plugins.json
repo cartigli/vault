@@ -1,4 +1,5 @@
 [
   "duplicate-line",
-  "execute-code"
+  "execute-code",
+  "obsidian-tikzjax"
 ]
