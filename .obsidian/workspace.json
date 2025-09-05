@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/VI ML/VI Deep ML/Activation Functions.md",
+                "file": "xsorted()/VI ML/VI Deep ML/Network Architecture.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Activation Functions"
+              "title": "Network Architecture"
             }
           },
           {
@@ -35,8 +35,7 @@
               "title": "Network Architecture"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -155,11 +154,11 @@
       "graph:Open graph view": false
     }
   },
-  "active": "0c4a16646ae493e3",
+  "active": "9926b9eb27b0feb4",
   "lastOpenFiles": [
     "xsorted()/VI ML/VI Deep ML/Activation Functions.md",
-    "xsorted()/VI ML/VI Deep ML/Network Architecture.md",
     "xsorted()/VI ML/VI Deep ML/Layers.md",
+    "xsorted()/VI ML/VI Deep ML/Network Architecture.md",
     "xsorted()/VI ML/IV Cost & Design/VI G.D. Calculations & Formulas.md",
     "xsorted()/VI ML/IV Cost & Design/IV Objective Function.md",
     "xsorted()/VI ML/IV Cost & Design/V Gradient Descent.md",

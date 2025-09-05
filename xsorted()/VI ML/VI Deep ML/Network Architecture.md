@@ -155,7 +155,7 @@ Below is a diagram of a simple Neural Network. The neurons denoted with x in the
 Layers are denoted in many ways, but the only important thing is the notation. like pythonic indexing, the layers are indicated by their position - 1. The first layer is layer 0, the second is layer 1, etc., etc., until layer n. The network itself is n layers + the input layer. The input layer isn't considered in standard ML practice because it is essentially *the inputs themselves*. Whatever data the model is designed to be trained on dictates the layer 0's size. If we have 10 variables to train the model on, layer 0 would have 10 neurons. If we were training it on words or text, the input layer would need to be exponentially bigger.
 
 Weights
-The connection between two neurons is a weight. Each neuron of the layer $L_{i}$ is connected to every neuron of layer $L_{i+1}$ and received the outputs of every neuron in layer $L_{i-1}$. For example, the neuron denoted $h_{11}$ is connected to the neurons $h_{21}, h_{22}, h_{23}, h_{24}, \& h_{25}$ and received the outputs of $x_1, x_2, x_3, x_4, x_5$. The same is true for any given neuron of any network, except for those of the input and output layer. Therefore, weights and their shape are defined by the configuration of the network and the neurons within.
+The connection between two neurons is a weight. Each neuron of the layer $L_{i}$ is connected to every neuron of layer $L_{i+1}$ and received the outputs of every neuron in layer $L_{i-1}$. For example, the neuron denoted $h_{11}$ is connected to the neurons $h_{21}, h_{22}, h_{23}, h_{24}, \& h_{25}$ and received the outputs of $x_1, x_2, x_3, x_4$. The same is true for any given neuron of any network, except for those of the input and output layer. Therefore, weights and their shape are defined by the configuration of the network and the neurons within.
 
 Every neuron of a single layer are connected to every neuron in the layer preceding and following it, except for layers 0 and L. This network has 5 layers of neurons, so we denote this as L=4. So, layer L would be layer 4, or the fifth layer $y$. Layer 0 is the layer of $x$'s and layers 1, 2, & 3 are Hidden Layers. This network takes four inputs and outputs 3 values.
 
@@ -184,8 +184,6 @@ Shown below is the layer 0 and first hidden layer, or layer 1. We know $x_1$ con
     \node[neuron] (H15) at (2, -3) {$h_{15}$};
 
     % --- Connect the nodes with lines ---
-
-    % Layer 0 to Hidden 1 --- FIXED node names from H1 to H11 etc.
     \draw (I1) -- (H11); \draw (I1) -- (H12); \draw (I1) -- (H13); \draw (I1) -- (H14); \draw (I1) -- (H15);
     \draw (I2) -- (H11); \draw (I2) -- (H12); \draw (I2) -- (H13); \draw (I2) -- (H14); \draw (I2) -- (H15);
     \draw (I3) -- (H11); \draw (I3) -- (H12); \draw (I3) -- (H13); \draw (I3) -- (H14); \draw (I3) -- (H15);
@@ -212,7 +210,6 @@ Take the connection below. This is what our model was in the previous two Tenser
     \node[neuron] (y) at (3, 0) {$y$};
 
     % --- Connect the nodes with lines ---
-
     \draw (I1) -- (y);
     \draw (I2) -- (y);
 
@@ -221,9 +218,9 @@ Take the connection below. This is what our model was in the previous two Tenser
 \end{document}
 ```
 
-We measure this value against the target to determine loss, which is normalized by L2-Norm in our model. The model calculate the gradient of the loss function with respect to the weights and the bias from the Loss Function. Doing so informs the model of the optimal weights and bias values to reduce the cost function for those given inputs. To throttle this, we take the returned optimal value and factor it by the learning rate. This was 0.01 for our model, but is usually generated with observations or some other activation function. Blind guy going down the mountain, you remember. 
+We measure this value against the target to determine loss, which is normalized by L2-Norm in our model. The model calculate the gradient of the loss function with respect to the weights and the bias from the Loss Function. Doing so informs the model of the optimal weights and bias values to reduce the cost function for those given inputs. To throttle this, we take the returned optimal value and factor it by the learning rate. This was 0.01 for our model, but is usually generated with observations or a normalization function. Blind guy going down the mountain, you remember. 
 
-x & z are both (1000,1) but were combined for processing, becoming the shape (1000,2). Initially, we had 1,000 pairs for our model to train on, the pairs perfectly split between each randomly generated set. This is for matrix multiplication; ML core. Having the inputs in the shape (1000,2) allows us to multiply them agains the weights matrix, or passing forward in this network. The weights matrix is (2x1); 2 weights, one for each variable. Multiplying the inputs matrix of (1000x2) by (2x1) gives us a dot product of (1000,1). There is only one layer in this network and it posses a single neuron, so there is only one bias to be added. Scalars are added Element-wise throughout matrices, meaning they are added to every element independently. (1000,1) times the (B) scalar bias results in the output of the model. Then we repeat until the gradient ceases to decrease. This is the foundation of the neural network; every node's consequent connection and signal is like one of our previous model but strung together in parallel.
+x & z are both (1000,1) but were combined for processing, becoming the shape (1000,2). Initially, we had 1,000 pairs for our model to train on, the pairs perfectly split between each randomly generated set. This is for matrix multiplication; ML core. Having the inputs in the shape (1000,2) allows us to multiply them agains the weights matrix, or passing forward in this network. The weights matrix is (2x1); 2 weights, one for each variable. Multiplying the inputs matrix of (1000x2) by (2x1) gives us a dot product of (1000,1). There is only one layer in this network and it posses a single neuron, so there is only one bias to be added. Scalars are added Element-wise throughout matrices, meaning they are added to every element independently. (1000,1) plus the (B) scalar of bias results in the output of the model. Then we repeat until the gradient ceases to decrease. This is the foundation of the neural network; every node's consequent connection and signal is like one of our previous model but strung together in parallel.
 
 
 ```tikz
@@ -377,7 +374,8 @@ Every connection above is the exact same as our miniature model. Every pair of n
 
 
 Activation
-If we only had weights and biases between these neurons without non-linear activation functions, we'd only ever find linear models. I recommend going back to the TensorFlow model and giving it a function of $x^2$ or something. It panics and has no means to derive representation for, much less find the minimum of, a non-linear function. Modern networks utilizes non-linear functions for adjustments of weights and biases. This allows the adjustments of the weights and biases which take advantage and utilize non-linear functions. In this way, the model, or network, can derive complicated patterns and complex functions, unlike our previous model with TensorFlow. This is genius and incredible but it also means for every calculation of the gradient through the network, these non-linear activation functions must be calculated in reverse to determine the gradient of the loss with respect to the weights upstream of said activation functions. It's just hard, there's nothing else to it. 
+If we only had weights and biases between these neurons without non-linear activation functions, we'd only ever find linear models. I recommend going back to the TensorFlow model and giving it a function of $x^2$ or something. It panics and has no means to derive representation for, much less find the minimum of, a non-linear function. Modern networks utilizes non-linear functions for adjustments of weights and biases. In this way, the model, or network, can derive complicated patterns and complex functions, unlike our previous model with TensorFlow. This is genius and incredible but it also means for every calculation of the gradient through the network, these non-linear activation functions must be calculated in reverse to determine the gradient of the loss with respect to the weights upstream of said activation functions. It's just hard, there's nothing else to it.
+
 ```tikz
 \begin{document}
 \begin{tikzpicture}
@@ -409,66 +407,52 @@ If we only had weights and biases between these neurons without non-linear activ
 
     % Connect the nodes with lines
 
- 
-
-
-
     \draw (H21) -- (H31);
     \draw (H21) -- (H32);
     \draw (H21) -- (H33);
     \draw (H21) -- (H34);
-    %%\draw (H21) -- (H35);
 
     \draw (H22) -- (H31);
     \draw (H22) -- (H32);
     \draw (H22) -- (H33);
     \draw (H22) -- (H34);
-    %%\draw (H22) -- (H35);
 
     \draw (H23) -- (H31);
     \draw (H23) -- (H32);
     \draw (H23) -- (H33);
     \draw (H23) -- (H34);
-    %%\draw (H23) -- (H35);
 
     \draw (H24) -- (H31);
     \draw (H24) -- (H32);
     \draw (H24) -- (H33);
     \draw (H24) -- (H34);
-    %%\draw (H24) -- (H35);
 
     \draw (H25) -- (H31);
     \draw (H25) -- (H32);
     \draw (H25) -- (H33);
     \draw (H25) -- (H34);
-    %%\draw (H25) -- (H35);
-
-
 
 
     \draw (H31) -- (O1);
     \draw (H32) -- (O1);
     \draw (H33) -- (O1);
     \draw (H34) -- (O1);
-    %%\draw (H35) -- (O1);
 
     \draw (H31) -- (O2);
     \draw (H32) -- (O2);
     \draw (H33) -- (O2);
     \draw (H34) -- (O2);
-    %%\draw (H35) -- (O2);
 
     \draw (H31) -- (O3);
     \draw (H32) -- (O3);
     \draw (H33) -- (O3);
     \draw (H34) -- (O3);
-    %%\draw (H35) -- (O3);
 
 \end{tikzpicture}
 \end{document}
 ```
 
-This model has { 4 x 5 } + { 5 x 5 } + { 5 x 4 } + { 4 x 3 } weights, and { 5 + 5 + 4 + 3 } biases. That's 77 weights and 18 biases, only 12 weights and 3 biases can be normally configured against the gradient while the rest are forced to be calculated through those 15. Every layer is activated, so h3 has some function like the sigmoid function, although there are many others. The gradient must be found through the results of this function, as that is all that we know. The derivative of this sigmoid function $\sigma (x) = \frac{1}{1+e^{-x}}$  is  $\sigma(x)(1-\sigma(x))$.
+This model has { 4 x 5 } + { 5 x 5 } + { 5 x 4 } + { 4 x 3 } weights, and { 5 + 5 + 5 + 3 } biases. That's 77 weights and 18 biases, only 12 weights and 3 biases can be normally configured against the gradient while the rest are forced to be calculated through those 15. Every layer is activated, so h3 has some function like the sigmoid function, although there are many others. The gradient must be found through the results of this function, as that is all that we know. The derivative of this sigmoid function $\sigma (x) = \frac{1}{1+e^{-x}}$  is  $\sigma(x)(1-\sigma(x))$.
 
 
 Back Propagation
@@ -481,12 +465,7 @@ Not only must this be found for all weights and biases, the values derived for t
     % style neurons
     \tikzstyle{neuron}=[circle, draw, minimum size=5pt]
 
-    % Layer 0
-
-
     % Hidden Layer[s]
-
-
     \node[neuron] (H21) at (-2, 2.5) {$h2_1$};
     \node[neuron] (H22) at (-2, 1.25) {$h2_2$};
     \node[neuron] (H23) at (-2, 0) {$h2_3$};
@@ -505,60 +484,46 @@ Not only must this be found for all weights and biases, the values derived for t
 
     % Connect the nodes with lines
 
- 
-
-
-
     \draw (H21) -- (H31);
     \draw (H21) -- (H32);
     \draw (H21) -- (H33);
     \draw (H21) -- (H34);
-    %%\draw (H21) -- (H35);
 
     \draw (H22) -- (H31);
     \draw (H22) -- (H32);
     \draw (H22) -- (H33);
     \draw (H22) -- (H34);
-    %%\draw (H22) -- (H35);
 
     \draw (H23) -- (H31);
     \draw (H23) -- (H32);
     \draw (H23) -- (H33);
     \draw (H23) -- (H34);
-    %%\draw (H23) -- (H35);
 
     \draw (H24) -- (H31);
     \draw (H24) -- (H32);
     \draw (H24) -- (H33);
     \draw (H24) -- (H34);
-    %%\draw (H24) -- (H35);
 
     \draw (H25) -- (H31);
     \draw (H25) -- (H32);
     \draw (H25) -- (H33);
     \draw (H25) -- (H34);
-    %%\draw (H25) -- (H35);
-
-
 
 
     \draw (H31) -- (O1);
     \draw (H32) -- (O1);
     \draw (H33) -- (O1);
     \draw (H34) -- (O1);
-    %%\draw (H35) -- (O1);
 
     \draw (H31) -- (O2);
     \draw (H32) -- (O2);
     \draw (H33) -- (O2);
     \draw (H34) -- (O2);
-    %%\draw (H35) -- (O2);
 
     \draw (H31) -- (O3);
     \draw (H32) -- (O3);
     \draw (H33) -- (O3);
     \draw (H34) -- (O3);
-    %%\draw (H35) -- (O3);
 
 \end{tikzpicture}
 \end{document}
