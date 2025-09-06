@@ -50,3 +50,39 @@ Similarly, momentum accountants for the small uphills in the gradient slope and 
 	In gradient descent, the consecutive step is determined with :$$w_{new} = w_{old} - \eta\frac{\partial L}{\partial w}$$
 	With momentum, we add the previous update step to the formula:$$w_{new} = w(t) - \eta \frac{\partial L}{\partial w_{old}}(t) - \alpha \eta \frac{\partial L}{\partial w_{old}}( t - 1 )$$
 	We multiply the previous gradient descent by some coefficient, denoted $\alpha$, because otherwise it would be considered at the same importance as the current gradient. $\alpha =$ 0.9 is conventional.
+
+Learning Rate
+Hyperparameters are set by us, like the width, depth, and $\eta$ of the network
+	$\eta$, or the Learning Rate, is rate at which the model is allowed to modify its weights in respect to the cost gradient
+
+Learning rate Schedule
+	To optimize the models learning, we start with high training rates to facilitate big patterns and initial discoveries
+		we lower it as the model progresses through the data so it does not overfit as patterns it adopts become more specific
+				ex:
+					First 5 epochs : $\eta = 0.1$
+					Second 20 epochs : $\eta = 0.01$
+					Third 100 epochs : $\eta = 0.001$
+				A more modern solution is an exponential learning rate based on the number of epochs. 
+					for n in range(epochs):
+						$\eta = \eta_0  e^{-n / c }$
+						so in the exponent of e, n is the current epoch and c is some constant
+						c can be a range of values but its around the number of epochs needed to minimize the cost
+							if this is around 100 epochs, c could be from 50 - 500
+							if this is around 1000 epochs, c could be from 500 - 5000
+								c is another Hyperparameter of the model
+```tikz
+\begin{document}
+\begin{tikzpicture}[x=0.6cm, y=0.6cm]
+
+    % --- Define boundaries and axes ---
+    \draw[step=1, gray, very thin] (0,0) grid (9,9);
+    \draw[->, thick] (0,0) -- (9,0) node[right] {$x$};
+    \draw[->, thick] (0,0) -- (0,9) node[above] {$f(x)$};
+    \clip (0,0) rectangle (9,6);
+
+    % --- Plot the piecewise function (steep then plateau) ---
+    \draw[blue, thick] (0,9) -- (2,4) -- (9,4);
+
+\end{tikzpicture}
+\end{document}
+```

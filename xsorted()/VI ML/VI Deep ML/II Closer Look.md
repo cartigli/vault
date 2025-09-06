@@ -246,27 +246,3 @@ Applying the Sigmoid function here allows the non-linear transformation to take 
 \end{tikzpicture}
 \end{document}
 ```
-
-
-```tikz
-\begin{document}
-\begin{tikzpicture}[xscale=2,yscale=4]
-    % --- Draw Grid ---
-    % Grid now goes from bottom-left (-4,-0.2) to top-right (4,1.2)
-    \draw[step=1cm, gray, very thin] (-4,-0.2) grid (4,1.2);
-
-    % --- Draw Axes ---
-    \draw[->, thick] (-4,0) -- (4,0) node[right] {$x$};
-    \draw[->, thick] (0,-0.2) -- (0,1.2) node[above] {$S(x)$};
-
-    % --- Add Ticks and Labels ---
-    \draw (0,1) -- (-0.1,1) node[left] {1};
-    \foreach \x in {-3,-2,-1,1,2,3}
-        \draw (\x,0) -- (\x,-0.05) node[below] {\x};
-
-    % --- Plot the Sigmoid Function ---
-    \draw[blue, thick, smooth, samples=100, domain=-4:4]
-        plot (\x, {1/(1+exp(-\x))});
-\end{tikzpicture}
-\end{document}
-```

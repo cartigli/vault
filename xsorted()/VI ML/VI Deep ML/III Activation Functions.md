@@ -63,7 +63,7 @@ TanH : Hyperbolic Tangent : $\text{tanh}(a) = \frac{\epsilon^a-\epsilon^{-a}}{\e
 ```
 
 Softmax Function: $\sigma_i(a) = \frac{\epsilon^{a_i}}{\sum_i\epsilon^{a_i}}$
-	*derivative* : $\frac{\partial \sigma_i(a)}{\partial a_i} = \sigma_i (a) (\delta_{ij} - \sigma_i(a))$ where $\delta_{ij}$ is 1 if i=j, 0 otherwise
+	*derivative* : $\frac{\partial \sigma_i(a)}{\partial a_i} = \sigma_i (a) (\delta_{ij} - \sigma_i(a))$ where $\delta_{ij}$ is 1 if i = j, 0 otherwise
 			this is the normalization we would use for the outputs of the classification model as it outputs a probability ; all the results sum to 1
 				this is not used for many if any layers within the network; the distortion of values from their original is too great to retain information when feeding forward
 						basically, softmax is only ever applied to the output layer of a network for probabilities of predictions 
