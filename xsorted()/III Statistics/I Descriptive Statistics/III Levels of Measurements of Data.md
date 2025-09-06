@@ -18,5 +18,5 @@ Quantitative
 	Ratio
 		have a true 0
 			I have 6 apples, you have 2, I have 6x the apples you do
-			6 / 2 = 3
+			$\frac{6}{2} = 3$
 			Number of objects, distance, time

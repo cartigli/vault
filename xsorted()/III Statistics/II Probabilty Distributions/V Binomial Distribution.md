@@ -1,6 +1,6 @@
 [Binomial Distribution]
-B (n, p)
-X ~ B (10, 0.6)
+$B (n, p)$
+$X \sim B (10, 0.6)$
 	variable x follows a binomial distribution across 10 trials and a likelihood of .6 to succeed on each trial
 	Bern (p) = B (1, p)
 		Suppose a pop quiz is given, with 10 T/F Questions
@@ -26,29 +26,29 @@ X ~ B (10, 0.6)
 									H T T
 									T H T
 									T T H
-							p(y) = (picking y elements from n trials) x $p^y$ x $(1 - p)^(n-y)$
-							p(y) = $C^{n}_y$ x $p^y$ x $(1 - p)^{n-y}$
+							p(y) = (picking y elements from n trials) x $p^y * (1 - p)^(n-y)$
+							$p(y) = C^{n}_y * p^y * (1 - p)^{n-y}$
 						Ex: General Motors Single Stock
-							p(up) = 60%
-							p(down) = 40%
+							$p(up) = 60%$
+							$p(down) = 40$
 						How many days will the stock price increase out of 5 days?
-							p(y) = probability of stock up
-							n = 5 days
-							y = 3
-							p(y) = $C^{5}_3$ x $p^y$ x $(1 - p)^{n-y}$
-							p(y) = $C^{5}_3$ x $.6^{3}$ x $(1 - .6)^{5-3}$
-							p(y) = $C^{5}_3$ x $.216$ x $(.4)^{2}$
-							p(y) = $C^{5}_3$ x $.216$ x $.16$
-							p(y) = $C^{5}_3$ x $0.03456$
-							p(y) = $C^{5}_3$ x $0.03456$
-								$C^{n}_p$ = n! / (n - p)! p!
-								$C^{n}_p$ = 5! / (5 - 3)! 3!
-								$C^{n}_p$ = 3 x 4 x 5 / 3!
-								$C^{n}_p$ = 3 x 4 x 5 / 1 x 2 x 3
-								$C^{n}_p$ = 60 / 6
-								$C^{n}_p$ = 10
-							p(y) = $C^{5}_3$ x $0.03456$
-							p(y) = $10$ x $0.03456$
+							$p(y) =$ probability of stock up
+							$n = 5$ days
+							$y = 3$
+							$p(y) = C^{5}_3$ x $p^y$ x $(1 - p)^{n-y}$
+							$p(y) = C^{5}_3$ x $.6^{3}$ x $(1 - .6)^{5-3}$
+							$p(y) = C^{5}_3$ x $.216$ x $(.4)^{2}$
+							$p(y) = C^{5}_3$ x $.216$ x $.16$
+							$p(y) = C^{5}_3$ x $0.03456$
+							$p(y) = C^{5}_3$ x $0.03456$
+								$C^{n}_p = \frac{n!}{(n - p)! p!}$
+								$C^{n}_p = \frac{5!}{(5 - 3)! 3!}$
+								$C^{n}_p = \frac{3 x 4 x 5}{3!}$
+								$C^{n}_p = frac{3 x 4 x 5}{1 x 2 x 3}$
+								$C^{n}_p = \frac{60}{6}$
+								$C^{n}_p = 10$
+							p(y) = $C^{5}_3 * 0.03456$
+							p(y) = $10 * 0.03456$
 							p(y) = $0.3456$
 								so, we have a 34.56% chance of getting exactly 3 increases in stock price over 5 days
 		Expected Values = sum of all values in a sample space multiplied by their respective probabilities

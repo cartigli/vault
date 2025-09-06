@@ -1,8 +1,8 @@
 P-value: Instead of testing at a predetermined confidence level, the P-Value is the smallest level of significance at which we can still reject the null hypothesis, given the observed sample statistic
 
 Previous example:
-	Standard Error: 2739
-	Population Standard Deviation: 15000 [known]
+	Standard Error: 2,739
+	Population Standard Deviation: 15,000 [known]
 	$N \sim (\mu, \sigma^2)$
 		n = 30
 				In the last example, the hypothesis of $\mu$ = 113,000 returned an associated Z-Score of -4.96, and was rejected with confidences of 95% and 99%

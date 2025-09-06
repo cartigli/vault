@@ -14,14 +14,14 @@ data science salary
 	*z is the value pulled from the Z-chart, i.e., 2.65, 1.96, etc., called the [Critical Value]*
 		$Z \sim N (\bar{x} -\mu_0, 1)$
 				Z is normally distributed over the mean of $\bar{x} - \mu_0$, with a standard deviation of one
-					$Z = (\bar{x} - \mu_0)  / (\sigma / \sqrt{n})$
+					$Z = \frac{\bar{x} - \mu_0}{\frac{\sigma}{\sqrt{n}}}$
 							^ formula to standardize a normal distribution
-			$Z = (\bar{x} - \mu_0)  / (\sigma / \sqrt{n})$
-			$Z = (100200 - 113,000)  / (2739)$
-				100200 is the sample mean, the std-dev is known and 15,000, and $(\sigma / \sqrt{n})$ is the standard error, 2739
-			$Z = (100200 - 113,000)  / (2739)$
-			$Z = (-12800)  / (2739)$
-			$Z = (-12800)  / (2739)$
+			$Z = \frac{\bar{x} - \mu_0}{\frac{\sigma}{\sqrt{n}}}$
+			$Z = \frac{100200 - 113,000}{2739}$
+				100,200 is the sample mean, the std-dev is known and 15,000, and $(\frac{\sigma}{\sqrt{n}}$ is the standard error, 2739
+			$Z = \frac{100200 - 113,000}{2739}$
+			$Z = \frac{-12800}{2739}$
+			$Z = \frac{-12800}{2739}$
 			$Z = -4.673$
 				Using an $\alpha$ of 0.05, or 95% confidence. Since it is a two tailed test, we divide the $\alpha$ by 2 and get the Z-scores
 					0.05 / 2 = 0.025, and the associated z [Critical Value] is: 1.96

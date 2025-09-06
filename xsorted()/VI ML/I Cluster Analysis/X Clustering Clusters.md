@@ -24,33 +24,22 @@ Flat and Hierarchal
 			we repeat until all observations are in the same cluster
 				this forms a [Dendrogram]
 					the Dendrogram holds All Solutions
-
-
-					Dendrogram
-					       |
-			|-------------------|
-		|-----------|         |
-	|-----|       |     |---------|
-	|   |----|    |  |------|     |
-	|   |    |    |  |      |     |
-	UK  US  CAN  Aus Germ   Fran  Swis
-			
-			Bigger the difference between two lengths, the bigger the dif between their features
+Bigger the difference between two lengths, the bigger the dif between their features
 
 					Dendrogram
-					       |                   row0
+					       |                    row0
 			|-----------------------|   row1
 		|---------------|         |   row2
 	|-----|           |         |   row3
 	|   |----|      |----|      |   row4
 	UK Fran Germ   US   Can    Aust
-
+-
 	if we cut out dendrogram on row 0, there is 1 cluster 
 	if we cut out dendrogram on row 1, there are 2 clusters 
 	if we cut out dendrogram on row 2, there are 3 clusters 
 	if we cut out dendrogram on row 3, there are 4 clusters 
 		and if we cut out dendrogram on row 3, there are 4 clusters 
-
+-
 	the two most related groups are US and Canada, and France and Germany
 	Australia is the furthest related from any other observations
 

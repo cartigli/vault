@@ -1,19 +1,19 @@
-two departments get grades: Engineering and Mangement
-	On average, management outpreforms engineering by 4%
+two departments get grades: Engineering and Management
+	On average, management outperforms engineering by 4%
 
 Null Hypothesis is the Engineering department minus the Management department results in -4%
 $H_0 : \mu_E - \mu_M = -4$%
 $H_A : \mu_E - \mu_M \neq -4$%
 
-|         | Engineering | Mangement | Diff                                 |      |
-| ------- | ----------- | --------- | ------------------------------------ | ---- |
-| Size    | 100         | 70        | ?                                    |      |
-| Mean    | 58%         | 65%       | -7.00%                               |      |
-| Pop Std | 10%         | 6%        | $\sqrt{\sigma^2/n_e + \sigma^2/n_m}$ | 1.23 |
-Hypothesied Diff: -4.00%
-	$Z = \bar{X} - \mu / \sqrt{\sigma^2/n_e + \sigma^2/n_m}$
-	$Z = -7.00 - -4.00 / 1.23$
-	$Z = -3.00 / 1.23$
+|         | Engineering | Mangement | Diff                                               |      |
+| ------- | ----------- | --------- | -------------------------------------------------- | ---- |
+| Size    | 100         | 70        | ?                                                  |      |
+| Mean    | 58%         | 65%       | -7.00%                                             |      |
+| Pop Std | 10%         | 6%        | $\sqrt{\frac{\sigma^2}{n_e}+\frac{\sigma^2}{n_m}}$ | 1.23 |
+Hypothesized Diff: -4.00%
+	$Z = \bar{X} - \frac{\mu}{\sqrt{\frac{\sigma^2}{n_e}} + \frac{\sigma^2}{n_m}}$
+	$Z = -7.00 - \frac{-4.00}{1.23}$
+	$Z = \frac{-3.00}{1.23}$
 	$Z = -2.44$
 		p-value = 0.0147
 		For $\alpha$ = 0.1, reject the Null Hypothesis

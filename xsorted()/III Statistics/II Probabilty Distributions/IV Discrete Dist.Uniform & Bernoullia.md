@@ -1,14 +1,14 @@
 [Uniform Distribution]
-U (a, b)
-X ~ U (3, 7) is read as:
+$U (a, b)$
+$X \sim U (3, 7)$ is read as:
 	variable x follows a discrete Uniform Distribution over the intervals 3, 7
 		all outcomes have equal probabilities; rolling a dye
 		when all outcomes have equal probabilities, Expected outcomes are useless
 			mean and variance are uninterpretable
 
 [Bernoulli Distribution]
-Bern (p)
-X ~ Bern (p)
+$Bern (p)$
+$X \sim Bern (p)$
 	variable x follows a discrete Bernoulli Distribution with a probability of success equal to p
 		Events that follow the bernoulli distribution are ones that have *one trial*, and *two outcomes*
 		A single coin flip, one true or false question, etc.; either have past data or P(p) is known
@@ -30,11 +30,11 @@ X ~ Bern (p)
 				$\sigma^2$ = .24
 
 [Binomial Distribution]
-B (n, p)
-X ~ B (10, 0.6)
+$B (n, p)$
+$X \sim B (10, 0.6)$
 	variable x follows a binomial distribution across 10 trials and a likelihood of .6 to succeed on each trial
-	Bern (p) = B (1, p)
-		Suppose a pop quiz is given, with 10 T/F Questions
+	$Bern (p) = B (1, p)$
+		Suppose a pop quiz is given, with 10 T / F Questions
 		Guessing one question is a Bernoulli event; Guessing them all is a Binomial event
 			Expected value of Bernoulli event is the outcome we expect for a single trial
 			Expected value of a Binomial event is the number of times we expect to get a specific outcome
@@ -72,11 +72,11 @@ X ~ B (10, 0.6)
 							p(y) = $C^{5}_3$ x $.216$ x $.16$
 							p(y) = $C^{5}_3$ x $0.03456$
 							p(y) = $C^{5}_3$ x $0.03456$
-								$C^{n}_p$ = n! / (n - p)! p!
-								$C^{n}_p$ = 5! / (5 - 3)! 3!
-								$C^{n}_p$ = 3 x 4 x 5 / 3!
-								$C^{n}_p$ = 3 x 4 x 5 / 1 x 2 x 3
-								$C^{n}_p$ = 60 / 6
+								$C^{n}_p$ = $\frac{n!}{(n - p)! p!}$
+								$C^{n}_p$ = $\frac{5!}{(5 - 3)! 3!}$
+								$C^{n}_p$ = $\frac{3 x 4 x 5}{3!}$
+								$C^{n}_p$ = $\frac{3 x 4 x 5}{1 x 2 x 3}$
+								$C^{n}_p$ = $\frac{60}{6}$
 								$C^{n}_p$ = 10
 							p(y) = $C^{5}_3$ x $0.03456$
 							p(y) = $10$ x $0.03456$

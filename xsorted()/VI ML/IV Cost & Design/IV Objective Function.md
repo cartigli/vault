@@ -33,7 +33,7 @@ in [ Supervised Learning ] , we generally have a target : [ T ]
 
 Cross-Entropy loss calculation ex:
 Our model is tasked with identifying Horses, Cats, and Dogs from a series of images
-	the data set is labeled with the correct classifications so we can accurately calculate accuracy and therefore , Cost
+-the data set is labeled with the correct classifications so we can accurately calculate accuracy and therefore , Cost
 Horse = [ 1 , 0, 0 ]
 Cat = [ 0 , 1, 0 ]
 Dog = [ 0 , 0, 1 ]

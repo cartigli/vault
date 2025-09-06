@@ -8,49 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "31b17fd8e1c1807b",
+            "id": "57618d8b5f94884a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/VI ML/VI Deep ML/VI Data Splits.md",
+                "file": "xsorted()/VI ML/VII MNIST/I MNIST Classification.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "VI Data Splits"
-            }
-          },
-          {
-            "id": "4c4ff2cb79c2e67b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "xsorted()/VI ML/VI Deep ML/Learning Rates.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Learning Rates"
-            }
-          },
-          {
-            "id": "c5e83a971650ce6e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "xsorted()/VI ML/VI Deep ML/VII Optimization.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "VII Optimization"
+              "title": "I MNIST Classification"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -97,8 +68,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 269.5,
-    "collapsed": true
+    "width": 269.5
   },
   "right": {
     "id": "cc49a367b9d619d7",
@@ -169,43 +139,43 @@
       "graph:Open graph view": false
     }
   },
-  "active": "c5e83a971650ce6e",
+  "active": "57618d8b5f94884a",
   "lastOpenFiles": [
-    "xsorted()/VI ML/VI Deep ML/Learning Rates.md",
-    "xsorted()/VI ML/VI Deep ML/VII Optimization.md",
-    "xsorted()/VI ML/VI Deep ML/IV Initialization.md",
-    "xsorted()/VI ML/VI Deep ML/III Activation Functions.md",
-    "xsorted()/VI ML/VI Deep ML/II Closer Look.md",
-    "xsorted()/VI ML/VI Deep ML/I Layers.md",
-    "xsorted()/VI ML/VI Deep ML/VI Data Splits.md",
-    "xsorted()/VI ML/VI Deep ML/VIII Problems with G.D..md",
-    "xsorted()/VI ML/VI Deep ML/V Back Propagation.md",
-    "xsorted()/VI ML/VI Deep ML/0. Network Architecture.md",
-    "xsorted()/VI ML/V Linear Network, Tensors/IV Tensore Notation Ext..md",
-    "xsorted()/VI ML/V Linear Network, Tensors/II Tensor Flow.md",
-    "xsorted()/VI ML/V Linear Network, Tensors/I Linear ML Model {{ S }}.md",
-    "xsorted()/VI ML/V Linear Network, Tensors/0 Cute ML.md",
-    "xsorted()/VI ML/V Linear Network, Tensors/V Tensor Notation Implement {{ S }}.md",
-    "xsorted()/VI ML/IV Cost & Design/VI G.D. Calculations & Formulas.md",
-    "xsorted()/VI ML/IV Cost & Design/IV Objective Function.md",
-    "xsorted()/VI ML/IV Cost & Design/V Gradient Descent.md",
-    "xsorted()/VI ML/IV Cost & Design/Untitled.md",
-    "xsorted()/VI ML/IV Cost & Design/III Linear ML.md",
-    "xsorted()/VI ML/IV Cost & Design/II Types of ML.md",
-    "xsorted()/VI ML/IV Cost & Design/I Neural Network Intro.md",
-    "xsorted()/VI ML/V Linear Network, Tensors/III Tensor Flow {{ S }}.md",
-    "xsorted()/VI ML/III Matrices, Tensors/V Matrices in code.md",
+    "III Statistics/I Descriptive Statistics/XI Correlation Coefficient.md",
+    "III Statistics/I Descriptive Statistics/X Covariance and linear regression correlation.md",
+    "III Statistics/I Descriptive Statistics/VIII Standard Deviation &  Coefficient of Variation.md",
+    "III Statistics/I Descriptive Statistics/VII Variance, Standard Deviation, and Coefficient of Variance.md",
+    "III Statistics/I Descriptive Statistics/VI Skewness.md",
+    "III Statistics/I Descriptive Statistics/V Means, Median, and Mode.md",
+    "III Statistics/I Descriptive Statistics/Practical Practice.md",
+    "III Statistics/I Descriptive Statistics/IV Graphs & Tables.md",
+    "III Statistics/I Descriptive Statistics/III Levels of Measurements of Data.md",
+    "III Statistics/I Descriptive Statistics/II Descriptive Statistics.md",
+    "III Statistics/I Descriptive Statistics/I Populations & Sample.md",
+    "xsorted()/II Probability/I Main Ideas/IV Events & Their Compliments.md",
+    "xsorted()/II Probability/I Main Ideas/III Probability Frequency Distribution.md",
+    "xsorted()/II Probability/I Main Ideas/II Expected Values.md",
+    "xsorted()/II Probability/I Main Ideas/I Probabilities.md",
+    "xsorted()/III Statistics/I Descriptive Statistics/I Populations & Sample.md",
+    "xsorted()/III Statistics/IV Hypothesis Testing/XI Practical Practice.md",
+    "xsorted()/III Statistics/IV Hypothesis Testing/X Unknown Variance p2-T-scores.md",
+    "xsorted()/III Statistics/IV Hypothesis Testing/VIII Unknown Variance p2-Z-scores.md",
+    "xsorted()/III Statistics/IV Hypothesis Testing/VII Multiple Samples.md",
+    "xsorted()/III Statistics/IV Hypothesis Testing/VI Hypothesis Testing, Variance Unknown.md",
+    "xsorted()/III Statistics/IV Hypothesis Testing/V P-Value.md",
+    "xsorted()/III Statistics/IV Hypothesis Testing/IV Hypothesis Testing, Variance Known.md",
+    "xsorted()/III Statistics/IV Hypothesis Testing/III Error Types.md",
+    "xsorted()/III Statistics/IV Hypothesis Testing/II Rejection Region - Significance level.md",
+    "xsorted()/III Statistics/IV Hypothesis Testing/I Null vs Alternate Hypothesis.md",
+    "xsorted()/VI ML/VII MNIST",
+    "xsorted()/VI ML/VIII Proprocessing",
     "xsorted()/VI ML/VI Deep ML",
-    "xsorted()/VI ML/V N.N. w.Numpy/Untitled.md",
-    "xsorted()/VI ML/V N.N. w.Numpy/I Linear ML Model in {{ S }}.md",
     "xsorted()/VI ML/N.N. w.Numpy/Untitled",
     "xsorted()/VI ML/V Linear Network, Tensors",
     "Untitled",
     "xsorted()/VI ML/IV Cost & Design",
     "xsorted()/VI ML/III Matrices, Tensors",
     "xsorted()/VI ML/II chat",
-    "xsorted()/VI ML/II chat/III Case Study",
-    "xsorted()/VI ML/II chat/II GPT Preprocessing.chopped",
-    "xsorted()/0 Snippets"
+    "xsorted()/VI ML/II chat/III Case Study"
   ]
 }

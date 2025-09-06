@@ -15,16 +15,16 @@ Open Rate of Opposing Co.:
 	Standard Error {$\sigma / \sqrt{n}$}: 4.34 %
 	Null Hypothesis value {$H_O$}: 40%
 		Sample Size {n} & variance are unknown, so use the Student's t Distribution:
-		~~~$CI = \bar{x} + or - t_{n-1,\alpha} * s / \sqrt{n}$
-		$~~~CI = 37.70 \pm t_{10-1,0.05} * 13.74 / \sqrt{10}$
-		$CI = 37.70 \pm t_{10-1,0.05} * 13.74 / \sqrt{10}$
+		~~~$CI = \bar{x} + or - t_{n-1,\alpha} * \frac{s}{\sqrt{n}}$
+		$~~~CI = 37.70 \pm t_{10-1,0.05} * \frac{13.74}{\sqrt{10}}$
+		$CI = 37.70 \pm t_{10-1,0.05} * \frac{13.74}{\sqrt{10}}$
 		NOOOO~~~
 		this is intervals, were hypothesis testing
-				T = {$\bar{x} - \mu / s / \sqrt{n}$}
-				T = {$37.70 - 40.00 / 13.74 / \sqrt{10}$}
-				T = {$ -2.3 / 13.74 / 3.16$}
-				T = {$ -2.3 / 4.34$}
-				T = {$ -0.53$}
+				$T = \bar{x} - \frac{\mu}{\frac{s}{\sqrt{n}}}$
+				$T = 37.70 - \frac{40.00}{\frac{13.74}{\sqrt{10}}}$
+				$T = \frac{-2.3}{\frac{13.74}{3.16}}$
+				$T = \frac{-2.3}{4.34}$
+				$T = -0.53$
 					With n - 1 {9} degrees of freedom, we get the T-score of 1.833 at the 5% significance the critical value
 					T = 0.53 is less than t = 1.83
 							Accept the Null if the value of the T-score is {<} LESS THAN the critical value t

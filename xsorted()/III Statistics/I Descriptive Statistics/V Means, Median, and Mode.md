@@ -7,8 +7,8 @@ Mean; Aka Simple Average
 			Easily affected by outliers
 
 Median: Middle Number
-	order in ascending order, then divide the number of positions [n] + 1 / 2
-	Median: (n + 1) / 2
+	order in ascending order, then divide the number of positions $n + \frac{1}{2}$
+	Median: $\frac{n + 1}{2}$
 		not affected by extreme values
 
 Mode: variable that occurs most often

@@ -13,7 +13,7 @@ Categorical Data in Graphs:
 		Bar Chart with decreasing frequency of categories
 		80% of the effect comes from 20% of the causes
 			shows how subtotals change with every additional category
-	Cross Tables/Contingency Tables
+	Cross Tables / Contingency Tables
 		You manage 3 investors, and each one varies in risk
 			bar chart - each investor has 3 stocks, represented side by side
 				easier representation between investors and markets
@@ -22,8 +22,8 @@ Numerical Data in Graphs:
 	Frequency Distribution Table
 		instead of connecting [20 random numbers] by labeling each one as 1;
 		we could group into intervals of 5 and count frequencies of each interval, and measure that
-			((largest number) - (smallest number)) / (number of desired intervals)
-		relative frequency = frequency / total frequency
+			$\frac{\text{largest number - smallest number}}{\text{number of desired intervals}}$
+		$\text{relative frequency} = \frac{\text{frequency}}{\text{total frequency}}$
 	Scatter Plot
 		represents two fields of numerical data
 			SAT scores of 100 individuals
