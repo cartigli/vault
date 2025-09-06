@@ -26,11 +26,35 @@ Previously, we made a linear model with a single layer and two variables
 
 *this is a visual representation of the model we defined and trained in V Linear Networks, Tensors*
 
-an example of a  non-linear function is the [ Sigmoid Function ]$$\text{Sigmoid} = \sigma (x) = \frac{1}{1+\epsilon^{-x}}$$
+an example of a  non-linear function ; [ Sigmoid Function ]$$\text{Sigmoid} = \sigma (x) = \frac{1}{1+\epsilon^{-x}}$$ The graphical representation of the Sigmoid function is
+```tikz
+\begin{document}
+\begin{tikzpicture}[xscale=2,yscale=4]
+    % --- Draw Grid ---
+    % Grid now goes from bottom-left (-4,-0.2) to top-right (4,1.2)
+    \draw[step=1cm, gray, very thin] (-4,-0.2) grid (4,1.2);
+
+    % --- Draw Axes ---
+    \draw[->, thick] (-4,0) -- (4,0) node[right] {$x$};
+    \draw[->, thick] (0,-0.2) -- (0,1.2) node[above] {$S(x)$};
+
+    % --- Add Ticks and Labels ---
+    \draw (0,1) -- (-0.1,1) node[left] {1};
+    \foreach \x in {-3,-2,-1,1,2,3}
+        \draw (\x,0) -- (\x,-0.05) node[below] {\x};
+
+    % --- Plot the Sigmoid Function ---
+    \draw[blue, thick, smooth, samples=100, domain=-4:4]
+        plot (\x, {1/(1+exp(-\x))});
+\end{tikzpicture}
+\end{document}
+```
+
 The leap between models like the one we configured and Deep Networks are the activation functions
 	Activation Functions are non-linear, usually normalizing functions applied to layers of a network
 			When a non-linear function is applied, the model's optimization function can utilize these non-linear results to derive non-linear patterns and discover more complex subtleties than a linear model
-					This combination of linear and non-linear modeling allows for more dynamacy than only linear or non-linear functions
+					This combination of linear and non-linear modeling allows for more dynamic learning than strictly linear or non-linear functions
+
 A Neural Network:
 
 ```tikz
@@ -181,8 +205,8 @@ A Neural Network:
 \end{document}
 ```
 
-Networks are often consider by layer
-	the input layer is layer of x's and the output layer is the layer of y's
+Networks are usually considered by layer
+	the input layer is the layer of x's and the output layer is the layer of y's
 		neural nets are designed off of the idea of giving inputs and receiving outputs ; like our model
 			the input layer, or layer 0, input data for and ' feeds it forward ' to the next layer
 				This process is done through the weights matrix, so to get the values given to layer 0 to layer 1, the first hidden layer, they must be weighted
@@ -237,7 +261,10 @@ Networks are often consider by layer
 .
 	*additionally, these activation functions are applied to the outputs of layers when their weights are applied and biases are added. In the case above, the values derived for layer 1, or h1, would be processed through an activation function before they were fed to the next layer. This is the power behind Deep Networks but also the bottleneck of their size, as the cost gradient must be determined through such functions.*
 
-Deep Nets
+Notation of Networks
+	The first layer 
+
+Deep Nets **maybe delete this**
 	A series of ' neurons ' or ' nodes ' organized by layer and interconnected between ; every ' neuron ' of layer L connects to every ' neuron ' of layer L+1 and layer L-1 
 		Notation for a Network is as follows :
 			The initial layer of the network is layer 0 { like python }
