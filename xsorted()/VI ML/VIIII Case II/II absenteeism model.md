@@ -6,6 +6,7 @@ from sklearn import metrics
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
+import pickle
 
 # preprocessed
 data = pd.read_csv('/Volumes/HomeXx/compuir/xsell/data_proc.csv')
@@ -68,7 +69,19 @@ print(reg.score(xtest,ytest))
 
 # or get probabilities
 proba_test = reg.predict_proba(xtest)
+p_test = reg.predict(xtest)
 print(proba_test) # shows probability of 0 in column 1 and probability of getting 1 in the second column
 
 
 # save the model
+# reg() holds the model's value's and its predictive power
+# pickle[module]
+# with open(filename, 'write-bytes') as file:
+#    pickle.dump = save - reg
+with open('model', 'wb') as file:
+	pickle.dump(reg, file)
+
+# scaler needs to be saved as well becuase if someone else wants to use this model, their data will need to be scaled in the same way
+
+with open('scaler','wb') as file:
+	pickle.dump(scaler, file)
