@@ -8,17 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "57618d8b5f94884a",
+            "id": "9f9cd2b524c8402a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/VI ML/VII MNIST/I MNIST Classification.md",
+                "file": "xsorted()/VI ML/VIII Business Case/IV Model.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "I MNIST Classification"
+              "title": "IV Model"
+            }
+          },
+          {
+            "id": "7ad715bc25b00f2a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "xsorted()/VI ML/VII MNIST/II MNIST {{ S }}.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "II MNIST {{ S }}"
             }
           }
         ]
@@ -68,7 +82,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 269.5
+    "width": 269.5,
+    "collapsed": true
   },
   "right": {
     "id": "cc49a367b9d619d7",
@@ -78,21 +93,6 @@
         "id": "ae30a3ad88ca1fd2",
         "type": "tabs",
         "children": [
-          {
-            "id": "180adf7347ca3f57",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
-            }
-          },
           {
             "id": "aaea73d36ece6f44",
             "type": "leaf",
@@ -139,8 +139,22 @@
       "graph:Open graph view": false
     }
   },
-  "active": "57618d8b5f94884a",
+  "active": "9f9cd2b524c8402a",
   "lastOpenFiles": [
+    "xsorted()/VI ML/VII MNIST/II MNIST {{ S }}.md",
+    "xsorted()/VI ML/VIII Business Case/IV Model.md",
+    "xsorted()/VI ML/VIII Business Case/III Shuffle then balance.md",
+    "xsorted()/VI ML/VIII Business Case/IV tf.keras.callbacks.md",
+    "xsorted()/VI ML/VII MNIST/III MNIST V2 {{ S }}.md",
+    "xsorted()/VI ML/VIII Business Case/II Preprocessing.md",
+    "xsorted()/VI ML/VIII Business Case/Cont.md",
+    "xsorted()/VI ML/VIII Business Case/I Data and Goal.md",
+    "xsorted()/VI ML/VIII Business Case",
+    "xsorted()/VI ML/Untitled.md",
+    "xsorted()/VI ML/VII MNIST/I MNIST Classification.md",
+    "xsorted()/VI ML/VII MNIST/0 Preprocessing Data.md",
+    "xsorted()/VI ML/VII MNIST/Untitled 1.md",
+    "Untitled",
     "III Statistics/I Descriptive Statistics/XI Correlation Coefficient.md",
     "III Statistics/I Descriptive Statistics/X Covariance and linear regression correlation.md",
     "III Statistics/I Descriptive Statistics/VIII Standard Deviation &  Coefficient of Variation.md",
@@ -155,27 +169,13 @@
     "xsorted()/II Probability/I Main Ideas/IV Events & Their Compliments.md",
     "xsorted()/II Probability/I Main Ideas/III Probability Frequency Distribution.md",
     "xsorted()/II Probability/I Main Ideas/II Expected Values.md",
-    "xsorted()/II Probability/I Main Ideas/I Probabilities.md",
-    "xsorted()/III Statistics/I Descriptive Statistics/I Populations & Sample.md",
-    "xsorted()/III Statistics/IV Hypothesis Testing/XI Practical Practice.md",
-    "xsorted()/III Statistics/IV Hypothesis Testing/X Unknown Variance p2-T-scores.md",
-    "xsorted()/III Statistics/IV Hypothesis Testing/VIII Unknown Variance p2-Z-scores.md",
-    "xsorted()/III Statistics/IV Hypothesis Testing/VII Multiple Samples.md",
-    "xsorted()/III Statistics/IV Hypothesis Testing/VI Hypothesis Testing, Variance Unknown.md",
-    "xsorted()/III Statistics/IV Hypothesis Testing/V P-Value.md",
-    "xsorted()/III Statistics/IV Hypothesis Testing/IV Hypothesis Testing, Variance Known.md",
-    "xsorted()/III Statistics/IV Hypothesis Testing/III Error Types.md",
-    "xsorted()/III Statistics/IV Hypothesis Testing/II Rejection Region - Significance level.md",
-    "xsorted()/III Statistics/IV Hypothesis Testing/I Null vs Alternate Hypothesis.md",
     "xsorted()/VI ML/VII MNIST",
     "xsorted()/VI ML/VIII Proprocessing",
     "xsorted()/VI ML/VI Deep ML",
     "xsorted()/VI ML/N.N. w.Numpy/Untitled",
     "xsorted()/VI ML/V Linear Network, Tensors",
-    "Untitled",
     "xsorted()/VI ML/IV Cost & Design",
     "xsorted()/VI ML/III Matrices, Tensors",
-    "xsorted()/VI ML/II chat",
-    "xsorted()/VI ML/II chat/III Case Study"
+    "xsorted()/VI ML/II chat"
   ]
 }
