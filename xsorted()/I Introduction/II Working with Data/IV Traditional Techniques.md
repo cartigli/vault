@@ -46,4 +46,3 @@ y_axis |________________________ x_axis
 
 [Time Series] - plotted values on T.time
 - time is *always* on the x_axis
-- 

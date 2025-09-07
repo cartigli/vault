@@ -20,7 +20,7 @@ null hypothesis is the mean price in ny is equal to la
 $ny: \frac{39.41}{10} = 3.94$
 	Stddev: 0.18
 $la: \frac{25.96}{8} = 3.25$
-	0.27
+	Stddev: 0.27
 
 $s^2_p = \frac{(n_x - 1)s^2_x + (n_y - 1)s^2_y}{n_x + n_y -2}$
 $s^2_p = \frac{(10 - 1)0.18^2 + (8 - 1)0.27^2}{10 + 8 - 2}$
@@ -34,7 +34,7 @@ $s^2_p = 0.0501$ = Pooled Variance
 	$\sqrt{0.005 + 0.00625}$
 	$\sqrt{0.01125}$
 	$0.106$ = the Pooled Standard Deviation
-		$t_{n-1, \alpha} = \frac{\bar{x} - \mu}{ST.err}$
+		$t_{n-1, \alpha} = \frac{\bar{x} - \mu}{\text{Stdder}}$
 		$t_{n-1, \alpha} = \frac{(3.94-3.25) - 0}{0.11}$
 		$t_{n-1, \alpha} =  \frac{0.69}{0.11}$
 		$t_{10+8-2, \alpha} =  6.27$

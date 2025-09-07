@@ -1,6 +1,6 @@
 [Normalization] $\sim (\mu, \sigma^2) => \sim (0, 1)$
-	$(x - \mu) / \sigma$
-	if we normalize the $\sigma$ and the $\mu$ , we can get a z-score chart 
+$\frac{x - \mu}{\sigma}$
+If we normalize the $\sigma$ and the $\mu$ , we can get a z-score chart 
 
 EX: og data: 1, 2, 2, 3, 3, 3, 4, 4, 5
 	$1 + 2 + 3 + 3 + 3 + 4 + 4 + 5$
@@ -15,10 +15,10 @@ EX: og data: 1, 2, 2, 3, 3, 3, 4, 4, 5
 	$S^2= 1.500$ [Variance]
 	$S = 1.225$ [Standard Deviation]
 		now, divide every data point by 1.22
-		$\frac{-2}{1.22} \frac{-1}{1.22} \frac{-1}{1.22} \frac{0}{1.22} \frac{0}{1.22} \frac{0}{1.22} \frac{1}{1.22} \frac{1}{1.22} \frac{2}{1.22}$
-		$-1.64 + -0.82 + -0.82 + 0 + 0 + 0 + 0.82 + 0.82 + 1.64$
-		$-1.64^2 + -0.82^2 + -0.82^2 + 0 + 0 + 0 + 0.82^2 + 0.82^2 + 1.64^2$
+		$\frac{-2}{1.22} + \frac{-1}{1.22} + \frac{-1}{1.22} + \frac{0}{1.22} + \frac{0}{1.22} + \frac{0}{1.22} + \frac{1}{1.22} + \frac{1}{1.22} + \frac{2}{1.22}$
+		$(-1.64) + (-0.82) + (-0.82) + (0) + (0) + (0) + (0.82) + (0.82) + (1.64)$
+		$(-1.64)^2 + (-0.82)^2 + (-0.82)^2 + (0)^2 + (0)^2 + (0)^2 + (0.82)^2 + (0.82)^2 + (1.64)^2$
 		$2.69 + 0.67 + 0.67 + 0 + 0 + 0 + 0.67 + 0.67 + 2.69$
 		$\frac{8.060}{9 - 1}$
 		$\sigma= 1$ [rounding-errors]
-			now, $X \sim N (0, 1)$	
+			now, $X \sim N (0, 1)$

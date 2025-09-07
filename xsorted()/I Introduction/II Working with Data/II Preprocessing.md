@@ -1,5 +1,4 @@
 | Customer ID | Name  | Email | Complaint Count
-| ___________ | ____  | _____ | ______________
 | 1.                   | John    | x.com | 5 
 | 2.                   | Emily  | y.com | 2
 | 3.                   | Julia    | z.com | 6

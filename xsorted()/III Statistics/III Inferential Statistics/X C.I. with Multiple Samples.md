@@ -27,15 +27,15 @@ Detecting mg in blood:
 		take differences, treat as 'New Sample'
 				Find Mean & Standard Deviation of this new sample
 Mean:
-	$-0.30 +0.30 +0.50 +0.20 +-0.10 +-0.10 +0.10 +1.00 +0.80 +0.90$
+	$(-0.30) + (0.30) + (0.50) + (0.20) + (-0.10) + (-0.10) + (0.10) + (1.00) + (0.80) + (0.90)$
 	$\frac{3.30}{10 - 1}$
 	$0.33$
-	$(0.33-0.30)^2 +(0.30-0.33)^2 +(0.50-0.33)^2...$
+	$(0.33-0.30)^2 + (0.30-0.33)^2 + (0.50-0.33)^2...$
 	$\sigma = 0.45, n = 10$
 		Formula for Confidence Interval for the Difference of two Samples = $\bar{d} \pm t_{n-1,\frac{\alpha}{2}} * \frac{s}{\sqrt{n}}$
-		$\bar{d} \pm t_{n-1,\frac{\alpha}{2}} * \frac{s}{\sqrt{n}}$
-		$0.33 \pm t_{10-1, 0.025} * \frac{0.45}{\sqrt{10}}$
-		$0.33 \pm 2.26 * \frac{0.45}{\sqrt{10}}$
+		$\bar{d} \pm t_{n-1,\frac{\alpha}{2}} \cdot \frac{s}{\sqrt{n}}$
+		$0.33 \pm t_{10-1, 0.025} \cdot \frac{0.45}{\sqrt{10}}$
+		$0.33 \pm 2.26 \cdot \frac{0.45}{\sqrt{10}}$
 		$(0.01, 0.65)$
 				"We are 95% confident the population mean will be within 0.01 and 0.65; 95% of the time the population mean will be within this interval."
 			

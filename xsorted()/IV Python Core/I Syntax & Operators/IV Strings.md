@@ -4,7 +4,6 @@ cannot run {George} straight up
 Ex:
 y = 10
 print(y + " Dollars")
-	~~{{ would throw an error for trying to use an integer {10} and a strong {Dollars} in the same expression }}~~
 	however, we can modify these variables
 	str() converts a number into test, so:
 y = 10

@@ -7,14 +7,14 @@ variable Y follows a poisson distribution with lambda ($\lambda$) equal to 4
 	P(y = 7) = what's the probability of your students asking exactly 7 questions?
 		$\lambda = 4$, interval = 1 day, y = 7
 		We need: $P_o(7)$
-		P(Y) = $\frac{(\lambda)^{y} (e)^{-\lambda}}{y!}$
-			e = euler's number, Napier's constant; about 2.72
-			$x^{-n} = 1 / x^n ; so (e)^{-\lambda} = \frac{1}{(e)^{\lambda}}$
-		P(Y) = $\frac{(4)^{7} (e)^{-4}}{7!}$
-		P(Y) = $\frac{(16384) (0.0183)}{5040}$
-		P(Y) = $\frac{299.83}{5040}$
-		P(Y) = $0.0595$
+		$P(Y) = \frac{(\lambda)^{y} \cdot (e)^{-\lambda}}{y!}$
+			e = Euler's number, Napier's constant; about 2.72
+			$x^{-n} = \frac{1}{x^n} ; \text{ so } (e)^{-\lambda} = \frac{1}{(e)^{\lambda}}$
+		$P(Y) = \frac{(4)^{7} \cdot (e)^{-4}}{7!}$
+		$P(Y) = \frac{(16384) \cdot (0.0183)}{5040}$
+		$P(Y) = \frac{299.83}{5040}$
+		$P(Y) = 0.0595$
 			the probability of your students asking exactly 7 questions in one day is 5.95%
-			E(Y) = complex formula...
+			$E(Y) = \text{complex formula...}$
 			$E(Y) = \lambda$
 			$\mu = \sigma^2 = \lambda$ [mean & variance are both $\lambda$ in Poisson Distributions]

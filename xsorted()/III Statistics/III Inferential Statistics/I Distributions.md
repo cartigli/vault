@@ -1,11 +1,8 @@
----
-cssclass: small-mermaid
----
 [Distribution] is a function that shows the possible values for a variable and how often they occur 
-	Ex: dye has same probability of getting 1 (1/6) and probability of 3 (1/6)
+	Ex: dye has same probability of getting 1 ($\frac{1}{6}$) and probability of 3 ($\frac{1}{6}$)
 		probability of 0 for getting a 7
 		So:
-			prob of getting 1-6: .17
+			prob of getting 1-6 = .17
 			all other values: 0
 				all probabilities summed = 1
 	[Discrete Normal Distribution] ^

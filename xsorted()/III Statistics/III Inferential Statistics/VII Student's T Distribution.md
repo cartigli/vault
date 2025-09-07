@@ -22,11 +22,10 @@ Looking for mean data scientist salary:
 Sample mean = 92,533
 Sample Standard Deviation = 13,932
 Sample Standard Error = 4,644
-		$CI = \bar{X} + or - t_{n-1,\frac{\alpha}{2}} * \frac{\sigma}{\sqrt{n}}$
-		$CI = 92,533 + or - t_{9-1,0.05/2} * \frac{4,644}{\sqrt{9}}$
-		$CI = 92,533 + or - t_{8,0.025} * \frac{4,644}{3}$
-		$CI = 92,533 + or - 2.31 * \frac{4,644}{3}$
-		$CI = 92,533 + or - 2.31 * 1,548$
-		$CI = 92,533 + or - 3,474.88$
-		$CI = 92,533 + or - 3,474.88$
+		$CI = \bar{X} \pm t_{n-1,\frac{\alpha}{2}} \cdot \frac{\sigma}{\sqrt{n}}$
+		$CI = 92,533 \pm t_{9-1,0.05/2} \cdot \frac{4,644}{\sqrt{9}}$
+		$CI = 92,533 \pm t_{8,0.025} \cdot \frac{4,644}{3}$
+		$CI = 92,533 \pm 2.31 \cdot \frac{4,644}{3}$
+		$CI = 92,533 \pm 2.31 \cdot 1,548$
+		$CI = 92,533 \pm 3,474.88$
 		$CI = (88957.12, 96108.88)$

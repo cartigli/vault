@@ -14,27 +14,24 @@ for M.L., Big Data is commonly used
 [Job Positions] & confusion
 
 [Big Data Roles]
-- #Data_Architect, #Data_Engineer, #Big_Data #Architect, #Big_Data_Engineer
+- Data_Architect, Data_Engineer, Big_Data Architect, Big_Data_Engineer
 	- architect
 		- creates databases by scratch
 	- engineer
 		- work off architect
 		- processes data for analysis
-- #Business_Intelligence_Analyst
+- Business_Intelligence_Analyst
 	- performs analysis and reporting of collected historical data
-- #Business_Intelligence_Consultant
+- Business_Intelligence_Consultant
 	- external B.I. Analysis, essentially
-- #Business_Inelligence_Developper
+- Business_Intelligence_Developper
 	- performs specific designs for processing a company's specified data
 
 [Traditional Data Roles]
-- #Data_Scientist
+- Data_Scientist
 	- employs traditional statistic methods 
 	- or unconventional ML techniques for making predictions
-- #Data_Analysis
+- Data_Analysis
 	- prepares more advances types of analysis's
-- #ML_Engineer 
+- ML_Engineer 
 	- applies state-of-the-art computational models
-
-```# = job positions
-[ content ] = topic, main point, key component

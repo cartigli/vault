@@ -9,21 +9,21 @@ generally, probability of Event A occurring: P(a)
 P(A) = preferred outcomes/all outcomes [sample space]
 
 head/tails; A = Heads
-- P(A) = 1/2 = 0.5
+- $P(A) = \frac{1}{2}= 0.5$
 
 6 Sided Dye; preferred outcome: 1
 - possible: 6
-- P(A) = 1/6 = ~0.167
+- $P(A) = \frac{1}{6}= \sim 0.167$
 Same Dye: roll a # divisible by 3
 - 2 preferred outcomes, 6 possible outcomes
-- P(A) = 2/6 = 1/3 = ~0.333
+- $P(A) = \frac{2}{6} = \frac{1}{3} = \sim 0.333$
 
-P(A + B) = P(A) * P(B)
-- Deck of Cards: P(Ace[spades]) = P(Ace) * P([spades])
-- P(Ace[spades]) = P(4/52) * P(13/52)
-- P(Ace[spades]) = P(.0769) * P(.25)
-- P(Ace[spades]) = P(0.02)
+$P(A + B) = P(A) * P(B)$
+- $Deck of Cards: P(Ace[spades]) = P(Ace) * P([spades])$
+- $P(Ace[spades]) = P(\frac{4}{52}) * P(\frac{13}{52})$
+- $P(Ace[spades]) = P(.0769) * P(.25)$
+- $P(Ace[spades]) = P(0.02)$
 
 Lottery: prefered outcome: # of tickets bought
 - total possible: 175 million
-- P(A) = 1 / 175,000,000 = 0.000 000 005
+- $P(A) = 1 / 175,000,000 = 0.000 000 005$

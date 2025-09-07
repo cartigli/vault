@@ -29,5 +29,3 @@ Jupyter allows code editing throuhg the browser
 Installation
 	Anaconda has jupyter and python packaged
 		free to download individual edition
-
-[[python]]

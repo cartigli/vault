@@ -12,10 +12,9 @@ xychart-beta
   ```
   We can say 7 is our $\bar{X}$, and Z and -Z would be at 10 and 4, respectively
 			with 95% confidence and a Z-score of 1.96, the upper and lower limits are -1.96 and 1.96 on the [Normalized Standard Distribution Curve]
-			CI =$\bar{X} + or - Z_{\frac{\alpha}{2}} * \frac{\sigma}{\sqrt{n}}$
+			$\text{Confidence Interval} =\bar{X} + or - Z_{\frac{\alpha}{2}} \cdot \frac{\sigma}{\sqrt{n}}$
 				As Confidence increases, i.e., 90% to 99%, the interval increases to fit the confidence
 				As Confidence decreases, the interval decreases but is less insightful
 
 For T-Distributions, use this formula
-	CI =$\bar{X} + or - t_{n-1,\frac{\alpha}{2}} * \frac{s}{\sqrt{n}}$
-	
+	$\text{Confidence Interval} = \bar{X} \pm t_{n-1,\frac{\alpha}{2}} \cdot \frac{s}{\sqrt{n}}$

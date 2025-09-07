@@ -6,18 +6,18 @@ Build the Test:
 	$H_A = \mu_{or} > 40$%
 		Null $H_O$ says opposite of task because our job is to determine if they beating us, we're not 'hoping we are losing' here
 			One sided test, only looking at greater than
-			$\alpha$ = 0.05
+			$\alpha = 0.05$
 
 Open Rate of Opposing Co.:
 26%, 23%, 42%, 49%, 23%, 59%, 29%, 29%, 57%, 40%
 	Sample Mean {$\bar{X}$}: 37.70 %
 	Sample Standard Deviation {$\sigma$}: 13.74 %
-	Standard Error {$\sigma / \sqrt{n}$}: 4.34 %
+	Standard Error {$\frac{\sigma}{\sqrt{n}}$}: 4.34 %
 	Null Hypothesis value {$H_O$}: 40%
 		Sample Size {n} & variance are unknown, so use the Student's t Distribution:
-		~~~$CI = \bar{x} + or - t_{n-1,\alpha} * \frac{s}{\sqrt{n}}$
-		$~~~CI = 37.70 \pm t_{10-1,0.05} * \frac{13.74}{\sqrt{10}}$
-		$CI = 37.70 \pm t_{10-1,0.05} * \frac{13.74}{\sqrt{10}}$
+		~~~$CI = \bar{x} \pm t_{n-1,\alpha} \cdot \frac{s}{\sqrt{n}}$
+		$~~~CI = 37.70 \pm t_{10-1,0.05} \cdot \frac{13.74}{\sqrt{10}}$
+		$CI = 37.70 \pm t_{10-1,0.05} \cdot \frac{13.74}{\sqrt{10}}$
 		NOOOO~~~
 		this is intervals, were hypothesis testing
 				$T = \bar{x} - \frac{\mu}{\frac{s}{\sqrt{n}}}$

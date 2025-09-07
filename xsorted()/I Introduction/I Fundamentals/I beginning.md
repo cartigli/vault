@@ -45,3 +45,4 @@ x = preprocessing.scale(data)
 # highxhigh = fans
 	# highxlow could be fans if loyalty improved
 	# lowxhigh could be fans if satisfaction approved
+```

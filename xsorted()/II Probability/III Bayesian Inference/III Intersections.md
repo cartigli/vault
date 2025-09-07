@@ -5,5 +5,5 @@ When we want A & B to happen at the same time, we want them to intersect
 	A '[upside down]U' B
 		intersection of Events [draw a heart] and Events [draw a spade] is
 		a null set, because they never overlap
-		A $\cap$ B = $\emptyset$
+		$A \cap B = \emptyset$
 	

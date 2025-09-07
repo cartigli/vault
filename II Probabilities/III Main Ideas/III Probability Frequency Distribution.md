@@ -17,20 +17,20 @@ E(A) = two rolls; 6 options each
 | 5    | 6   | 7   | 8   | 9   | 10  | 11  |
 | 6    | 7   | 8   | 9   | 10  | 11  | 12  |
 ^^ Outcomes possible for the two dye rolls; 36 possible sums of the two dye
-7 Occurs 6 times on the table / out of 36 possibilities: P(7) = 6 / 36 = 1 / 6
+7 Occurs 6 times on the table / out of 36 possibilities: $P(7) = \frac{6}{36} = \frac{1}{6}$
 
-| E(A) | Frequncy | Probability |
-| ---- | -------- | ----------- |
-| 2    | 1        | 1/36        |
-| 3    | 2        | 1/18        |
-| 4    | 3        | 1/12        |
-| 5    | 4        | 1/9         |
-| 6    | 5        | 5/36        |
-| 7    | 6        | 1/6         |
-| 8    | 5        | 5/36        |
-| 9    | 4        | 1/9         |
-| 10   | 3        | 1/12        |
-| 11   | 2        | 1/18        |
-| 12   | 1        | 1/36        |
+| E(A) | Frequncy | Probability    |
+| ---- | -------- | -------------- |
+| 2    | 1        | $\frac{1}{36}$ |
+| 3    | 2        | $\frac{1}{18}$ |
+| 4    | 3        | $\frac{1}{12}$ |
+| 5    | 4        | $\frac{1}{9}$  |
+| 6    | 5        | $\frac{5}{36}$ |
+| 7    | 6        | $\frac{1}{6}$  |
+| 8    | 5        | $\frac{5}{36}$ |
+| 9    | 4        | $\frac{1}{9}$  |
+| 10   | 3        | $\frac{1}{12}$ |
+| 11   | 2        | $\frac{1}{18}$ |
+| 12   | 1        | $\frac{1}{36}$ |
 6, 7, & 8 have the highest probabilities
 7 is the Peak

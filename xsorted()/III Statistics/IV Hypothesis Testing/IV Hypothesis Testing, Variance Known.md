@@ -4,7 +4,7 @@ single population and multiple populations
 data science salary
 	mean is 100,200
 	pop std 15,000
-	std error 2739
+	std error 2,739
 	sample size 30
 		someone suggests the average salary is 113,000
 				two-sided test, rejecting the null {mean salary is 113,000} would be decided by the mean being over __or__ under 113
@@ -24,7 +24,7 @@ data science salary
 			$Z = \frac{-12800}{2739}$
 			$Z = -4.673$
 				Using an $\alpha$ of 0.05, or 95% confidence. Since it is a two tailed test, we divide the $\alpha$ by 2 and get the Z-scores
-					0.05 / 2 = 0.025, and the associated z [Critical Value] is: 1.96
-							4.67 > 1.96, so we reject $H_0$, the Null Hypothesis; or we reject this null hypothesis with 95% confidence
+					$\frac{0.05}{2} = 0.025$, and the associated z [Critical Value] is: 1.96
+							$4.67 > 1.96$, so we reject $H_0$, the Null Hypothesis; or we reject this null hypothesis with 95% confidence
 						We can test again with 99% confidence by comparing to the z-score of an $\alpha$ equal to 0.005 {divided by 2}
 							the new associated z-score is 2.58, and 4.96 > 2.58, so with 99% confidence, we again reject the Null Hypothesis

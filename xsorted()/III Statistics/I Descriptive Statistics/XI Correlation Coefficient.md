@@ -11,7 +11,7 @@ Correlation Coefficient= $Cov_{xy} / (Stdev(x) * Stdev(y))$
 = 33,491,250 = Covariance of the Sample Above
 x: $\sigma^2$: 222
 y: $\sigma^2$: 173,615
-	Correlation Coefficient: $\frac{33,491,250}{222 * 173,615}$
+	Correlation Coefficient: $\frac{33,491,250}{222 \cdot 173,615}$
 	Correlation Coefficient: 0.87
 		fairly strong correlation coefficient; correlation of 1 would mean 100% of one variable determines the other, 0 would mean no correlation or relationship
 			-1 or negative means the opposite; ice cream vs umbrella store, when sunny, ice cream sells and when rainy, umbrellas sell; negative correlation

@@ -12,4 +12,4 @@ n possible outcomes
 n-1 possible outcomes in 2nd 
 n-2 possible outcomes for 3rd
 
-P(n) = n x ( n - 1 ) x ( n - 2 ) x . . . = n! [n factorial]
+$P(n) = n \cdot ( n - 1 ) \cdot ( n - 2 ) \cdot . . . = n!$ [n factorial]

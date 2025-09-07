@@ -9,4 +9,4 @@ Confidence level:
 
 Formula:
 	(Point Estimate - Reliability Factor * Standard Error, Point Estimate + Reliability Factor * Standard Error)	
-	$$(\bar{X} - Z_{\frac{\alpha}{2}} * \frac{\sigma}{\sqrt{n}}, \bar{X} + Z_{\frac{\alpha}{2}} * \frac{\sigma}{\sqrt{n}})$$ 
+	$$(\bar{X} - Z_{\frac{\alpha}{2}} \cdot \frac{\sigma}{\sqrt{n}}, \bar{X} + Z_{\frac{\alpha}{2}} \cdot \frac{\sigma}{\sqrt{n}})$$ 

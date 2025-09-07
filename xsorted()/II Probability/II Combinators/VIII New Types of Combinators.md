@@ -9,10 +9,10 @@ What's in the lunch deal
 		starting with sandwhich, we have 3 options
 		pick one, two options of drinks
 		pick one, two options of sides
-			for every combo of sandwhich + side, we have two possible combinations
-			3 x 2 x 2
+			for every combo of sandwich + side, we have two possible combinations
+			$3 \cdot 2 \cdot 2$
 			12 lunch items on new menu; 12 days
 
-New ad campaign; posting on fb, testing heders, buttons, bio, and picture
+New ad campaign; posting on fb, testing headers, buttons, bio, and picture
 5 headers, 3 buttons, 2 bios, 6 pictures
-possible combos = 5 x 3 x 2 x 6 = 180 [unique] ads to test
+possible combos = $5 \cdot 3 \cdot 2 \cdot 6 = 180$ [unique] ads to test

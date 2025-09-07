@@ -4,17 +4,16 @@ Mean ($\bar{x}$) = $2,617.23
 	What if take many, many samples, and analyze them?
 		This is a [Sampling Distribution] of the Mean ($\bar{x}$)
 			mean of the sample means will theoretically point us to the population mean
-				$\bar{X}_s = Mean-of-the-Sample-Means$
+				$\bar{X}_s = \text{Mean of the Sample Means}$
 				Gives us a normal distribution, of the Sample Means
-					*This is the [Central Limit Theorum]*
+					*This is the* [Central Limit Theorem]
 
 [Sampling Distribution] :
 	$\sim N (\mu, \frac{\sigma^2}{n})$
 		The Sampling Distribution with a mean equal to the original mean, and variance equal to the original variance divided by the sample size
 
-[Standard Error] of the Sampling Distribution = $\frac{\sigma^2}{n}$
-	or  $\frac{\sigma}{\sqrt{n}}$
-		*[Standard Error] decreases as n increases; higher sample size means reduced Standard Error*
+[Standard Error] of the Sampling Distribution = $\frac{\sigma^2}{n} \text{ or }  \frac{\sigma}{\sqrt{n}}$
+		[Standard Error] *decreases as n increases; higher sample size means reduced Standard Error*
 
 Estimates & Estimators - a type of statistic
 Confidence Intervals and Point Estimates

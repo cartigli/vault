@@ -1,10 +1,10 @@
 Y = outcome of an event
 y = one of the possible outcome 
-	P(Y = y) or P(y)
+	$P(Y = y) \text{ or } P(y)$
 
 Y = red marbles drawn from a bag
 y = 5 marbles drawn
-	P(Y = 5) or P(5)
+	$P(Y = 5) \text{ or } P(5)$
 
 P(y) = probability function
 	record the frequency of each unique value & divide it by the total number of elements [has to be finite]
