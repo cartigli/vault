@@ -1,13 +1,13 @@
-[scalars] have no dimensions; they are shit for brains locations, don't show direction, angle, speed, nuthin'
-	[points] have the same characteristics, through and through
+[ scalars ] have no dimensions; they are shit for brains locations, don't show direction, angle, speed, nuthin'
+	[ points ] have the same characteristics, through and through
 $$\begin{bmatrix}
 	222
 	\end{bmatrix} = \bullet$$
 
 *make a wild guess what's next*
 
-[vectors] have one more dimension than a scalar, they show direction
-	[lines] have the same characteristics! See a pattern?
+[ vectors ] have one more dimension than a scalar, they show direction
+	[ lines ] have the same characteristics! See a pattern?
 		lines are single dimensional; whichever direction they point
 			fundamentally, a line is a collection of points
 			==
@@ -20,7 +20,7 @@ to plot a line, we need a space, and to get a space (more so than a line is a sp
 	*what happens when we use two single dimensioned objects together?*
 		we gain a dimension :)
 
-[Matrices] are a multidimensional; they have any dimensions<1
+[ Matrices ] are a multidimensional; they have any dimensions<1
 	to get 2 dimensional space, we combined two lines, soo...
 		to get the same for Matrices, we'll combine two vectors!
 			this gives us a platform for representing any two dimensional space

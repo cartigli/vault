@@ -1,4 +1,4 @@
-Flat and Hierarchal
+[ Flat and Hierarchal ]
 	KMeans is flat as in we choose the cluster, and there is no hierarchy
 
 [Hierarchal]

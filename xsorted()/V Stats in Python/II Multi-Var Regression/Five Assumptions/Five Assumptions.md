@@ -1,7 +1,7 @@
 assumptions before any regression model analysis
 
-[[xsorted()/V Stats in Python/II Multi-Var Regression/Five Assumptions/I Linearity]]
-			linear regression, linear in nature, simplest regression, variables are multiplied by coefficients 
+
+linear regression, linear in nature, simplest regression, variables are multiplied by coefficients 
 
 [ No Endogeneity ]
 		covariance of the error; $\sigma_{x\epsilon}$ = 0 : 

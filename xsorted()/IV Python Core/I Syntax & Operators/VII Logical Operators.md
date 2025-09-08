@@ -1,4 +1,4 @@
-Logical Operators: [Not, And, Or]  [[xsorted()/IV Python Core/I Syntax & Operators/VI Comparison Operators#^booleanOperators]]
+Logical Operators: [ Not, And, Or ]
 	Boolean operators; return True or False 
 
 And checks if the statements on either side are true
@@ -26,9 +26,15 @@ True or not True or not False
 True and not True or not False
 -> True
 
-[The order of evaluation is 'not', then 'and', then 'or']
+{ The order of evaluation is 'not', then 'and', then 'or' }
 True and not True or not False {breaks down to...}
 True and not True or True
 True and False or True
 True and True
 True
+
+Identity Operators: [is, is not]
+	function similar to != 
+5 is not 6 {returns True}
+
+Less used than == & !=, but fundamental to Python logic 

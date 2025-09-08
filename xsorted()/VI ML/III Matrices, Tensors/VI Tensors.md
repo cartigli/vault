@@ -11,7 +11,7 @@ $$\begin{bmatrix}
 \end{bmatrix} = \text{Tensor m x n [ 2 x 2 ] | rank: 2 }$$
 $$? = \text{Tensor k x m x n}$$
 
-	hold on to your seats, folks. A tensor can be dimensions k x m x n , but it is not different from an ndarray in coding terms and follows the same pattern we've seen so far : a line is many scalars, a plane is many lines, and guess what, the next dimension is many planes
+hold on to your seats, folks. A tensor can be dimensions k x m x n , but it is not different from an ndarray in coding terms and follows the same pattern we've seen so far : a line is many scalars, a plane is many lines, and guess what, the next dimension is many planes
 		the pattern is the previous dimension must be built on to proceed
 ```python
 import numpy as np

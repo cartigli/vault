@@ -1,9 +1,9 @@
 Applications in Data Science
-	[vectorized code]
-	[image recognition]
-	[dimensionality reduction]
+	[ vectorized code ]
+	[ image recognition ]
+	[ dimensionality reduction ]
 
-[vectorized code]
+[ vectorized code ]
 	claim: house price depends on size
 		you devlop this equation:
 		House Price = 10,190 + 223 x K[sq ft]
@@ -44,7 +44,7 @@ $$A = \begin{bmatrix}
 
 when we use array programming to compute linear algebraic expressions, it is called [vectorizing code]
 
-[image recognition]
+[ image recognition ]
 	take a 400x400 pixel image
 	together, we see this is an image, with a subject, color, etc.,
 		it could also be expressed as a matrix, an array of 400x400 pixels
@@ -53,6 +53,6 @@ when we use array programming to compute linear algebraic expressions, it is cal
 				could train it to classify dogs, burglars, birds, etc.,
 			if we wanted color, instead of the matrix being 400x400x1 { intensity of gray } , we could do 400x400x3 [Tensor], where the resulting additional dimensions held information about that pixel's RGB scale, to simulate authentic colors
 
-[dimensionality reduction]
+[ dimensionality reduction ]
 not going in, only intuition
 	essentially, like matrices, a series of points can be shown over 3 dimensions but if the points form a plane, or approximate one, we could call it a new plane and remove a dimension from its form ; reducing its dimensionality

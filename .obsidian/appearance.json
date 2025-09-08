@@ -5,7 +5,9 @@
   "monospaceFontFamily": "",
   "showViewHeader": false,
   "showRibbon": false,
-  "enabledCssSnippets": [],
+  "enabledCssSnippets": [
+    "bullet-styles"
+  ],
   "textFontFamily": "Times New Roman",
   "translucency": false
 }

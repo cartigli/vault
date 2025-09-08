@@ -29,7 +29,7 @@ Why's it useful?
 Clustering does not use labels ; akin to unsupervised ML compared to Categorization 
 
 
-Methods:
+[ Methods ]
 imagine we have two points on a graph: (3, 4.5) and (10, 2.5)
 how do we measure the difference between these two points?
 	build a right triangle, lengths of 10 - 3 and 4.5 - 2.5 , or 7 and 2
@@ -44,7 +44,7 @@ in N-Dimensional space, the formula's pattern would continue and calculate the s
 in nd space; d(A,B) = d(B,A) = $\sqrt{ ( a_2 - b_1 )^2 + (a_2 - b_1)^2 + . . . (a_n - b_n )^2 }$
 with clustering, we'll find the distance between clusters of n dimensional space where n = the number of features in the data set
 
-[Centroid]
+[ Centroid ]
 	in our example, the centroid is the point on the line between our two points which is halfway between both of them
 	our line was 7.28, so the centroid of our two points is $\frac{7.28}{2} = 3.64$
 	going from either point, if the line connecting them were 3.64 units long, it would point to exactly their centroid

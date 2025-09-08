@@ -1,4 +1,4 @@
-Matrix: a collection of numbers ordered in rows and columns
+[ Matrix ] a collection of numbers ordered in rows and columns
 An example of a matrix:
 $$A = \begin{bmatrix}
 1 & 3 & 5 \\

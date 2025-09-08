@@ -1,4 +1,4 @@
-combine [for loops] and [range functions]
+combine [ for loops ] and [ range functions ]
 ```python
 for n in range(10):
 	print(2 ** n, end=" ") # output on a single line

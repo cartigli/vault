@@ -1,10 +1,10 @@
-Scalars: matrices containing one row and one column, or one element
+[ Scalars ] matrices containing one row and one column, or one element
 	$$\begin{bmatrix}
 	777
 	\end{bmatrix}$$
 essentially every number you see, $\pi, \infty, \epsilon$ are all scalars
 
-Vectors: singe dimension objects, practically the simplest algebraic object
+[ Vectors ] singe dimension objects, practically the simplest algebraic object
 	$$\begin{bmatrix}
 	2 \\
 	5 \\

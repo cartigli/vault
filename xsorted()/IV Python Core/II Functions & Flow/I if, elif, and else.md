@@ -1,14 +1,14 @@
 If statements are intuitive;
-	{assigns a Boolean value to your query; [[IV Python Core/I Syntax & Operators/VI Comparison Operators#^booleanOperators]]}
+	{assigns a Boolean value to your query
 
-[Conditionals]
+[ Conditionals ]
 if 5 != 5 * 3:
 	print('Hello, world')
 -> Hello, world
 
 if 5 > x and y <= 4:
 	print('Both variables fit')
-[Else]
+[ Else ]
 Else runs a block of code if the preliminary if statement is false
 ```python
 if x > 1:
@@ -17,7 +17,7 @@ else:
 	print('Case 2')
 ```
 
-[Elif]
+[ Elif ]
 Another conditional after a preliminary if statement
 ```python
 def comparefive(x):
@@ -27,10 +27,10 @@ def comparefive(x):
          print('Less')
      else:
          print('Equal')
-         ```
 comparefive(6)
 -> Greater
 comparefive(4)
 -> Less
 comparefive(5)
 -> Equal
+```

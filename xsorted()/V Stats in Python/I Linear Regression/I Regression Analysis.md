@@ -9,7 +9,7 @@ Dependent /predicted/ = Y
 Independent = $x_1, x_2,...$
 	Y = F($x_1, x_2,...$)
 
-Simple Linear Regression Model
+[ Simple Linear Regression Model ]
 $y = \beta_0 + \beta_1 x_1 + \epsilon$
 	$\beta_1$ is the quantifies the effect that x has on y
 		$\beta_0$ is a constant

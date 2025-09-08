@@ -20,7 +20,7 @@ common keywords: data, algorithm, insight
 
 30 observations - each gave insight of loyalty & satisfaction
 ```
-inport pandas as pd
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set()

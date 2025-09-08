@@ -4,10 +4,10 @@ def function_name(parameters):
 function_name(parameters) {returns output of function body}
 
 function_name(10)
-10 is an [argument], not a parameter of the function 'function_name'
+10 is an [ argument ], not a parameter of the function 'function_name'
 
 def funct(a):
-	result = a / 7
+	result = $\frac{a}{7}$
 	return result 
 		{add a function in a function, and return its output}
 

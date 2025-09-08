@@ -1,16 +1,16 @@
 Supervised, Unsupervised, Reinforcement
 
-[Supervised]
+[ Supervised ]
 	like the weather example ; the model runs through data ; the output is judged by ' correctness ', and the optimization fx revises the weights and biases before re-running the data to find the resulting optimization fx
 
-[Unsupervised]
+[ Unsupervised ]
 	no goals, or parameters ; the goal is to have the model learn and classify the data by more efficient methods than could be manually programmed
 		doesn't need labeled data or objective targets
 			useful when the goal is to split data into x categories , when we don't know how to split the data , by what metrics, or how many clusters , k , to make {{ k-means clustering ! }}
-[Reinforcement]
+[ Reinforcement ]
 	like training your pet ; give it a treat every time a goal is achieved or metric improved
 
-[Supervised] is the Good Stuff
+[ Supervised ] is the Good Stuff
 	two main branches ; Classification and Regression
 		Classification : cats , dogs , lizards
 			Categorical : sorting, groups, clusters

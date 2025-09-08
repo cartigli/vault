@@ -1,9 +1,8 @@
-[Iteration] is the ability to execute certain code repeatedly 
+[ Iteration ] is the ability to execute certain code repeatedly 
 	fundamental to all programming
 
 Iteration Process:
-
-[for loop]
+[ for loop ]
 ```python
 even = [0,2,4,6,8,10,12,14]
 for n in even: # for every element n in the list even:

@@ -70,12 +70,12 @@
 ```
 
 This network has 5 inputs and an initial weight matrix of 4 x 5 weights to feed forward to layer h1 of 5 neurons. We'll call this weight matrix $w_1$. To get from the results of $w_1$ to the output layer, the results must be multiplied again by the matrix $w_2$ between h1 and y. 
-	So, x * $w_1$ = h, and h * $w_2$ = y.
-		This algebraic expression can be simplified by substituting h for x * $w_1$
-				leaving y = x * $w_1$ * $w_2$ 
-					but** the matrices for the weights are shapes 4 x 5 and 5 x 3, so they can be combined
-						combining the weight matrices of $w_1 \text{ } \& \text{ } w_2$ gives us $w^*$ ; shape 4 x 3 
-							This leaves y = x * $w^*$ -- a linear model, eliminating the need for a hidden layer and reverting the model's abilities to linear functions only
+	So, $x \cdot w_1 = h\text{, and } h \cdot w_2 = y$.
+		This algebraic expression can be simplified by substituting h for $x \cdot w_1$
+				leaving $y = x \cdot w_1 \cdot w_2$ 
+					but** the matrices for the weights are shapes $4 \cdot 5$ and $5 \cdot 3$, so they can be combined
+						combining the weight matrices of $w_1 \text{ } \& \text{ } w_2$ gives us $w^*$ ; shape $4 \cdot 3$ 
+							This leaves $y = x \cdot w^*$ -- a linear model, eliminating the need for a hidden layer and reverting the model's abilities to linear functions only
 										*the two consecutive linear transformations are equal to one linear transformation*
 								Neural Networks apply activation functions to the outputs of these weight matrices to derive non-linear patterns from linear combinators
 

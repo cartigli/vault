@@ -57,4 +57,4 @@ $$\begin{bmatrix}
  \text{[ 8, 1, 0 ]}\\
  \text{[ 2, -15, 5 ]}
  \end{bmatrix}.T$$
-	*its always row vector times column vector ; the row vector [ 2, 7, 5 ] is multiplied by the column vector [ 8, 1, 0 ] - it is a column vector after the transpoition*
+*its always row vector times column vector ; the row vector [ 2, 7, 5 ] is multiplied by the column vector [ 8, 1, 0 ] - it is a column vector after the transpoition*

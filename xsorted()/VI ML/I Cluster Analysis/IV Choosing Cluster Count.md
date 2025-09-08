@@ -1,4 +1,4 @@
-' elbow method '
+[ elbow method ]
 
 minimizing distance between points in a cluster == maximizing distance between clusters
 

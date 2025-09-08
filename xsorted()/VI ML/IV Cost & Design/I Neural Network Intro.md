@@ -1,6 +1,6 @@
-Neural Networks work by taking inputs and giving outputs
+[ Neural Networks ] work by taking inputs and giving outputs
 
-they are a series of interlayered neurons configured with weights and biases
+they are a series of inter-layered neurons configured with weights and biases
 
 ex: we want model to predict weather based on the previous 5 days
 	we give it 5 days of weather, have it predict, and adjust the weights and biases depending on how correct or incorrect the model was

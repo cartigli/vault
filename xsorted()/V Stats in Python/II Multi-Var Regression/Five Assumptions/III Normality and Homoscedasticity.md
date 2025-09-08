@@ -1,12 +1,12 @@
 $\epsilon \sim N ( 0 , \sigma^2 )$
 
-[Normality]
+[ Normality ]
 		we assume $\epsilon$ {{ error }} is normally distributed
 
-[Zero mean]
+[ Zero mean ]
 			$...N( 0,...$ means the sample is normally distributed over the mean: 0
 
-[Homoscedasticity]
+[ Homoscedasticity ]
 			the error is equally distributed
 			an example of this not happening is a demerging dataset; its variance increases as x and y increase; impossible to statistically analyze and suggests a different kind of problem
 					prevention:

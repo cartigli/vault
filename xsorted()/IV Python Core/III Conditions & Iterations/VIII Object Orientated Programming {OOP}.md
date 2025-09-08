@@ -4,7 +4,7 @@ Classes:
 	objects belong to classes based off attributes they posses/were given from operations
 	'Mike' can make bicycles, so he is in the bike-maker class
 ex:
-object {{ instance }} = [14.9, 14.8, 10.3]
+object {{ instance }} = [ 14.9, 14.8, 10.3 ]
 	list class
 	attributes: float data
 	methods available: .extend(), .index()

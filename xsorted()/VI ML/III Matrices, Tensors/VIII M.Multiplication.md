@@ -1,9 +1,9 @@
 let's get it
-scalars
+[ scalars ]
 	1 x 2 = 2
 	4 x {-4} = 16
 
-vectors
+[ vectors ]
 	same as usual, must be same length
 $$\begin{bmatrix}
 2 \\
@@ -20,8 +20,7 @@ $$\begin{bmatrix}
 \end{bmatrix} {\text{; a scalar !}}$$
 		Dot Product ^
 			the sum of the products of the corresponding elements
-
-	numpy got a .dot() method :)
+numpy got a .dot() method :)
 
 ```python
 import numpy as np

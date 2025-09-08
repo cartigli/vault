@@ -55,7 +55,7 @@ The leap between models like the one we configured and Deep Networks are the act
 			When a non-linear function is applied, the model's optimization function can utilize these non-linear results to derive non-linear patterns and discover more complex subtleties than a linear model
 					This combination of linear and non-linear modeling allows for more dynamic learning than strictly linear or non-linear functions
 
-A Neural Network:
+A [ Neural Network ]
 
 ```tikz
 \begin{document}

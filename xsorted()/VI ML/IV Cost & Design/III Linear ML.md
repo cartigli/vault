@@ -20,7 +20,7 @@ This could be done with a [Linear Model]
 
 	*if this were a realestate - predicition model , its would be likely given x , where x = size , and w and b are configured to predict the price of a house given the size , x
 
-[Multiple Variables Linear Model]
+[ Multiple Variables Linear Model ]
 	what if we're determining cost of houses in Charleston?
 		an additional element for location would be introduced 
 			in the single variable model, the input $x$ is a $1x1$ scalar being multiplied with a $1x1$ scalar, added to a $1x1$ scalar
@@ -38,7 +38,7 @@ z = np.dot(x,w) + b
 print(z)
 ```
 
-[Multivariable Linear Model with Multiple Outputs]
+[ Multivariable Linear Model with Multiple Outputs ]
 	imagine our model designed to predict the price of houses in Charleston was also tasked with determining the rent price?
 		without modifying the input or training data, the model would need to predict two things:
 			the price of the house
@@ -93,44 +93,3 @@ plt.axvline(0, color='black',linewidth=0.5) # v for vertical @ 0
 plt.show()
 plt.close()
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-x = [-5,-3,-1,1,3,5,7,9]
-y = [-6,-4,-2,0,2,4,6,8]
-
-plt.scatter(x,y)
-plt.title('Linear Function')
-plt.xlim(-10,10)
-plt.ylim(-10,10)
-plt.grid(True)
-plt.show()
-plt.close() # we see a line
-
-a = [-8,-3,1,0,-1,-2,-5,-9]
-b = [-9,-5,0,1,-2,-4,-6,-8]
-
-plt.scatter(a,b)
-plt.title('Non-Linear Function')
-plt.xlim(-10,10)
-plt.ylim(-10,10)
-plt.grid(True)
-plt.show()
-plt.close() # we see a line

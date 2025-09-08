@@ -20,7 +20,7 @@ for the situation above, $v = v-^T$
 			the row vector v became the column vector v_
 				a vector transposed twice is the original vector
 
-Transposing a matrix
+[ Transposing ] a matrix
 	M x N matrix transposed is an N x M matrix
 $$\begin{bmatrix}
 5 & 7 & 9 \\

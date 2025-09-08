@@ -1,5 +1,5 @@
 function that counts the numbers who are less than 20 from a list
-Called a [Rolling Sum]
+Called a [ Rolling Sum ]
 ```python
 def count(numbers):
 	total = 0
