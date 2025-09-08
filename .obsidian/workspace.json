@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/III SQL/MySQL Databases.md",
+                "file": "xsorted()/III SQL/Data Types.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MySQL Databases"
+              "title": "Data Types"
             }
           },
           {
@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -196,10 +196,11 @@
       "graph:Open graph view": false
     }
   },
-  "active": "62128fc6c84693a3",
+  "active": "8f133990a0946b56",
   "lastOpenFiles": [
     "xsorted()/III SQL/I SQL Theory.md",
-    "xsorted()/III SQL/MySQL Databases.md",
+    "xsorted()/III SQL/Data Types.md",
+    "add, python.md",
     "xsorted()/III SQL/II DataBase terminology.md",
     "xsorted()/III SQL/III Relational Schema.md",
     "xsorted()/III SQL/install and run macos.md",
@@ -227,7 +228,6 @@
     "xsorted()/II Python/IV ML/VIIII Case II/III Unpickle.md",
     "xsorted()/II Python/IV ML/VIIII Case II/II absenteeism model.md",
     "xsorted()/II Python/IV ML/VIIII Case II/I prprocess X.md",
-    "xsorted()/II Python/IV ML/VIII Business Case/test.md",
     "xsorted()/II Python/IV ML/VIIII Case II",
     "xsorted()/II Python/IV ML/VIII Business Case",
     "Untitled",
