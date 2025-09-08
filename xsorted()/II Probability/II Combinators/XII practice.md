@@ -14,8 +14,8 @@
 		$C^n_p = \frac{n!}{(n - p)! p!}$
 		$C^8_5 = \frac{8!}{(8 - 5)! 5!}$
 		$C^8_5 = \frac{8!}{(3)! 5!}$
-		$C^8_5 = \frac{5 x 6 x 7 x 8}{5!}$
-		$C^8_5 = \frac{5 x 6 x 7 x 8}{120}$
+		$C^8_5 = \frac{5 \cdot 6 \cdot 7 \cdot 8}{5!}$
+		$C^8_5 = \frac{5 \cdot 6 \cdot 7 \cdot 8}{120}$
 		$C^8_5 = \frac{1680}{120}$
 		$C^8_5 = 14$
 	d. combinations with repetition
@@ -53,8 +53,8 @@
 			v.bar(7, 2) = 2! / 7!
 			v.bar(7, 2) = 2! / 7!~~~
 			combinations with repetition ig
-			$C^2_7 = \frac{(2 + 7 - 1)!}{(2 - 7)! 7!}$
-			$C^2_7 ) = \frac{(2 + 7 - 1)!}{(-5)! 7!}$
+			$C^2_7 = \frac{(2 + 7 - 1)!}{(2 - 7)! \cdot 7!}$
+			$C^2_7 ) = \frac{(2 + 7 - 1)!}{(-5)! \cdot 7!}$
 			$C^2_7 =$ broken?
 			7 rooms, each can be gray or yellow, 14 options
 
@@ -65,8 +65,8 @@
 	permutations: 39916800
 	combo 
 		$n = 11, p = 11$
-		$C^n_p = \frac{n!}{(n - p)! p!}$
-		$C^n_p  = \frac{11!}{(11 - 11)! 11!}$
+		$C^n_p = \frac{n!}{(n - p)! \cdot p!}$
+		$C^n_p  = \frac{11!}{(11 - 11)! \cdot 11!}$
 		$C^n_p  =$ divide by 0 :(
 only one has preference, for the middle:
 	permutations: 10!
@@ -76,9 +76,9 @@ only one has preference, for the middle:
 	$8! \cdot 3!$
 	$241920$
 One empty slot, so $n = 10, p = 11$
-$C^n_p  = \frac{n!}{(n - p)! p!}$
-$C^n_p = \frac{10!}{(10 - 11)! 11!}$
-$C^n_p  = \frac{10!}{(-1)! 11!}$
+$C^n_p  = \frac{n!}{(n - p)! \cdot p!}$
+$C^n_p = \frac{10!}{(10 - 11)! \cdot 11!}$
+$C^n_p  = \frac{10!}{(-1)! \cdot 11!}$
 breaks again?
 
 	
