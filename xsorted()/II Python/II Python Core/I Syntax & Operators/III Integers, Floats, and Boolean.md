@@ -25,7 +25,7 @@ in Python, there are Integers, Floats, and Boolean Values
 [ str ]
 	string value
 	type(x) when x = 'boot' would return str
-	[[xsorted()/IV Python Core/I Syntax & Operators/IV Strings]]
+	[[IV Strings]]
 
 [ type ]
 	tells you the type of variable specified

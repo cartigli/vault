@@ -7,7 +7,7 @@ Like z, t distributions, the f-statistic follows a distribution, which is skewed
 				the $H_A$ is that at least one of the variables defers from 0; it explains some of the variability in y
 					$H_A : at-least-one \beta_i \neq 0$
 
-from [[xsorted()/V Stats in Python/II Multi-Var Regression/II Multi-Variate Example {{ S }}]]
+from [[II Multi-Variate Example {{ S }}]]
                             OLS Regression Results                            
 ==============================================================================
 Dep. Variable:                    GPA   R-squared:                       0.407
