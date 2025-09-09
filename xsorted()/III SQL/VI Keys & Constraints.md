@@ -2,7 +2,7 @@ Specific limitations or specifications applied to a table
 	outlines the relationships between tables
 
 PRIMARY KEY
-```sql
+```mysql
 CREATE TABLE sales
 (
 	purchase_number INT AUTO_INCREMENT,
@@ -17,7 +17,7 @@ A child table references with a Foreign Key a to a Parent Table
 	Usually, this Parent Table's value is a Primary Key for the parent
 		The foreign key maintains the referential relationship within the database
 
-```sql
+```mysql
 CREATE TABLE sales
 (
 	purchase_number INT AUTO_INCREMENT,
@@ -25,14 +25,14 @@ CREATE TABLE sales
 	customer_id INT,
 	item_code VARCHAR(10),
 PRIMARY KEY (purchase_number),
-FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE --foreign key constraint
+FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE # foreign key constraint
 );
 ```
 
 ON DELETE CASCADE - this constrains the tables by defining a rule enforcing the child table to delete all associated records with a 
 customer_id if a value of the PRIMARY KEY on the Parent Table is deleted
 
-```sql
+```mysql
 CREATE TABLE sales
 (
 	purchase_number INT AUTO_INCREMENT,
@@ -43,15 +43,15 @@ PRIMARY KEY (purchase_number)
 );
 
 ALTER TABLE sales
-ADD FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE; --add key after the fact
+ADD FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE; # add key after the fact
 
 ALTER TABLE sales
-DROP FOREIGN KEY customer_id; --to remove key
+DROP FOREIGN KEY customer_id; # to remove key
 ```
 
 UNIQUE KEYS
 
-```sql
+```mysql
 CREATE TABLE customers
 (
 	customer_id INT,
@@ -64,7 +64,7 @@ UNIQUE KEY (email_address)
 );
 ```
 add after the fact :
-```sql
+```mysql
 CREATE TABLE customers
 (
 	customer_id INT,
@@ -80,7 +80,7 @@ ADD UNIQUE KEY (email_address);
 ```
 
 PRIMARY, FOREIGN, AND UNIQUE
-```sql
+```mysql
 CREATE TABLE products
 (
     product_id INT AUTO_INCREMENT,
@@ -96,14 +96,14 @@ UNIQUE KEY (product_name)
 INDICES
 unique keys serve the same role is indexes , but not the reverse !
 indexing allows organization and retrieval of information but also enforces updating of all indices if one is updated
-```sql
+```mysql
 ALTER TABLE customers
-DROP INDEX email_address; --drop index , not unique key , and remove parenthesis
+DROP INDEX email_address; # drop index , not unique key , and remove parenthesis
 ```
 
 DEFAULT CONSTRAINT
 ex: No. of Complaints would default to 0 unless specified otherwise
-```sql
+```mysql
 CREATE TABLE customers
 (
 	customer_id INT AUTO_INCREMENT,
@@ -115,17 +115,17 @@ PRIMARY KEY (customer_id)
 );
 ```
 add in hindsight :
-```sql
+```mysql
 ALTER TABLE customers
-CHANGE COLUMN number_of_complaints number_of_complaints INT DEFAULT 0; --sets default value to 0
+CHANGE COLUMN number_of_complaints number_of_complaints INT DEFAULT 0; # sets default value to 0
 ```
 remove after the fact :
-```sql
+```mysql
 ALTER TABLE customers
-ALTER COLUMN number_of_complaints DROP DEFAULT; --sets default to null
+ALTER COLUMN number_of_complaints DROP DEFAULT; # sets default to null
 ```
 
-```sql
+```mysql
 CREATE TABLE products
 (
     product_id INT AUTO_INCREMENT,
@@ -140,25 +140,25 @@ UNIQUE KEY (product_name)
 
 NOT NULL
 
-```sql
+```mysql
 CREATE TABLE products
 (
     product_id INT AUTO_INCREMENT,
     product_name VARCHAR(20) DEFAULT 'no-name',
     product_price INT,
-    warehouse_id VARCHAR(255) NOT NULL, --enforces values for every position
+    warehouse_id VARCHAR(255) NOT NULL, # enforces values for every position
 PRIMARY KEY (product_id),
 );
 ```
 to remove :
-```sql
+```mysql
 ALTER TABLE companies
-MODIFY warehouse_id VARCHAR(255) NULL; --removes NOT NULL enforcement
+MODIFY warehouse_id VARCHAR(255) NULL; # removes NOT NULL enforcement
 ```
 to add in hindsight :
-```sql
+```mysql
 ALTER TABLE companies
-CHANGE COLUMN warehouse_id warehouse_id VARCHAR(255) NOT NULL; --adds NOT NULL enforcement rule
+CHANGE COLUMN warehouse_id warehouse_id VARCHAR(255) NOT NULL; # adds NOT NULL enforcement rule
 ```
 
 *Null* values should not be confused with 0 or None
@@ -166,7 +166,7 @@ CHANGE COLUMN warehouse_id warehouse_id VARCHAR(255) NOT NULL; --adds NOT NULL e
 
 INSERT VALUES { WITH ENUM & PRIMARY KEY }
 
-```sql
+```mysql
 USE sales;
 
 CREATE TABLE customers
@@ -180,11 +180,11 @@ PRIMARY KEY (customer_id)
 );
 
 ALTER TABLE customers
-ADD COLUMN gender ENUM('M','F') AFTER last_name; --only 'M' or 'F' permitted
+ADD COLUMN gender ENUM('M','F') AFTER last_name; # only 'M' or 'F' permitted
 
 INSERT INTO customers (first_name, last_name, gender, email_address, number_of_complaints)
 VALUES ('John','Mackinley','M','john.mickinley@365careers.com',0);
 
 INSERT INTO customers (first_name, last_name, gender, email_address)
-VALUES ('Jane','Mackinley','F','jane.mickinley@365careers.com'); --no value or reference for default
+VALUES ('Jane','Mackinley','F','jane.mickinley@365careers.com'); # no value or reference for default
 ```

@@ -412,3 +412,20 @@ GROUP BY first_name
 HAVING COUNT(first_name) <= 200
 ORDER BY first_name;
 ```
+
+
+LIMIT
+```mysql
+SELECT * FROM salaries; # could return thousands of lines
+```
+
+```mysql
+SELECT * FROM salaries limit 10; # limits response to 10 rows
+```
+
+Ex: looking for top 10 salaries within the company
+```mysql
+SELECT salary FROM salaries
+ORDER BY salary DESC LIMIT 10;
+```
+*This returns the top average salaries sorted by descending order limited to 10 rows*

@@ -17,7 +17,9 @@ CREATE TABLE table_name
 	. . .
 	column_n data_type constraints
 );
-```sql
+
+To Query a Database :
+```mysql
 USE sales;
 
 CREATE TABLE sales
@@ -30,18 +32,18 @@ CREATE TABLE sales
 
 CREATE TABLE customers
 (
-	customer_id INT NOT NULL PRIMARY KEY, --primary key auto increment values 
-    first_name VARCHAR(255), --255 char limit with variable length
+	customer_id INT NOT NULL PRIMARY KEY, #primary key auto increment values 
+    first_name VARCHAR(255), #255 char limit with variable length
     last_name VARCHAR(255),
-    number_of_complaints INT --integer no comma
+    number_of_complaints INT #integer no comma
 );
 ```
 
-```sql
+```mysql
 SELECT * FROM sales; # got table
-SELECT customer_id FROM sales; # got row of table
+SELECT customer_id FROM sales; # got column of table
 ```
 
-```sql
+```mysql
 DROP TABLE sales; # tables deleted
 ```
