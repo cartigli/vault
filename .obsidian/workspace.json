@@ -8,49 +8,21 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b814433f52d2fbe5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "xsorted()/III SQL/0 SQL Introduction.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "0 SQL Introduction"
-            }
-          },
-          {
-            "id": "b8c93536574277e4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "xsorted()/III SQL/I SQL Theory.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "I SQL Theory"
-            }
-          },
-          {
-            "id": "62128fc6c84693a3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "xsorted()/III SQL/Data Types.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Data Types"
-            }
-          },
-          {
             "id": "ea0352722195f2c6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "xsorted()/III SQL/IV Data Types.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "IV Data Types"
+            }
+          },
+          {
+            "id": "23073b82d3c752b9",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -76,23 +48,9 @@
               "icon": "lucide-file",
               "title": "III Relational Schema"
             }
-          },
-          {
-            "id": "8f133990a0946b56",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "xsorted()/III SQL/install and run macos.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "install and run macos"
-            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -139,8 +97,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 269.5,
-    "collapsed": true
+    "width": 269.5
   },
   "right": {
     "id": "cc49a367b9d619d7",
@@ -196,14 +153,16 @@
       "graph:Open graph view": false
     }
   },
-  "active": "8f133990a0946b56",
+  "active": "0789d3e2d403fe64",
   "lastOpenFiles": [
-    "xsorted()/III SQL/I SQL Theory.md",
-    "xsorted()/III SQL/Data Types.md",
-    "add, python.md",
+    "xVault/miscellaneous/keysncodes.md",
+    "xsorted()/III SQL/IV Data Types.md",
+    "xsorted()/III SQL/x.install and run macos.md",
     "xsorted()/III SQL/II DataBase terminology.md",
     "xsorted()/III SQL/III Relational Schema.md",
-    "xsorted()/III SQL/install and run macos.md",
+    "xsorted()/III SQL/V Queries.md",
+    "xsorted()/III SQL/I SQL Theory.md",
+    "add, python.md",
     "xsorted()/III SQL/0 SQL Introduction.md",
     "xsorted()/II Python/IV ML/VI Deep ML/0. Network Architecture.md",
     "xsorted()/II Python/IV ML/IV Cost & Design/3d plot.md",
@@ -226,8 +185,6 @@
     "xsorted()/I Stats/II Probability/II Combinators/IV Variations V-bar.md",
     "xsorted()/I Stats/II Probability/II Combinators/XII practice.md",
     "xsorted()/II Python/IV ML/VIIII Case II/III Unpickle.md",
-    "xsorted()/II Python/IV ML/VIIII Case II/II absenteeism model.md",
-    "xsorted()/II Python/IV ML/VIIII Case II/I prprocess X.md",
     "xsorted()/II Python/IV ML/VIIII Case II",
     "xsorted()/II Python/IV ML/VIII Business Case",
     "Untitled",

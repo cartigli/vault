@@ -9,7 +9,7 @@ purchase-no & date-of-purchase & customer-id & item-code \\
 3 & 3.7.2019 & 3 & 10 \\
 \hline
 \end{array}$$
-For the table above, the values in date-of-purchase and item-code can be seen multiple times, as epexted
+For the table above, the values in date-of-purchase and item-code can be seen multiple times, as expected
 
 [ Primary Key ]
 Purchase-No is unique, it will not repeat ever
@@ -95,4 +95,4 @@ purchase-no & date-of-purchase & customer-id & item-code \\
 ```
 
 Relationships between Tables
-Despite the fact that Customer ID is a Primary Key for Customer ID list, meaning it never repeats and every value is unique and exists. However, the same information is seen in Sales with the Foreign Key value Customer ID. In Sales, the Customer ID value can repeat and likely will, as unique customers can make multiple purchases. This is a One to Many relationship. There is also Many to One, One to One, etc.,
+Despite the fact that Customer ID is a Primary Key for Customer ID list, meaning it never repeats and every value is unique and exists. However, the same information is seen in Sales with the Foreign Key value Customer ID. In Sales, the Customer ID value can repeat and likely will, as unique customers can make multiple purchases. This is a One to Many relationship. There is also Many to One, One to One, etc., ~~||<

@@ -35,13 +35,32 @@ if you needed a database for your business, you wouldn't hire a data analysis, y
 		a way they do this is by plotting the entire database's structure and relationships
 			one of two methods for this is the Entity Relationship Diagram [ ER ]
 				like a flow chart of the relationship between tables and data
-			another is the Relational Schema { shown below, tables are connected via references of more tables$$\begin{array} {c}
-		PURCHASE-NO & CUSTOMER-ID & ITEM-CODE & COMPANY-ID\\
-		date-o-purchase & first-name & item & company-name\\
-		customer-id[fx] & last-name &unit-price & hq-contact-no\\
-		item-code [fx] & email & company-ID[fx] & company-ID \\
-		 & no-of-complaints & & 
-		\end{array} $$
-		```tikz
-\begin{document}
-\begin{tikzpicture}
+			another is the Relational Schema { shown below, tables are connected via references of more tables
+$$\overset{\text{Sales}}{\begin{array} {|l|}
+\hline
+\underline{\text{Purchase No. [pk]}}\\
+\text{Date of Purchase} \\
+\text{Customer ID [fk]} \\
+\text{Item Code [fk]} \\
+\hline
+\end{array}} , \overset{\text{Customer ID}}{\begin{array} {|l|}
+\hline
+\underline{\text{Customer ID [pk]}}\\
+\text{Last Name} \\
+\text{Email} \\
+\text{No. Complaints} \\
+\hline
+\end{array}},\overset{\text{Items}}{\begin{array} {|l|}
+\hline
+\underline{\text{Item Code [pk]}}\\
+\text{Item} \\
+\text{Unit Cost} \\
+\text{Company ID [fk]} \\
+\hline
+\end{array}}, \overset{\text{Company}}{\begin{array} {|l|}
+\hline
+\underline{\text{Company ID [pk]}}\\
+\text{Company} \\
+\text{Contact No.} \\
+\text{No. of Products} \\
+\hline \end{array}}$$
