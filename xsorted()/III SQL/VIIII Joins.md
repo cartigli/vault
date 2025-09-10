@@ -3,29 +3,25 @@ The SQL tool that allows us to construct a relationship between objects.
 Joins must be constructed over a column the two tables have in common. It shows a result set, containing fields *derived* from two or more tables.
 
 ```
-                         ┌──────────────────┐       ┌────────────────────┐
-                         │  dept_manager    │       │   departments      │
-┌────────────────┐       ├──────────────────┤>|──||─├────────────────────┤
-│  employees     │       │FK dept_no CHAR4  │       │PK dept_no CHR4     │
-├────────────────┤─||──|<│FK emp_no INT     │  ┌┼┼─<│   dept_name VCHR40 │
-│PK mep_no INT   │       │   from_date DATE │  │    └────────────────────┘
-│ birth_date DATE│       │   to_date DATE   │  │
-│ first_name VCHR│       └──────────────────┘  │
-│ last_name VCHR |─┼┼──────────────────────┐   │      ┌─────────────────┐
-│ gender ENUM    │─┼┼────                  │   └──┼┼─<│   dept_emp      │
-│ hire_date DATE │─┼┼────                  │          ├─────────────────┤
-└────────────────┘                         └──────┼┼─<│FK emp_no INT    │
-   │     │                ┌─────────────────────┐     │FK dept_no CHR4  │
-  ─┼─    └────────────┼┼─<│     titles          │     │   from_date DATE│
-  ─┼─                     ├─────────────────────┤     │   to_date DATE  │
-┌──^──────────────────┐   │ FK emp_no INT       │     └─────────────────┘
-│    salaries         │   │    title VARCHAR(50)│
-├─────────────────────┤   │    from_date DATE   │
-│ FK emp_no INT       │   │    to_date DATE     │
-│    salary INT       │   └─────────────────────┘
-│    from_date DATE   │
-│    to_date DATE     │
-└─────────────────────┘
+  ┌────────────────┐           ┌──────────────────┐      ┌────────────────────┐
+  │  employees     │─||──────|<┤  dept_manager    │>|─── ┤   departments      │
+  ├────────────────┤           ├──────────────────┤      ├────────────────────┤
+  │PK mep_no INT   │           │FK dept_no CHAR4  │  ┌─││┤PK dept_no CHR4     │
+  │ birth_date DATE│─||─────┐  │FK emp_no INT     │  │   │   dept_name VCHR40 │
+  │ first_name VCHR│        │  │   from_date DATE │  │   └────────────────────┘
+  │ last_name VCHR │─||───┐ │  │   to_date DATE   │  │   ┌──────────────────┐
+  │  gender ENUM   │      │ │  └──────────────────┘  └─|<┤   dept_emp       │
+  │ hire_date DATE │─||─┐ │ └──────────────────────────|<┼──────────────────┤
+  └────────────────┘    │ │     ┌─────────────────────┐  │FK emp_no INT     │
+     ┌──────────────────┘ └───|<┤     titles          │  │FK dept_no CHR4   │
+     │    ┌──────────────────┐  ├─────────────────────┤  │   from_date DATE │
+     └──|<┤    salaries      │  │ FK emp_no INT       │  │   to_date DATE   │
+          ├──────────────────┤  │    title VARCHAR(50)│  └──────────────────┘
+          │ FK emp_no INT    │  │    from_date DATE   │
+          │    salary INT    │  │    to_date DATE     │
+          │    from_date DATE│  └─────────────────────┘
+          │    to_date DATE  │
+		  └──────────────────┘
 ```
 
 
