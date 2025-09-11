@@ -1,7 +1,3 @@
-\usepackage{tikz}
-\usetikzlibrary{positioning, shapes.multipart, arrows.meta}
-\usepackage{tikz}
-
 The SQL tool that allows us to construct a relationship between objects.
 
 Joins must be constructed over a column the two tables have in common. It shows a result set, containing fields *derived* from two or more tables.
@@ -622,7 +618,7 @@ FROM
 				emp_no = 110022) AS manager_ID
 	FROM employees e
 	JOIN dept_emp de ON e.emp_no = de.emp_no
-	WHERE e.emp_no <= 10020
+	WHERE e.emp_no <= 110020
 	GROUP BY e.emp_no
 	ORDER BY e.emp_no) AS A
 UNION SELECT
@@ -639,7 +635,7 @@ FROM
 				emp_no = 110039) AS manager_ID
 	FROM employees e
 	JOIN dept_emp de ON e.emp_no = de.emp_no
-	WHERE e.emp_no > 10020
+	WHERE e.emp_no > 110020
 	GROUP BY e.emp_no
 	ORDER BY e.emp_no
 	LIMIT 20) AS B
@@ -657,7 +653,7 @@ FROM
 				emp_no = 110039) AS manager_ID
 	FROM employees e
 	JOIN dept_emp de ON e.emp_no = de.emp_no
-	WHERE e.emp_no = 10022
+	WHERE e.emp_no = 110022
 	GROUP BY e.emp_no
 	ORDER BY e.emp_no) AS C
 UNION SELECT
@@ -674,7 +670,7 @@ FROM
 				emp_no = 110022) AS manager_ID
 	FROM employees e
 	JOIN dept_emp de ON e.emp_no = de.emp_no
-	WHERE e.emp_no = 10039
+	WHERE e.emp_no = 110039
 	GROUP BY e.emp_no
 	ORDER BY e.emp_no) AS U;
 ```
@@ -695,7 +691,7 @@ FROM(SELECT A.*
 					emp_no = 110022) AS manager_ID
 		FROM employees e
 		JOIN dept_emp de ON e.emp_no = de.emp_no
-		WHERE e.emp_no <= 10020
+		WHERE e.emp_no <= 110020
 		GROUP BY e.emp_no
 		ORDER BY e.emp_no) AS A
 	UNION SELECT
@@ -712,7 +708,7 @@ FROM(SELECT A.*
 					emp_no = 110039) AS manager_ID
 		FROM employees e
 		JOIN dept_emp de ON e.emp_no = de.emp_no
-		WHERE e.emp_no > 10020
+		WHERE e.emp_no > 110020
 		GROUP BY e.emp_no
 		ORDER BY e.emp_no
 		LIMIT 20) AS B
@@ -730,7 +726,7 @@ FROM(SELECT A.*
 					emp_no = 110039) AS manager_ID
 		FROM employees e
 		JOIN dept_emp de ON e.emp_no = de.emp_no
-		WHERE e.emp_no = 10022
+		WHERE e.emp_no = 110022
 		GROUP BY e.emp_no
 		ORDER BY e.emp_no) AS C
 	UNION SELECT
@@ -747,7 +743,7 @@ FROM(SELECT A.*
 					emp_no = 110022) AS manager_ID
 		FROM employees e
 		JOIN dept_emp de ON e.emp_no = de.emp_no
-		WHERE e.emp_no = 10039
+		WHERE e.emp_no = 110039
 		GROUP BY e.emp_no
 		ORDER BY e.emp_no) AS U);
 ```
@@ -757,7 +753,7 @@ FROM(SELECT A.*
 
 
 
-mine:
+mine: should work ithink
 ```mysql
 USE employees;
 
@@ -811,7 +807,7 @@ FROM(SELECT A.*
 					emp_no = 110039) AS manager_ID
 		FROM employees e
 		JOIN dept_emp de ON e.emp_no = de.emp_no
-		WHERE e.emp_no = 10022
+		WHERE e.emp_no = 110022
 		GROUP BY e.emp_no) AS C
 	UNION SELECT
 		D.*
@@ -827,8 +823,8 @@ FROM(SELECT A.*
 					emp_no = 110022) AS manager_ID
 		FROM employees e
 		JOIN dept_emp de ON e.emp_no = de.emp_no
-		WHERE e.emp_no = 10039
-		GROUP BY e.emp_no) AS D)AS U;
+		WHERE e.emp_no = 110039
+		GROUP BY e.emp_no) AS D) AS U;
 ```
 
 
@@ -1326,3 +1322,7 @@ FROM
 \end{tikzpicture}
 \end{document}
 ```
+
+USE employees;
+
+INSERT INTO emp_manager SELECT U.* FROM(SELECT A.* FROM (SELECT e.emp_no AS employee_ID,  MIN(de.dept_no) AS department_code, (SELECT emp_no FROM dept_manager WHERE emp_no = 110022) AS manager_ID FROM employees e JOIN dept_emp de ON e.emp_no = de.emp_no WHERE e.emp_no <= 110020 GROUP BY e.emp_no ORDER BY e.emp_no) AS A UNION SELECT B.* FROM (SELECT e.emp_no AS employee_ID,  MIN(de.dept_no) AS department_code,(SELECT emp_no FROM dept_manager WHERE emp_no = 110039) AS manager_ID FROM employees e JOIN dept_emp de ON e.emp_no = de.emp_no WHERE e.emp_no > 110020 GROUP BY e.emp_no ORDER BY e.emp_no LIMIT 20) AS B UNION SELECT C.* FROM (SELECT e.emp_no AS employee_ID, MIN(de.dept_no) AS department_code, (SELECT emp_no FROM dept_manager WHERE emp_no = 110039) AS manager_ID FROM employees e JOIN dept_emp de ON e.emp_no = de.emp_no WHERE e.emp_no = 110022 GROUP BY e.emp_no) AS C UNION SELECT D.* FROM (SELECT e.emp_no AS employee_ID, MIN(de.dept_no) AS department_code, (SELECT emp_no FROM dept_manager WHERE emp_no = 110022) AS manager_ID FROM employees e JOIN dept_emp de ON e.emp_no = de.emp_no WHERE e.emp_no = 110039 GROUP BY e.emp_no) AS D)AS U;
