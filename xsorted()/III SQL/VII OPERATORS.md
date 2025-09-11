@@ -199,35 +199,45 @@ ADD. COMPARISON OPERATORS
 
 NOT EQUAL : { < > } or { ! = } = not equal, different from
 ```mysql
-SELECT * FROM employees WHERE first_name = 'Mark'; # find all those named Mark
-
-SELECT * FROM employees WHERE first_name <> 'Mark'; # find all those NOT named Mark ; also could be !=
+SELECT * FROM employees WHERE first_name = 'Mark'; 
 ```
+*Find all those named Mark.*
+
+```mysql
+SELECT * FROM employees WHERE first_name <> 'Mark';
+```
+*Find all those NOT named Mark { also could be != }.
 
 AFTER : { > } after is denoted with the ' greater than ' symbol
 ```mysql
-SELECT * FROM employees WHERE hire_date > '2000-01-01'; # find all those hired AFTER the specified date
+SELECT * FROM employees WHERE hire_date > '2000-01-01';
 ```
+*Find all those hired AFTER the specified date.*
 
 BEFORE : { < } before is the counterpart of AFTER
 ```mysql
-SELECT * FROM employees WHERE hire_date < '2000-01-01'; # find all those hired BEFORE the specified date
+SELECT * FROM employees WHERE hire_date < '2000-01-01';
 ```
-
+*Find all those hired BEFORE the specified date.*
 
 SELECT DISTINCT
 ```mysql
-SELECT gender FROM employees; # returns all entries in the gender column
-SELECT DISTINCT gender FROM employees; # returns only one M and one F ; or all the distinct values in gender
+SELECT gender FROM employees;
 ```
+*Returns all entries in the gender column.*
+```mysql
+SELECT DISTINCT gender FROM employees;
+```
+*Returns only one M and one F, or all the distinct values in gender.*
+
 
 
 AGGREGATE FUNCTIONS
-Applied on multiple rows of a single column of a table and return an output of a single value.
+Applied on multiple rows of a single column of a table and return an output of a single value. They are commonly used with GROUP as they can be applied to any group of data values within a given column.
 
 
-COUNT()
-Counts the number of Non-Null records in a field.
+COUNT ( )
+Counts the number of records in a field.
 
 ```mysql
 SELECT column_name COUNT(column_name)
@@ -251,16 +261,82 @@ SELECT COUNT(*) FROM salaries WHERE salary >= 75405;
 ```
 *Returns all salaries from the table Salaries where the value in column salary is over or equal to $75,405.*
 
-SUM()
-Sums all the Non-Null values in a column.
+**COUNT(column_name) ignores Null values by default. COUNT( * ) DOES NOT.**
+```mysql
+SELECT 
+	COUNT(*)
+FROM 
+	salaries;
+```
+*This counts all rows of the given table, Null values included.*
 
-MIN() & MAX()
-Returns the minimum or maximum value from the entire list.
+
+SUM ( )
+Sums all the Non-Null values in a column, and only works for numerical data, never non-numeric.
+
+*How much did the company spend on salaries?*
+```mysql
+SELECT 
+	SUM(salary)
+FROM 
+	salaries;
+```
+*How much did the company spend on salaries? This query sums all the salaries's values into one sum.*
+
+
+MIN ( ) & MAX ( )
+Returns the minimum or maximum value from the entire list, also restricted to numeric values.
+
+```mysql
+SELECT 
+	MAX(salary)
+FROM 
+	salaries;
+```
+*Find the highest salary in the company.*
+```mysql
+SELECT 
+	MIN(salary)
+FROM 
+	salaries;
+```
+*Find the lowest salary in the company.*
+
 
 AVG()
-Calculates the average of all the Non-Null values belonging to a specified column of a table.
+Extracts the average of all the Non-Null values belonging to a specified column of a table.
+
+```mysql
+SELECT AVG(salary)
+FROM salaries;
+```
+*Finds the average of all salaries within the salaries table.*
+
+
+
+ROUND
+Rounds the returned value (usually from an aggregate function, listed above). Only numeric values allowed.
+
+```mysql
+SELECT ROUND(AVG(salary))
+FROM salaries;
+```
+*Rounds the returned average value of the salaries.*
+```mysql
+SELECT ROUND(AVG(salary),2)
+FROM salaries;
+```
+*Rounds the returned average value of the salaries with two decimal points, specified by { , 2 ) }.*
+```mysql
+SELECT ROUND(AVG(salary),2) AS average_salary
+FROM salaries;
+```
+*Same as above but with an Alias of average_salary.*
+
 
 ORDER BY
+Defines an order to sort the returned data by.
+
 ```mysql
 SELECT * FROM employees;
 ```
@@ -435,3 +511,65 @@ ORDER BY
 LIMIT
 	10;
 ```
+
+
+
+IFNULL & COALESCE
+
+IFNULL(exp_1, exp_2) returns expression 1 if the data value found in the table is Not Null, and returns expression 2 if the value is Null. It then returns these values to the columns of the output.
+```mysql
+SELECT dept_no,
+	IFNULL(dept_name,
+		'Department name not provided')
+FROM
+	departments;
+```
+*Returns two columns; the first with the dept_no, the second with either the original department name, or if a null value was found, 'Department name not provided' is given in the null value's place. The only issue is the second column is named: "IFNULL(dept_name, 'Department name not provided')". Let's clean this up:*
+```mysql
+SELECT dept_no,
+	IFNULL(dept_name,
+		'Department name not provided') AS dept_name
+FROM
+	departments;
+```
+*Ifnull can only contain two arguments; Coalesce is not confined by this.*
+
+COALESCE
+Like Ifnull but can use multiple expressions.
+
+```mysql
+SELECT dept_no,
+	COALESCE(dept_name,
+		'Department name not provided') AS dept_name
+FROM
+	departments;
+```
+*With only two arguments, Coalesce behaves identical to Ifnull.*
+```mysql
+SELECT 
+	dept_no, 
+	dept_name, 
+	COALESCE(dept_name, 
+				dept_no, 
+					'Empty row')
+FROM
+	departments
+ORDER BY 
+	dept_no DESC;
+```
+*This is a bad example, but Coalesce essentially extends Ifnull to multiple fallbacks. If the table departments had a null value for a department's name, it would return the department number instead. If the department number was also a Null entry, it would return the string  'Empty row'. This would all be under a column next to dept_no and named: "COALESCE(dept_name, dept_no, 'Empty row')".
+	Coalesce takes the list provided and for every record, it looks for the first non-Null value in the record. Whichever meets this condition first is the value seen in the corresponding column.*
+```mysql
+SELECT 
+	dept_no, 
+	dept_name, 
+	COALESCE(dept_name, 
+				dept_no, 
+					'Empty row') AS named_depts
+FROM
+	departments
+ORDER BY 
+	dept_no DESC;
+```
+*This would be identical to the previous query but the additional column would be titled: "named_depts".
+	Another small note is mixing data types in MySQL will lead to it trying to convert them into like-types; the int dept_no will be converted into a string to match dept_name and 'Empty row'.*
