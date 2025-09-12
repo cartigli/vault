@@ -21,7 +21,7 @@ WHERE first_name = 'George'
 ```mysql
 CREATE INDEX i_hire_date ON employees(hire_date);
 ```
-This was a small database to index, but I still saw a 0.01 second difference in the SELECT * FROM employees query, so the principal is shown. Pretty cool, honestly. Why not index everything always?
+This was a small database to index, but I still saw a 0.01 second difference in the ' SELECT * FROM employees ' query, so the principal is shown. Pretty cool, honestly. Why not index everything always?
 
 
 Composite Indexes
@@ -36,7 +36,13 @@ To see current Indexes:
 ```mysql
 SHOW INDEX FROM database_name FROM table_name;
 ```
-*For the ones made above:*
+*For the indexes made above:*
 ```mysql
 SHOW INDEX FROM employees FROM employees;
+```
+
+"Create a composite index named i_composite_salary on the emp_no and salary columns of the salaries table."
+```mysql
+CREATE INDEX i_composite_salary
+ON salaries(emp_no, salary);
 ```

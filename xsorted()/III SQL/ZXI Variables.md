@@ -4,13 +4,14 @@ Scope = region of a computer program where a phenomenon, such as a variable, is 
 
 
 Variables
-When defining a program, such as stored procedures, ' parameters ' is an appropriate term. Whatever is given to the procedure as Input is considered an argument of the procedure, while the output of a procedure, if exists, stores the output of said procedure in a variable. It depends, or varies, based off the input for the given procedure.
+When defining a program, such as stored procedures, ' parameters ' is an appropriate term. Whatever is given to the procedure as Input is considered an argument of the procedure, while the output of a procedure, if exists, stores the output of said procedure in a variable.
 
 Creating a variable is done with ' @ ':
 ```mysql
 SET @p_avg_salary = 0;
 ```
 *Initial value of the variable is not important here.*
+
 Call the procedure to be assigned to the newly created variable
 ```mysql
 CALL employees.emp_av_sal_out(11300, @p_avg_salary);
@@ -48,8 +49,7 @@ END $$
 
 DELIMITER ;
 ```
-*In this function, the declare statement is used to create this variable. Declare can only be used to create Local variables. Therefore, v_avg_salary is Local, and only viewable when between Begin and End in this function.*
-	*Trying to call or Select these variables outside of the scope of this function will result in an error.*
+*In this function, the declare statement is used to create this variable. Declare can only be used to create Local variables. Therefore, v_avg_salary is Local, and only viewable when between Begin and End in this function. Trying to call or Select these variables outside of the scope of this function will result in an error.*
 
 Session Variables
 Broader scope than Local variables but less so than Global variables.
@@ -137,6 +137,7 @@ END$$
 DELIMITER ;
 ```
 *New refers to a New record being inserted. Set assigns the newly inserted value as 0 if its value is negative.*
+
 After committing and executing, let's give the salaries table a negative value and observe the results:
 ```mysql
 INSERT INTO salaries VALUES ('10001',-92891, '2010--06-22', '9999-01-01')
@@ -145,6 +146,7 @@ SELECT * FROM salaries
 WHERE emp_no = '10001'
 ```
 *In return, we get the same table as before with one additional row, shown with a salary of 0 among the other values we Inserted, meaning the Insert Trigger was correctly activated and accurately executed its query.*
+
 
 Before Update Trigger
 ```mysql
@@ -177,7 +179,7 @@ SET salary = -98765
 WHERE emp_no = '10001'
 AND from_date = '2010-06-22';
 ```
-*Salary did not change from $98,765; the Update Trigger operated as intended and set the salary back to the previous value because we tried to update to a negative number. Considering our rule, we should be able to set the salary to 0. Let's try.
+*Salary did not change from $98,765; the Update Trigger operated as intended and set the salary back to the previous value because we tried to update to a negative number. Considering our rule, we should be able to set the salary to 0. Let's try.*
 ```mysql
 UPDATE salaries
 SET salary = 0
@@ -197,16 +199,16 @@ SELECT SYSDATE();
 ```mysql
 SELECT DATE_FORMAT(SYSDATE()), '%y-%m-%d') AS today;
 ```
-*This returns the date in the format: YY-MM-DD. Sysdate() alone includes the time in HH-MM-SS.*
+*This returns the date in the format: YY-MM-DD. Sysdate alone includes the time in HH-MM-SS.*
 
 
 "Someone has been promoted from employee to manager. Their annual salary should be $20,000 higher than the highest salary they've earned to date and the Dept_manager table will need updating." 
-	Let's create a trigger that applies several modifications to the Salaries table once the relevant record is inserted into the Dept_manager table which will:
-			Ensure the end date of the previous highest salary contract of that employee is the one from the execution of the insert statement { we assume the highest salary they have earned is the latest one & we can use the Sysdate function to get the end date for said salary }
-			Insert into Salaries a new record where:
-					a start date equal to the new from date from the newly inserted record in Dept_manager
-					a salary equal to their highest ever salary plus $20,000
-					a contract of indefinite duration, i.e., ending on the date 9999-01-01
+Let's create a trigger that applies several modifications to the Salaries table once the relevant record is inserted into the Dept_manager table which will:
+		Ensure the end date of the previous highest salary contract of that employee is the one from the execution of the insert statement { we assume the highest salary they have earned is the latest one & we can use the Sysdate function to get the end date for said salary }
+		Insert into Salaries a new record where:
+				a start date equal to the new from date from the newly inserted record in Dept_manager
+				a salary equal to their highest ever salary plus $20,000
+				a contract of indefinite duration, i.e., ending on the date 9999-01-01
 
 ```mysql
 USE employees;
@@ -236,10 +238,11 @@ END $$
 
 DELIMITER ;
 ```
-
+*Starting from the Begin statement, Declare the new variable v_curr_salary which is an Integer. Select the max salary Into the variable just declared from the Salaries table for the emp_no that matches the emp_no which activated this trigger. If the value of the variable is Not-Null, then update the Salaries table: Set the to_date to the current date for the emp_no that matches the new manager and the New to_date. Finally, the third query inserts the new salary to the Salaries table: the New emp_no, the highest salary this emp_no has recorded plus $20,000, and record the new from and to _dates. End the If conditional.*
 ```mysql
 INSERT INTO dept_manager VALUES('111534','d009',date_format(sysdate(), '%y-%m-%d'), '9999-01-01');
 
 SELECT * FROM salaries
 WHERE emp_no = '111534';
 ```
+*Insert a new value to the Dept_manager table to test our new Trigger. Select and observe effects of said Trigger.*
