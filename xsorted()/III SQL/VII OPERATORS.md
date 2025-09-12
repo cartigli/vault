@@ -250,7 +250,6 @@ SELECT COUNT(emp_no)
 FROM employees;
 ```
 *This counts all the rows of the emp_no column from the employees table. emp_no = primary key, so we know it won't repeat and don't need DISTINCT.*
-
 ```mysql
 SELECT COUNT(DISTINCT first_name)
 FROM employees;
@@ -260,7 +259,6 @@ FROM employees;
 SELECT COUNT(*) FROM salaries WHERE salary >= 75405;
 ```
 *Returns all salaries from the table Salaries where the value in column salary is over or equal to $75,405.*
-
 **COUNT(column_name) ignores Null values by default. COUNT( * ) DOES NOT.**
 ```mysql
 SELECT 
@@ -407,6 +405,7 @@ ORDER BY first_name;
 
 HAVING
 Refines the outputs from records that do not satisfy a certain condition - like WHERE, but applied to the GROUP BY block.
+
 ```mysql
 SELECT 
 	column_name[s]
@@ -451,7 +450,7 @@ ORDER BY first_name;
 ```
 *Count is an aggregate function, so to include it as a conditional in a query, you must use HAVING, not WHERE.*
 
-Retrieve the average contract salary for each employee whose average salary is higher than $70,000. Sort the output by employee number in ascending order. Solution:
+"Retrieve the average contract salary for each employee whose average salary is higher than $70,000. Sort the output by employee number in ascending order."
 ```mysql
 SELECT emp_no, AVG(salary) FROM salaries
 GROUP BY emp_no
@@ -463,9 +462,8 @@ ORDER BY emp_no ASC;
 
 WHERE
 Allows setting of conditions that refer to subsets of individual rows. It is applied before re-organizing the output into groups.
-	*WHERE sets the conditions upon the table so the only returned values match said condition. After this, the WHERE clause looses its power and HAVING comes in.
-
-HAVING allows us to set a condition AFTER the values that satisfy the prerequisite conditions are met. After retrieval, HAVING applies some additional condition to the retrieved data.
+	*WHERE sets the conditions upon the table so the only returned values match said condition. After this, the WHERE clause looses its power and HAVING comes in.*
+	*HAVING allows us to set a condition AFTER the values that satisfy the prerequisite conditions are met. After retrieval, HAVING applies some additional condition to the retrieved data.*
 
 Imagine we need to extract a list of all names that are encountered less than 200 times. Let the data refer to people hired after the 1st of January, 1999. 
 ```mysql

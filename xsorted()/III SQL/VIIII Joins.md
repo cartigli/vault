@@ -6,7 +6,7 @@ Joins must be constructed over a column the two tables have in common. It shows 
 ┌─────────────────┐          ┌─────────────────┐
 │  employees      ├||──────|<┤  dept_manager   ├>|┐  ┌──────────────────┐
 ├─────────────────┤          ├─────────────────┤  └||┤   departments    │
-│PK mep_no INT    ├||─────┐  │FK dept_no CHAR4 │     ├──────────────────┤
+│PK emp_no INT    ├||─────┐  │FK dept_no CHAR4 │     ├──────────────────┤
 │ birth_date DATE │       │  │FK emp_no INT    │     │PK dept_no CHR4   ├││┐
 │ first_name VCHR ├||───┐ │  │ from_date DATE  │     │ dept_name VCHR40 │  │
 │ last_name VCHR  │     │ │  │ to_date DATE    │     └──────────────────┘  │
@@ -88,7 +88,7 @@ JOIN
 ```
 *This way it becomes much easier to spell out the entire relationship.*
 
-Practice with the preconfigured dataset: Retrieve all employee numbers (`emp_no`) and contract start dates (`from_date`) from the department employees table (`dept_emp`). Add a third column, displaying the name of the department they have signed for (`dept_name` from the `departments`table):
+"Practice with the preconfigured dataset: Retrieve all employee numbers (emp_no) and contract start dates (from_date) from the department employees table (dept_emp). Add a third column, displaying the name of the department they have signed for (dept_name from the departments table):"
 ```mysql
 SELECT 
 	de.emp_no, de.from_date, d.dept_name
@@ -155,7 +155,7 @@ LEFT JOIN
 ```
 
 RIGHT JOIN
-The same as a left join but the direction of the comparison is swapped.
+The same as a left join but the Join types of the comparison and position of the products are swapped.
 
 ```tikz
 \begin{document}
@@ -428,7 +428,7 @@ UNION ALL SELECT n columns
 FROM table_2
 ```
 *We have to select the same amount columns from each table, they must have the same name, be in the same order, and contain related data types.*
-Following the class, he made a duplicate value in for employees, and then added columns containing only Null values to each table so they had the same number and name of columns inside his Union All command. He then showed the same thing run with Union. Does this make any sense for showing this example of the uses and use for Union | Union All?
+*Not a practical example, but in this case to have a union over these two un-similar tables, Null columns were added to each table as if to give like like terms. Then the Union can take place.*
 ```mysql
 SELECT
 	e.emp_no,
@@ -472,7 +472,6 @@ UNION SELECT
 FROM 
     dept_manager d;
 ```
-I don't see the value in Unions because why not use where and select from multiple tables? Or a Join with a Where clause? I am missing some crucial component of Unions, likely about some aspect of their behavior with duplicates.
 
 
 
@@ -517,11 +516,7 @@ WHERE EXISTS (SELECT *
             );
 ```
 
-
-
-TASK:
-Assign employee number 110022 as a manager to all employees from 10001 to 10020, and employee number 110039 as a manager to all employees from 10021 to 10040.
-
+"Assign employee number 110022 as a manager to all employees from 10001 to 10020, and employee number 110039 as a manager to all employees from 10021 to 10040."
 ```mysql
 SELECT emp_no
 FROM dept_manager
@@ -603,7 +598,7 @@ FROM
 ```
 *Make one more outer function for the function and duplicate it with the modifications for the second group of employees designated to be managed by the second employee. Change the Inner most function looking for the **manager**'s emp_no to be 110039, switch the directional of the greater than operator [ was less than ], and add a Limit of 20 right after the Order By clause. Finally, change the Aliases from A to B.*
 
-Big Boy:
+*Fill the Emp_manager table with data about employees, the number of the department they are working in, and their managers:*
 ```mysql
 SELECT A.*
 FROM
@@ -674,89 +669,8 @@ FROM
 	GROUP BY e.emp_no
 	ORDER BY e.emp_no) AS U;
 ```
-
+*Finally:*
 ```mysql
-INSERT INTO emp_manager
-SELECT U.*
-FROM(SELECT A.*
-	FROM
-		(SELECT 
-			e.emp_no AS employee_ID, 
-			MIN(de.dept_no) AS department_code,
-				(SELECT 
-					emp_no
-				FROM 
-					dept_manager
-				WHERE
-					emp_no = 110022) AS manager_ID
-		FROM employees e
-		JOIN dept_emp de ON e.emp_no = de.emp_no
-		WHERE e.emp_no <= 110020
-		GROUP BY e.emp_no
-		ORDER BY e.emp_no) AS A
-	UNION SELECT
-		B.*
-	FROM
-		(SELECT 
-			e.emp_no AS employee_ID, 
-			MIN(de.dept_no) AS department_code,
-				(SELECT 
-					emp_no
-				FROM 
-					dept_manager
-				WHERE
-					emp_no = 110039) AS manager_ID
-		FROM employees e
-		JOIN dept_emp de ON e.emp_no = de.emp_no
-		WHERE e.emp_no > 110020
-		GROUP BY e.emp_no
-		ORDER BY e.emp_no
-		LIMIT 20) AS B
-	UNION SELECT
-		C.*
-	FROM
-		(SELECT 
-			e.emp_no AS employee_ID, 
-			MIN(de.dept_no) AS department_code,
-				(SELECT 
-					emp_no
-				FROM 
-					dept_manager
-				WHERE
-					emp_no = 110039) AS manager_ID
-		FROM employees e
-		JOIN dept_emp de ON e.emp_no = de.emp_no
-		WHERE e.emp_no = 110022
-		GROUP BY e.emp_no
-		ORDER BY e.emp_no) AS C
-	UNION SELECT
-		D.*
-	FROM
-		(SELECT 
-			e.emp_no AS employee_ID, 
-			MIN(de.dept_no) AS department_code,
-				(SELECT 
-					emp_no
-				FROM 
-					dept_manager
-				WHERE
-					emp_no = 110022) AS manager_ID
-		FROM employees e
-		JOIN dept_emp de ON e.emp_no = de.emp_no
-		WHERE e.emp_no = 110039
-		GROUP BY e.emp_no
-		ORDER BY e.emp_no) AS U);
-```
-
-
-
-
-
-
-mine: should work ithink
-```mysql
-USE employees;
-
 INSERT INTO emp_manager
 SELECT U.*
 FROM(SELECT A.*
@@ -826,503 +740,3 @@ FROM(SELECT A.*
 		WHERE e.emp_no = 110039
 		GROUP BY e.emp_no) AS D) AS U;
 ```
-
-
-
-thiers:
-```mysql
-INSERT INTO emp_manager
-SELECT 
-    u.*
-FROM
-    (SELECT 
-        a.*
-    FROM
-        (SELECT 
-        e.emp_no AS employee_ID,
-            MIN(de.dept_no) AS department_code,
-            (SELECT 
-                    emp_no
-                FROM
-                    dept_manager
-                WHERE
-                    emp_no = 110022) AS manager_ID
-    FROM
-        employees e
-    JOIN dept_emp de ON e.emp_no = de.emp_no
-    WHERE
-        e.emp_no <= 10020
-    GROUP BY e.emp_no
-    ORDER BY e.emp_no) AS a UNION SELECT 
-        b.*
-    FROM
-        (SELECT 
-        e.emp_no AS employee_ID,
-            MIN(de.dept_no) AS department_code,
-            (SELECT 
-                    emp_no
-                FROM
-                    dept_manager
-                WHERE
-                    emp_no = 110039) AS manager_ID
-    FROM
-        employees e
-    JOIN dept_emp de ON e.emp_no = de.emp_no
-    WHERE
-        e.emp_no > 10020
-    GROUP BY e.emp_no
-    ORDER BY e.emp_no
-    LIMIT 20) AS b UNION SELECT 
-        c.*
-    FROM
-        (SELECT 
-        e.emp_no AS employee_ID,
-            MIN(de.dept_no) AS department_code,
-            (SELECT 
-                    emp_no
-                FROM
-                    dept_manager
-                WHERE
-                    emp_no = 110039) AS manager_ID
-    FROM
-        employees e
-    JOIN dept_emp de ON e.emp_no = de.emp_no
-    WHERE
-        e.emp_no = 110022
-    GROUP BY e.emp_no) AS c UNION SELECT 
-        d.*
-    FROM
-        (SELECT 
-        e.emp_no AS employee_ID,
-            MIN(de.dept_no) AS department_code,
-            (SELECT 
-                    emp_no
-                FROM
-                    dept_manager
-                WHERE
-                    emp_no = 110022) AS manager_ID
-    FROM
-        employees e
-    JOIN dept_emp de ON e.emp_no = de.emp_no
-    WHERE
-        e.emp_no = 110039
-    GROUP BY e.emp_no) AS d) as u;
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
-┌─────────────────┐          ┌─────────────────┐
-│  employees      ├||──────|<┤  dept_manager   ├>|┐  ┌──────────────────┐
-├─────────────────┤          ├─────────────────┤  └||┤   departments    │
-│PK mep_no INT    ├||─────┐  │FK dept_no CHAR4 │     ├──────────────────┤
-│ birth_date DATE │       │  │FK emp_no INT    │     │PK dept_no CHR4   ├││┐
-│ first_name VCHR ├||───┐ │  │ from_date DATE  │     │ dept_name VCHR40 │  │
-│ last_name VCHR  │     │ │  │ to_date DATE    │     └──────────────────┘  │
-│ gender ENUM     ├||─┐ │ │  └─────────────────┘  ┌────────────────┐       │
-│ hire_date DATE  │   │ │ └─────────────────────|<┤   dept_emp     ├>|─────┘
-└─────────────────┘   │ │   ┌────────────────┐    ├────────────────┤
-  ┌───────────────────┘ └─|<┤     titles     │    │FK emp_no INT   │
-  │   ┌────────────────┐    ├────────────────┤    │FK dept_no CHR4 │
-  └─|<┤    salaries    │    │FK emp_no INT   │    │ from_date DATE │
-      ├────────────────┤    │ title VCHR50   │    │ to_date DATE   │
-      │FK emp_no INT   │    │ from_date DATE │    └────────────────┘
-      │ salary INT     │    │ to_date DATE   │
-      │ from_date DATE │    └────────────────┘
-      │ to_date DATE   │
-      └────────────────┘
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```tikz%
-%\documentclass{standalone}
-\usepackage{tikz}
-\usetikzlibrary{shapes.multipart, positioning, arrows.meta}
-
-\begin{document}
-\begin{tikzpicture}[
-    node distance=1.5cm and 3cm,
-    entity/.style={
-        rectangle split,
-        rectangle split parts=2,
-        draw,
-        text width=3.5cm,
-        align=left,
-        font=\ttfamily,
-        minimum height=2cm
-    },
-    relationship/.style={
-        line width=0.8pt,
-        draw=black
-    }
-]
-
-% Entities
-\node[entity] (employees) {
-    \textbf{employees}
-    \nodepart{second}
-    PK emp\_no INT \\
-    birth\_date DATE \\
-    first\_name VARCHAR \\
-    last\_name VARCHAR \\
-    gender ENUM \\
-    hire\_date DATE
-};
-
-\node[entity, right=of employees] (dept_manager) {
-    \textbf{dept\_manager}
-    \nodepart{second}
-    FK dept\_no CHAR(4) \\
-    FK emp\_no INT \\
-    from\_date DATE \\
-    to\_date DATE
-};
-
-\node[entity, right=of dept_manager] (departments) {
-    \textbf{departments}
-    \nodepart{second}
-    PK dept\_no CHAR(4) \\
-    dept\_name VARCHAR(40)
-};
-
-\node[entity, below=of dept_manager] (dept_emp) {
-    \textbf{dept\_emp}
-    \nodepart{second}
-    FK emp\_no INT \\
-    FK dept\_no CHAR(4) \\
-    from\_date DATE \\
-    to\_date DATE
-};
-
-\node[entity, below=of employees] (titles) {
-    \textbf{titles}
-    \nodepart{second}
-    FK emp\_no INT \\
-    title VARCHAR(50) \\
-    from\_date DATE \\
-    to\_date DATE
-};
-
-\node[entity, below=of titles] (salaries) {
-    \textbf{salaries}
-    \nodepart{second}
-    FK emp\_no INT \\
-    salary INT \\
-    from\_date DATE \\
-    to\_date DATE
-};
-
-% Crow's foot relationship lines
-% Employee to dept_manager (one to many)
-\draw[relationship] (employees.east) -- ++(0.2,0) -- ++(0,0.05) -- ++(0,-0.05) -- ++(0.1,0);
-\draw[relationship] (employees.east) ++(0.2,0) -- ++(0,-0.05) -- ++(0,0.05);
-\draw[relationship] (employees.east) ++(0.3,0) -- (dept_manager.west) ++(0,0) -- ++(-0.3,0);
-\draw[relationship] (dept_manager.west) ++(-0.3,0) -- ++(-0.15,0.1);
-\draw[relationship] (dept_manager.west) ++(-0.3,0) -- ++(-0.15,-0.1);
-\draw[relationship] (dept_manager.west) ++(-0.15,0) -- ++(-0.15,0.1);
-\draw[relationship] (dept_manager.west) ++(-0.15,0) -- ++(-0.15,-0.1);
-
-% Department to dept_manager (one to many)
-\draw[relationship] (departments.west) -- ++(-0.2,0) -- ++(0,0.05) -- ++(0,-0.05) -- ++(-0.1,0);
-\draw[relationship] (departments.west) ++(-0.2,0) -- ++(0,-0.05) -- ++(0,0.05);
-\draw[relationship] (departments.west) ++(-0.3,0) -- (dept_manager.east) ++(0,0) -- ++(0.3,0);
-\draw[relationship] (dept_manager.east) ++(0.3,0) -- ++(0.15,0.1);
-\draw[relationship] (dept_manager.east) ++(0.3,0) -- ++(0.15,-0.1);
-\draw[relationship] (dept_manager.east) ++(0.15,0) -- ++(0.15,0.1);
-\draw[relationship] (dept_manager.east) ++(0.15,0) -- ++(0.15,-0.1);
-
-% Employee to dept_emp (one to many)
-\draw[relationship] ([yshift=-0.3cm]employees.east) -- ++(0.2,0) -- ++(0,0.05) -- ++(0,-0.05) -- ++(0.1,0);
-\draw[relationship] ([yshift=-0.3cm]employees.east) ++(0.2,0) -- ++(0,-0.05) -- ++(0,0.05);
-\draw[relationship] ([yshift=-0.3cm]employees.east) ++(0.3,0) -- ++(0.7,0) |- ([yshift=0.3cm]dept_emp.west);
-\draw[relationship] ([yshift=0.3cm]dept_emp.west) -- ++(-0.15,0.1);
-\draw[relationship] ([yshift=0.3cm]dept_emp.west) -- ++(-0.15,-0.1);
-\draw[relationship] ([yshift=0.3cm]dept_emp.west) ++(0.15,0) -- ++(-0.15,0.1);
-\draw[relationship] ([yshift=0.3cm]dept_emp.west) ++(0.15,0) -- ++(-0.15,-0.1);
-
-% Department to dept_emp (one to many)
-\draw[relationship] ([yshift=-0.3cm]departments.west) -- ++(-0.2,0) -- ++(0,0.05) -- ++(0,-0.05) -- ++(-0.1,0);
-\draw[relationship] ([yshift=-0.3cm]departments.west) ++(-0.2,0) -- ++(0,-0.05) -- ++(0,0.05);
-\draw[relationship] ([yshift=-0.3cm]departments.west) ++(-0.3,0) -- ++(-0.7,0) |- ([yshift=0.3cm]dept_emp.east);
-\draw[relationship] ([yshift=0.3cm]dept_emp.east) -- ++(0.15,0.1);
-\draw[relationship] ([yshift=0.3cm]dept_emp.east) -- ++(0.15,-0.1);
-\draw[relationship] ([yshift=0.3cm]dept_emp.east) ++(-0.15,0) -- ++(0.15,0.1);
-\draw[relationship] ([yshift=0.3cm]dept_emp.east) ++(-0.15,0) -- ++(0.15,-0.1);
-
-% Employee to titles (one to many)
-\draw[relationship] ([xshift=-0.5cm]employees.south) -- ++(0,-0.2) -- ++(0.05,0) -- ++(-0.05,0) -- ++(0,-0.1);
-\draw[relationship] ([xshift=-0.5cm]employees.south) ++(0,-0.2) -- ++(-0.05,0) -- ++(0.05,0);
-\draw[relationship] ([xshift=-0.5cm]employees.south) ++(0,-0.3) |- (titles.west);
-\draw[relationship] (titles.west) -- ++(-0.15,0.1);
-\draw[relationship] (titles.west) -- ++(-0.15,-0.1);
-\draw[relationship] (titles.west) ++(0.15,0) -- ++(-0.15,0.1);
-\draw[relationship] (titles.west) ++(0.15,0) -- ++(-0.15,-0.1);
-
-% Employee to salaries (one to many)
-\draw[relationship] ([xshift=-1cm]employees.south) -- ++(0,-0.2) -- ++(0.05,0) -- ++(-0.05,0) -- ++(0,-0.1);
-\draw[relationship] ([xshift=-1cm]employees.south) ++(0,-0.2) -- ++(-0.05,0) -- ++(0.05,0);
-\draw[relationship] ([xshift=-1cm]employees.south) ++(0,-0.3) -- ++(0,-1.2) -| (salaries.west);
-\draw[relationship] (salaries.west) -- ++(-0.15,0.1);
-\draw[relationship] (salaries.west) -- ++(-0.15,-0.1);
-\draw[relationship] (salaries.west) ++(0.15,0) -- ++(-0.15,0.1);
-\draw[relationship] (salaries.west) ++(0.15,0) -- ++(-0.15,-0.1);
-
-\end{tikzpicture}
-\end{document}
-```
-
-
-
-
-
-
-
-<u>employees</u>
-┌─────────────────┐        ┌─────────────────┐
-│  employees                              ├||─|<┤  dept_manager                       ├>|┐  ┌──────────────────┐
-├─────────────────┤        ├─────────────────┤   └||┤   departments                             │
-│PK mep_no INT                      │        │FK dept_no CHAR4              │        ├──────────────────┤
-│ birth_date DATE                    │        │FK emp_no INT                     │        │PK dept_no CHR4                     │
-│ first_name VCHR                  │        │ from_date DATE                   │        │ dept_name VCHR40                 │
-│ last_name VCHR                   │        │ to_date DATE                       │         └──────────────────┘
-│ gender ENUM                       │        └─────────────────┘
-│ hire_date DATE                     │
-└─────────────────┘
-
-```tikz%
-%\documentclass{standalone}
-\usepackage{tikz}
-\usetikzlibrary{shapes.multipart, positioning, arrows.meta}
-
-\begin{document}
-\begin{tikzpicture}[
-    node distance=1.5cm and 2.5cm,
-    entity/.style={
-        rectangle split,
-        rectangle split parts=2,
-        draw,
-        text width=3.5cm,
-        align=left,
-        font=\ttfamily
-    }
-]
-
-% Entities
-\node[entity] (employees) {
-    \textbf{employees}
-    \nodepart{second}
-    PK emp\_no INT \\
-    birth\_date DATE \\
-    first\_name VARCHAR \\
-    last\_name VARCHAR \\
-    gender ENUM \\
-    hire\_date DATE
-};
-
-\node[entity, right=of employees] (dept_manager) {
-    \textbf{dept\_manager}
-    \nodepart{second}
-    FK dept\_no CHAR(4) \\
-    FK emp\_no INT \\
-    from\_date DATE \\
-    to\_date DATE
-};
-
-\node[entity, right=of dept_manager] (departments) {
-    \textbf{departments}
-    \nodepart{second}
-    PK dept\_no CHAR(4) \\
-    dept\_name VARCHAR(40)
-};
-
-\node[entity, below=of dept_manager] (dept_emp) {
-    \textbf{dept\_emp}
-    \nodepart{second}
-    FK emp\_no INT \\
-    FK dept\_no CHAR(4) \\
-    from\_date DATE \\
-    to\_date DATE
-};
-
-\node[entity, below=of employees] (titles) {
-    \textbf{titles}
-    \nodepart{second}
-    FK emp\_no INT \\
-    title VARCHAR(50) \\
-    from\_date DATE \\
-    to\_date DATE
-};
-
-\node[entity, below=of titles] (salaries) {
-    \textbf{salaries}
-    \nodepart{second}
-    FK emp\_no INT \\
-    salary INT \\
-    from\_date DATE \\
-    to\_date DATE
-};
-
-% Relationships
-\draw (employees.east) -- (dept_manager.west);
-\draw (departments.west) -- (dept_manager.east);
-\draw (employees.east) -| (dept_emp.west);
-\draw (departments.west) -| (dept_emp.east);
-\draw (employees.south) |- (titles.west);
-\draw (employees.south) |- (salaries.west);
-
-\end{tikzpicture}
-\end{document}
-```
-
-
-
-
-
-
-
-
-
-
-
-
-```tikz
-\begin{document}
-\begin{tikzpicture}[
-    % --- DEFINE THE SYMBOLS HERE ---
-    one bar/.pic = {
-        \draw[thick] (0, -0.15) -- (0, 0.15);
-    },
-    many circle/.pic = {
-        \draw (0,0) circle (0.1cm);
-    },
-    % --- Style for the table nodes (unchanged) ---
-    tbl/.style={
-        draw,
-        rectangle,
-        font=\sffamily\small
-    }
-]
-
-% --- NODES (Manually placed with coordinates) ---
-\node[tbl] at (0,0) (employees) {
-    \begin{tabular}{l}
-        \textbf{employees} \\ \hline
-        PK emp\_no INT \\
-        birth\_date DATE \\
-        first\_name VARCHAR \\
-        last\_name VARCHAR \\
-        gender ENUM \\
-        hire\_date DATE
-    \end{tabular}
-};
-
-\node[tbl] at (10,0) (departments) {
-    \begin{tabular}{l}
-        \textbf{departments} \\ \hline
-        PK dept\_no CHAR(4) \\
-        dept\_name VARCHAR(40)
-    \end{tabular}
-};
-
-\node[tbl] at (5, 3) (dept_manager) {
-    \begin{tabular}{l}
-        \textbf{dept\_manager} \\ \hline
-        FK emp\_no INT \\
-        FK dept\_no CHAR(4) \\
-        from\_date DATE \\
-        to\_date DATE
-    \end{tabular}
-};
-
-\node[tbl] at (5, -3) (dept_emp) {
-    \begin{tabular}{l}
-        \textbf{dept\_emp} \\ \hline
-        FK emp\_no INT \\
-        FK dept\_no CHAR(4) \\
-        from\_date DATE \\
-        to\_date DATE
-    \end{tabular}
-};
-
-\node[tbl] at (0, -5.5) (titles) {
-    \begin{tabular}{l}
-        \textbf{titles} \\ \hline
-        FK emp\_no INT \\
-        title VARCHAR(50) \\
-        from\_date DATE \\
-        to\_date DATE
-    \end{tabular}
-};
-
-\node[tbl] at (0, -8.25) (salaries) {
-    \begin{tabular}{l}
-        \textbf{salaries} \\ \hline
-        FK emp\_no INT \\
-        salary INT \\
-        from\_date DATE \\
-        to\_date DATE
-    \end{tabular}
-};
-
-
-% --- RELATIONSHIPS (with graphical 'pic' symbols) ---
-\draw (employees.east) -| (dept_manager.west)
-      pic[pos=0.02, sloped] {one bar}
-      pic[pos=0.98] {many circle};
-
-\draw (departments.west) -| (dept_manager.east)
-      pic[pos=0.02, sloped] {one bar}
-      pic[pos=0.98] {many circle};
-
-\draw (employees.east) -| (dept_emp.west)
-      pic[pos=0.02, sloped] {one bar}
-      pic[pos=0.98] {many circle};
-
-\draw (departments.west) -| (dept_emp.east)
-      pic[pos=0.02, sloped] {one bar}
-      pic[pos=0.98] {many circle};
-
-\draw (employees.south) |- (titles.west)
-      pic[pos=0.03, sloped] {one bar}
-      pic[pos=0.97] {many circle};
-
-\draw (employees.south) |- (salaries.west)
-      pic[pos=0.03, sloped] {one bar}
-      pic[pos=0.97] {many circle};
-
-\end{tikzpicture}
-\end{document}
-```
-
-USE employees;
-
-INSERT INTO emp_manager SELECT U.* FROM(SELECT A.* FROM (SELECT e.emp_no AS employee_ID,  MIN(de.dept_no) AS department_code, (SELECT emp_no FROM dept_manager WHERE emp_no = 110022) AS manager_ID FROM employees e JOIN dept_emp de ON e.emp_no = de.emp_no WHERE e.emp_no <= 110020 GROUP BY e.emp_no ORDER BY e.emp_no) AS A UNION SELECT B.* FROM (SELECT e.emp_no AS employee_ID,  MIN(de.dept_no) AS department_code,(SELECT emp_no FROM dept_manager WHERE emp_no = 110039) AS manager_ID FROM employees e JOIN dept_emp de ON e.emp_no = de.emp_no WHERE e.emp_no > 110020 GROUP BY e.emp_no ORDER BY e.emp_no LIMIT 20) AS B UNION SELECT C.* FROM (SELECT e.emp_no AS employee_ID, MIN(de.dept_no) AS department_code, (SELECT emp_no FROM dept_manager WHERE emp_no = 110039) AS manager_ID FROM employees e JOIN dept_emp de ON e.emp_no = de.emp_no WHERE e.emp_no = 110022 GROUP BY e.emp_no) AS C UNION SELECT D.* FROM (SELECT e.emp_no AS employee_ID, MIN(de.dept_no) AS department_code, (SELECT emp_no FROM dept_manager WHERE emp_no = 110022) AS manager_ID FROM employees e JOIN dept_emp de ON e.emp_no = de.emp_no WHERE e.emp_no = 110039 GROUP BY e.emp_no) AS D)AS U;
