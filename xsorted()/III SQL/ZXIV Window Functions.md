@@ -190,7 +190,7 @@ WHERE a.row_num=1;
 ```
 
 
-""Retrieve the employee number (`emp_no`) and the third-highest contract salary value (`salary`, using the alias `third_max_salary`) for all managers. To solve the exercise, you need to refer to the_ `_dept_manager_` _and_ `_salaries_` _tables._"" { I don't get this one incredibly well because why did they use ' FROM dept_manager dm ' inside the FROM ( SELECT ... statement? Especially because here ' FROM salaries s ' is used }
+""Retrieve the employee number (`emp_no`) and the third-highest contract salary value (`salary`, using the alias `third_max_salary`) for all managers. To solve the exercise, you need to refer to the_ `_dept_manager_` _and_ `_salaries_` _tables._"" { I don't get this one incredibly well because why did they use ' FROM dept_manager dm ' inside the FROM ( SELECT... statement? Especially because here ' FROM salaries s ' is used }
 ```mysql
 SELECT a.emp_no, a.salary AS third_max_salary
     FROM (SELECT
@@ -448,4 +448,86 @@ FROM
 	salaries
 WINDOW l AS (PARTITION BY emp_no ORDER BY salary)
 LIMIT 100;
+```
+
+
+
+Aggregate Functions in the Context of Window Functions
+Whether or not the aggregate function will be applied to the window function we implement depends entirely on the organization of our data and the syntax used. 
+	More specifically, you need to include in your query if you would like to apply the function on groups of values or apply it on data partitions.
+
+When referencing the values of a certain column, Group By is used. When referencing to partitions, Over is used, and likely a partition by Window clause.
+
+Create a query that will extract the following information about all currently employed workers registered in the Dept_emp table:
+	Their emp_no
+	The department they're currently working in
+	The salary they are currently being paid ( salary specified in their latest contract )
+	The all time average salary paid in the department the employee is currently working in ( use a function to create a field named average_salary_per_department )
+		*We want four columns of information to be returned; emp_no, dept_name, salary, and average_salary_per_department.*
+
+*Since the determining the current department of an employee requires the current date, we'll use the Sysdate function to get the current date, with which we can compare to their to_date's.*
+```mysql
+SELECT
+FROM emp_no, salary, from_date, to_date
+FROM salaries
+WHERE to_date > SYSDATE();
+```
+*~81,000 rows returned. However, we shouldn't let MySQL choose the from_date for us. Additionally, to ensure we have the latest information, we use the Max function.*
+```mysql
+SELECT s1.emp_no, s.salary, s.from_date, s.to_date
+FROM salaries s
+JOIN (SELECT emp_no, MAX(from_date) AS from_date
+	FROM salaries
+	GROUP BY emp_no) s1 ON s.emp_no = s1.emp_no
+WHERE s.to_date > SYSDATE()
+AND s.from_date = s1.from_date;
+```
+*Returned the same ~81,000 but with appropriate constraints. Now, we need the average salaries of the departments of a given emp_no, which we will use a Window Function for.*
+```mysql
+SELECT 
+	de2.emp_no, 
+	d.dept_name, 
+	s2.salary, 
+	AVG(s2.salary) OVER w AS average_salary_per_department
+FROM (SELECT
+		de.emp_no, 
+		de.dept_no, 
+		de.from_date, 
+		de.to_date
+	FROM 
+		dept_emp de 
+	JOIN
+		(SELECT
+			emp_no, 
+			MAX(from_date) AS from_date
+		FROM 
+			dept_emp
+		GROUP BY 
+			emp_no) de1 ON de.emp_no = de1.emp_no
+WHERE
+	de.to_date > SYSDATE()
+		AND de.from_date = de1.from_date) de2
+		JOIN
+	(SELECT
+	s1.emp_no, 
+	s.salary, 
+	s.from_date, 
+	s.to_date
+FROM
+	salaries s
+		JOIN
+	(SELECT
+		emp_no, 
+		MAX(from_date) AS from_date
+	FROM
+		salaries
+	GROUP BY emp_no) s1 ON s.emp_no = s1.emp_no
+WHERE 
+	s.to_date > SYSDATE()
+		AND s.from_date = s1.from_date) s2 ON s2.emp_no = de2.emp_no
+			JOIN
+		departments d ON d.dept_no = de2.dept_no
+GROUP BY de2.emp_no, d.dept_name
+WINDOW l AS (PARTITION BY de2.emp_no)
+ORDER BY de2.emp_no;
 ```
