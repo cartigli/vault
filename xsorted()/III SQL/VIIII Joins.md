@@ -740,3 +740,21 @@ FROM(SELECT A.*
 		WHERE e.emp_no = 110039
 		GROUP BY e.emp_no) AS D) AS U;
 ```
+
+
+SELF JOINS
+Make one table into multiple.
+
+```mysql
+SELECT e1.*
+FROM emp_manager e1 JOIN
+	emp_manager e2 ON
+e1.emp_no = e2.manager_no;
+```
+*Or get only unique values:*
+```mysql
+SELECT DISTINCT e1.*
+FROM emp_manager e1 JOIN
+	emp_manager e2 ON
+e1.emp_no = e2.manager_no;
+```
