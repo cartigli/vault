@@ -1,0 +1,1 @@
+Performs a calculation for every record in the dataset, using a specified one from the table.
