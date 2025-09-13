@@ -8,73 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a8864863df6cf3b5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "xsorted()/III SQL/VIIII Joins.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "VIIII Joins"
-            }
-          },
-          {
-            "id": "a5c88ce8944cc338",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "xsorted()/III SQL/ZX Routines.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ZX Routines"
-            }
-          },
-          {
-            "id": "42d4857f4b45a51a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "xsorted()/III SQL/ZXI Variables.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ZXI Variables"
-            }
-          },
-          {
-            "id": "806a768044e0e53b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "xsorted()/III SQL/ZXII Indexing.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ZXII Indexing"
-            }
-          },
-          {
             "id": "3a7dbfabd669f33b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/III SQL/ZXIII Case.md",
-                "mode": "source",
+                "file": "xsorted()/II Python/XX/Files & Dir.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ZXIII Case"
+              "title": "Files & Dir"
             }
           },
           {
@@ -83,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/III SQL/ZXIV Window Functions.md",
+                "file": "xsorted()/II Python/II Python Core/II Functions & Flow/VI Methods.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ZXIV Window Functions"
+              "title": "VI Methods"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -124,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "*",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -196,34 +139,35 @@
       "graph:Open graph view": false
     }
   },
-  "active": "70489b7097cb4aa3",
+  "active": "3a7dbfabd669f33b",
   "lastOpenFiles": [
+    "xsorted()/II Python/II Python Core/II Functions & Flow/VI Methods.md",
+    "xsorted()/II Python/XX/Files & Dir.md",
+    "xsorted()/II Python/II Python Core/II Functions & Flow/X test Function Syntax Clarity.md",
     "xsorted()/III SQL/ZXIII Case.md",
+    "xsorted()/II Python/II Python Core/II Functions & Flow/V List Slicing.md",
+    "xsorted()/II Python/II Python Core/II Functions & Flow/IV Lists.md",
+    "xsorted()/II Python/II Python Core/II Functions & Flow/III Defining Functions.md",
+    "xsorted()/II Python/II Python Core/I Syntax & Operators/X Intro to Functions.md",
+    "xsorted()/II Python/II Python Core/I Syntax & Operators/V Arithmetic Operators.md",
+    "xsorted()/II Python/II Python Core/I Syntax & Operators/IV Strings.md",
+    "xsorted()/II Python/II Python Core/I Syntax & Operators/III Integers, Floats, and Boolean.md",
+    "xsorted()/II Python/II Python Core/I Syntax & Operators/II Variables.md",
+    "xsorted()/II Python/I Introduction/II Working with Data/V Trad. Analysis x Real Examples.md",
+    "xsorted()/II Python/I Introduction/II Working with Data/IV Traditional Techniques.md",
+    "xsorted()/II Python/I Introduction/II Working with Data/III Data Analysis.md",
+    "xsorted()/II Python/I Introduction/II Working with Data/II Preprocessing.md",
+    "xsorted()/II Python/I Introduction/I Fundamentals/V Connecting Disciplines.md",
+    "xsorted()/II Python/I Introduction/I Fundamentals/IV Big Data.md",
+    "xsorted()/II Python/I Introduction/I Fundamentals/III common fields.md",
+    "xsorted()/II Python/I Introduction/I Fundamentals/I beginning.md",
     "xsorted()/III SQL/ZXIV Window Functions.md",
+    "xsorted()/II Python/XX",
     "xsorted()/III SQL/VIIII Joins.md",
     "xsorted()/III SQL/Z SQL Views.md",
     "xsorted()/III SQL/ZXI Variables.md",
     "xsorted()/III SQL/ZXII Indexing.md",
     "xsorted()/III SQL/ZX Routines.md",
-    "xsorted()/III SQL/VII OPERATORS.md",
-    "xsorted()/III SQL/X Notation Notes.md",
-    "xsorted()/III SQL/VIII INSERT.md",
-    "xsorted()/III SQL/VI Keys & Constraints.md",
-    "xsorted()/III SQL/I SQL Theory.md",
-    "xsorted()/III SQL/II DataBase terminology.md",
-    "xsorted()/III SQL/III Relational Schema.md",
-    "xsorted()/III SQL/V Queries DEPRECATED.md",
-    "xsorted()/III SQL/IV Data Types.md",
-    "xsorted()/III SQL/VIIII FUNCTIONS.md",
-    "xsorted()/III SQL/x.install and run macos.md",
-    "xsorted()/III SQL/0 SQL Introduction.md",
-    "xVault/miscellaneous/keysncodes.md",
-    "add, python.md",
-    "xsorted()/II Python/IV ML/VI Deep ML/0. Network Architecture.md",
-    "xsorted()/II Python/IV ML/IV Cost & Design/3d plot.md",
-    "xsorted()/II Python/IV ML/IV Cost & Design/I Neural Network Intro.md",
-    "xsorted()/II Python/IV ML/VI Deep ML/I Layers.md",
-    "xsorted()/II Python/V xtra/PDIndexing.md",
     "xsorted()/III SQL",
     "xsorted()/II Python",
     "xsorted()/I Stats",
@@ -232,7 +176,6 @@
     "xsorted()/II Python/IV ML/VIII Business Case",
     "Untitled",
     "xsorted()/II Python/IV ML/VII MNIST",
-    "xsorted()/VI ML/VIII Proprocessing",
-    "xsorted()/II Python/IV ML/VI Deep ML"
+    "xsorted()/VI ML/VIII Proprocessing"
   ]
 }
