@@ -161,7 +161,7 @@ WHERE a.row_num = 2;
 *With the Partitions By emp_no and Ordered By salary, changing the row_num of the Where clause makes the query return the second row of every partition from the Select statement.*
 
 
-""Retrieve the employee number (`emp_no`) and the highest contract salary value (`salary`, using the alias `max_salary`) for all managers.
+""Retrieve the employee number (emp_no) and the highest contract salary value (salary, using the alias max_salary) for all managers.
 _To obtain the desired output, modify the following query, which finds the department managers' lowest salaries._""
 ```mysql
 SELECT a.emp_no, 
@@ -190,7 +190,7 @@ WHERE a.row_num=1;
 ```
 
 
-""Retrieve the employee number (`emp_no`) and the third-highest contract salary value (`salary`, using the alias `third_max_salary`) for all managers. To solve the exercise, you need to refer to the_ `_dept_manager_` _and_ `_salaries_` _tables._"" { I don't get this one incredibly well because why did they use ' FROM dept_manager dm ' inside the FROM ( SELECT... statement? Especially because here ' FROM salaries s ' is used }
+""Retrieve the employee number (emp_no) and the third-highest contract salary value (salary, using the alias third_max_salary) for all managers. To solve the exercise, you need to refer to the dept_manager and_ salaries tables."" { I don't get this one incredibly well because why did they use ' FROM dept_manager dm ' inside the FROM ( SELECT... statement? Especially because here ' FROM salaries s ' is used }
 ```mysql
 SELECT a.emp_no, a.salary AS third_max_salary
     FROM (SELECT
@@ -275,8 +275,7 @@ WINDOW w AS (PARTITION BY emp_no ORDER BY salary DESC);
 In summary, the Rank and Dense_Rank Window Functions must be used with the Order By clause. The rank values are always assigned sequentially and the first value is always equal to the integer one. The subsequent values grow *incrementally by* one, unless there is a duplicate record or value.
 
 
-""Order and number all contract salary values of employee 10002 from highest to lowest. Store the row numbers in a third column named order_num which assigns different row numbers to identical salary values.
-To obtain the desired values, refer to the employee number (emp_no) and salary (salary) columns from the salaries table.""
+""Order and number all contract salary values of employee 10002 from highest to lowest. Store the row numbers in a third column named order_num which assigns different row numbers to identical salary values. To obtain the desired values, refer to the employee number (emp_no) and salary (salary) columns from the salaries table.""
 ```mysql
 SELECT emp_no, salary, 
     ROW_NUMBER () OVER (PARTITION BY emp_no ORDER BY salary DESC) AS order_num
@@ -284,9 +283,7 @@ FROM salaries
 WHERE emp_no = '10002';
 ```
 
-""Order and rank all contract salary values of employee 10002 from highest to lowest. Store the row numbers in a third column named `order_num`. Assign the same rank to identical salary values allowing gaps in the obtained ranks for subsequent rows.
-
-_To obtain the desired values, refer to the employee number (_`_emp_no_`_) and salary (_`_salary_`_) columns from the_ `_salaries_`_table._""
+""Order and rank all contract salary values of employee 10002 from highest to lowest. Store the row numbers in a third column named order_num. Assign the same rank to identical salary values allowing gaps in the obtained ranks for subsequent rows. To obtain the desired values, refer to the employee number (emp_no_) and salary (salary) columns from the_ salaries table""
 ```mysql
 SELECT emp_no, salary, 
     RANK () OVER (PARTITION BY emp_no ORDER BY salary DESC) AS order_num
@@ -295,9 +292,7 @@ WHERE emp_no = '10002';
 ```
 
 
-""Order and rank all contract salary values of employee 10002 from highest to lowest. Store the row numbers in a third column named `order_num`. Assign the same rank to identical salary values _without_ allowing gaps in the obtained ranks for subsequent rows.
-
-_To obtain the desired values, refer to the employee number (_`_emp_no_`_) and salary (_`_salary_`_) columns from the_ `_salaries_`_table._""
+""Order and rank all contract salary values of employee 10002 from highest to lowest. Store the row numbers in a third column named order_num. Assign the same rank to identical salary values _without_ allowing gaps in the obtained ranks for subsequent rows. To obtain the desired values, refer to the employee number (emp_no) and salary (salary) columns from the_ salaries_table.""
 ```mysql
 SELECT emp_no, salary, 
     DENSE_RANK () OVER (PARTITION BY emp_no ORDER BY salary DESC) AS order_num
@@ -312,7 +307,7 @@ WHERE emp_no = '10002';
 	Arrange the partitions by manger's salary contract values in descending order
 	Rank the managers according to their salaries in certain departments ( where you prefer to not lose track of the number of salary contracts signed within each department )
 	Display the start and end dates of each salary contract ( call the relevant fields salary_from_date and salary_to_date, respectively )
-	Display the first and last date in which an employee has been a manager, according to the data provided in the dept_manager table ( call the relevant fields dept_manager_from_date and dept_maanager_to_date, respectively. )
+	Display the first and last date in which an employee has been a manager, according to the data provided in the dept_manager table ( call the relevant fields dept_manager_from_date and dept_maanager_to_date, respectively. )""
 
 *It is a complicated query, but we only need data stored on Dept_manager, Departments, and Salaries. Let's build off of the From statement:*
 ```mysql
@@ -351,9 +346,7 @@ WINDOW w AS (PARTITION BY dm.dept_no ORDER BY s.salary DESC);
 *We made the select statement last so we could pick the order and aliases of our selections carefully; first, from Departments, we pull the dept_no and dept_name, then the emp_no from Dept_manager. Next, the dept_salary_ranking Rank Window Function is called, then the Salaries' salary, from_date, and to_date. Finally, the Dept_manager's from_date's and to_date's are called with their respective aliases. Additionally, the Salaries' to and from _dates are restricted to be between the Dept_manager's to and from _dates for a given employee. This restriction changes the misleading output from 405 rows to the correct output with 149 rows.*
 
 
-""Allowing gaps in the obtained ranks for subsequent rows, rank the contract salary values from highest to lowest for employees 10001, 10002, 10003, 10004, 10005, and 10006. 
-
-Every row in the desired output should contain an employee number (`emp_no`) obtained from the `employees` table, and a `salary` value obtained from the `salaries` table. Additionally, include the salary ranking values between the two columns in a field named `employee_salary_ranking`.""
+""Allowing gaps in the obtained ranks for subsequent rows, rank the contract salary values from highest to lowest for employees 10001, 10002, 10003, 10004, 10005, and 10006. Every row in the desired output should contain an employee number (emp_no) obtained from the employees table, and a salary value obtained from the salaries table. Additionally, include the salary ranking values between the two columns in a field named employee_salary_ranking.""
 ```mysql
 SELECT 
     e.emp_no, 
@@ -365,11 +358,7 @@ JOIN salaries s ON e.emp_no = s.emp_no
 WINDOW w AS (PARTITION BY e.emp_no ORDER BY s.salary DESC);
 ```
 
-""Without allowing gaps in the obtained ranks for subsequent rows, rank the contract salary values from highest to lowest for employees 10001, 10002, and 10003. 
-
-Every row in the desired output should contain the relevant employee number (`emp_no`) and the hire date (`hire_date`) from the `employees` table, as well as the relevant `salary`value and the start date (`from_date`) from the `salaries`table. Additionally, include the salary ranking values in a field named `employee_salary_ranking`.
-
-Retrieve only data for contracts that have started prior to 2000. Sort your data by the  `emp_no` in ascending order, referring to the `employees` table.""
+""Without allowing gaps in the obtained ranks for subsequent rows, rank the contract salary values from highest to lowest for employees 10001, 10002, and 10003. Every row in the desired output should contain the relevant employee number (emp_no) and the hire date (hire_date) from the employees table, as well as the relevant salary value and the start date (from_date) from the salaries table. Additionally, include the salary ranking values in a field named employee_salary_ranking. Retrieve only data for contracts that have started prior to 2000. Sort your data by the  emp_no in ascending order, referring to the employees table.""
 ```mysql
 SELECT 
     e.emp_no, 
@@ -430,14 +419,12 @@ WHERE
 WINDOW l AS (ORDER BY salary);
 ```
 
-""Retrieve the following data from the `salaries` table:
-
-- employee number (`emp_no`)  
-- salary (`salary`)  
-- use a window function to obtain the salary value of three contracts prior to the given employee contract salary value, if applicable. Name the column `_before_previous_salary`  
-- use a window function to obtain the salary value of three contracts after the given employee contract salary value, if applicable. Name the column `_after_next_salary`.
-
-To obtain the desired output, partition the data by employee number (`emp_no`) and order by salary (`salary`) in ascending order. Retrieve only the first one hundred rows of data.""
+""Retrieve the following data from the salaries table:
+	employee number (emp_no)  
+	salary (salary)
+	use a window function to obtain the salary value of three contracts prior to the given employee contract salary value, if applicable. name the column _ before_previous_salary  
+	use a window function to obtain the salary value of three contracts after the given employee contract salary value, if applicable.
+	Name the column _ after_next_salary. To obtain the desired output, partition the data by employee number (emp_no) and order by salary (salary) in ascending order. Retrieve only the first one hundred rows of data.""
 ```mysql
 SELECT 
 	emp_no, 
