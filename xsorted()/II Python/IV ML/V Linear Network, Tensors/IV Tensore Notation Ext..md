@@ -1,8 +1,7 @@
 model = tf.keras.Sequential([ # tf = tensor flow ; keras 
 							tf.keras.layers.Dense(output_size)
 							]) # this completes the definition of our model
--	
-					^ this was our previous initialization of the model. We initialized our weights with random variables between two points using the NumPy's random.uniform() fx in another portion of the code , but we can consolidate our model's definitions and initializations
+					^ This was our previous initialization of the model. We initialized our weights with random variables between two points using the NumPy's random.uniform() fx in another portion of the code , but we can consolidate our model's definitions and initializations
 
 *Instead of the sole argument of output size being passed to the model , we can add arguments for weight and bias initialization , using the same methodology as before. 
 	Also, weights are referred to as **kernels** in this context*

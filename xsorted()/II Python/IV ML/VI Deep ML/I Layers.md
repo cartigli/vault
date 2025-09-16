@@ -24,7 +24,7 @@ Previously, we made a linear model with a single layer and two variables
 \end{document}
 ```
 
-*this is a visual representation of the model we defined and trained in V Linear Networks, Tensors*
+*This is a visual representation of the model we defined and trained in V Linear Networks, Tensors*
 
 an example of a  non-linear function ; [ Sigmoid Function ]$$\text{Sigmoid} = \sigma (x) = \frac{1}{1+\epsilon^{-x}}$$ The graphical representation of the Sigmoid function is
 ```tikz
@@ -256,25 +256,6 @@ Networks are usually considered by layer
 								This process is completed when the values are passed through the network and output of the final layer which we compare to the targets to compute loss
 										This is Feeding Forward
 .
-		*consider this as a whole. The weights and biases are random values which initially are irrelevant. the model feeds forward through the net and produces a prediction, which is compared to the targets for loss. With loss, we compute the gradient of said cost function to determine the optimal position for every weight and bias in the network. Then, the process is repeated until the cost function diminishes or ceases to decrease. It is nearly identical to our model in terms of functionality, it is just scaled exponentially and carries non-linear activation functions*
+		*Consider this as a whole. The weights and biases are random values which initially are irrelevant. the model feeds forward through the net and produces a prediction, which is compared to the targets for loss. With loss, we compute the gradient of said cost function to determine the optimal position for every weight and bias in the network. Then, the process is repeated until the cost function diminishes or ceases to decrease. It is nearly identical to our model in terms of functionality, it is just scaled exponentially and carries non-linear activation functions*
 .
-.
-	*additionally, these activation functions are applied to the outputs of layers when their weights are applied and biases are added. In the case above, the values derived for layer 1, or h1, would be processed through an activation function before they were fed to the next layer. This is the power behind Deep Networks but also the bottleneck of their size, as the cost gradient must be determined through such functions.*
-
-Notation of Networks
-	The first layer 
-
-Deep Nets **maybe delete this**
-	A series of ' neurons ' or ' nodes ' organized by layer and interconnected between ; every ' neuron ' of layer L connects to every ' neuron ' of layer L+1 and layer L-1 
-		Notation for a Network is as follows :
-			The initial layer of the network is layer 0 { like python }
-			The last layer of the network is layer L, the ' output ' layer { where L = len( layers ) }
-					This layer is responsible for the values that we compare the the targets for loss and gradient calculations
-			All layers between layer 0 and layer L are Hidden Layers
-					Hidden Layers are also referred to as Tensors ; $h_{22}$ is an element of the tensor h2 in the network above
-						This refers to the 'black box ' nature of Deep Networks, we know they exist, their size, their orientations ; we never find out what they actually do, however. This is left the model {{ Machine Learning ! }}.
-				The ' width ' of a layer is the number of ' neurons ' in said layer 
-				The 'depth ' of a network is the number of layers in said network
-					The ' width ' and ' depth ' of a network constitute its [ Hyperparameters ]
-						Weights and Biases are the [ Parameters ] of the Model
-							Hyperparameters are configured by architects of the model ; the parameters are found by the model through the optimization function
+	*Additionally, these activation functions are applied to the outputs of layers when their weights are applied and biases are added. In the case above, the values derived for layer 1, or h1, would be processed through an activation function before they were fed to the next layer. This is the power behind Deep Networks but also the bottleneck of their size, as the cost gradient must be determined through such functions.*

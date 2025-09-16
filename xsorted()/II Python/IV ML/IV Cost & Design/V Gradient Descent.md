@@ -1,15 +1,15 @@
-the original , most fundamental Optimization Algorithm
+The original , most fundamental Optimization Algorithm
 
 [ Gradient Descent ] is the multivariate generalization of the derivative of the [ Cost Function ]
 
-quick derivatives :
+Quick derivatives :
 	$f(x) = 3x^2 + 5x + 1$
 	$f'(x) = 2*3x + 5 + 0$
 		$f'(x) = 6x + 5$
 			*the derivative is denoted with : '
 				*the derivative of f(x) is f'(x)*
 
-suppose we want to find the minimum of the function : $x$ {{ above }}
+Suppose we want to find the minimum of the function : $x$ {{ above }}
 	if we used the gradient slope method
 		we take the derivative 
 			$f'(x) = 6x + 5$
@@ -29,11 +29,11 @@ $$\eta=\text{Learning Rate}$$
 				$x_{1} = 7 - (0.01 * 47)$
 				$x_{1} = 7 - 0.47$
 				$x_{1} = 6.53$
-		we choose the learning rate for each case*
-				*the model would then run the x of 6.53 back through the function, generate a new loss and find the new updates for the weights / biases 
-					this process repeats until the rate of learning plateaus or minimizes
+		We choose the learning rate for each case*
+				*The model would then run the x of 6.53 back through the function, generate a new loss and find the new updates for the weights / biases 
+					This process repeats until the rate of learning plateaus or minimizes
 				eventually, the values will stop decreasing , which is the minimum cost
-						the derivative = the slope of a function , so when the derivative of our loss function is no longer getting lower , we know the cost is at a minimum. Ideally and theoretically, we want a cost of 0 which means the function is completely optimized. This is a fallacy, unfortunately. We only go until we can go no further.
+						The derivative = the slope of a function , so when the derivative of our loss function is no longer getting lower , we know the cost is at a minimum. Ideally and theoretically, we want a cost of 0 which means the function is completely optimized. This is a fallacy, unfortunately. We only go until we can go no further.
 									Something daunting that is not important at this stage is local minimum ; when the derivative is looking for minimum too aggressively, it can get stuck in a place where the cost function dips, a local minimum, rather than the global minimum. The model will stop learning as the optimization function and derivative adjustments of weights and biases are designed to direct the model **down** the cost gradient. Another non-trivial component to fix with convoluted calculus, but we will persist.
 -
 	This adjustment of the weights & biases in respect to their partial derivatives is the backend behind the visualization of a hiker on a mountain or a ball on a plane ; the derivative finds the slope and points us to to a lower cost ; we know at any given moment which direction is down but we only ever know know this for the exact position we're currently in ; we are blind and the Cost Gradient is our only walking pole. At any given moment , when we calculate the partial derivatives of the weights and biases , we determine the optimal position , or value that would achieve the lowest cost function , **for the given input**. The moment we change this input variable , the cost function is completely different and could have polarizing values to the last change we made. 

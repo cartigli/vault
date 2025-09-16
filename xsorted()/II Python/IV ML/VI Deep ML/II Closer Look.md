@@ -1,3 +1,4 @@
+Inside the Network
 ```tikz
 \begin{document}
 \begin{tikzpicture}

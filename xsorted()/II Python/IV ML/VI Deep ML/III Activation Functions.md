@@ -1,13 +1,13 @@
 Non-linear functions for weights and biases
 
 Sigmoid Function : $\sigma (x) = \frac{1}{1+\epsilon^{-x}}$
-	*derivative* : $\sigma(x)(1-\sigma(x))$
-			this ranges form 0-1, and sort of behaves like a biological neuron
-				low values are exponentially low and high numbers are exponentially high
-					similar to people neurons, this acts as a sort of energy for the neuron; its firing
-							when then model's neurons are given certain values, they can ' fire ' indicating information or signaling that can be interpreted as such
-							oddly enough, if our weights are too close the center value of the Sigmoid Function, the slope is essentially linear
-								conversely, at either pole, highs and lows are pushed to their extremes rapidly
+	*Derivative* : $\sigma(x)(1-\sigma(x))$
+			This ranges form 0-1, and sort of behaves like a biological neuron
+				Low values are exponentially low and high numbers are exponentially high
+					Similar to people neurons, this acts as a sort of energy for the neuron; its firing
+							When then model's neurons are given certain values, they can ' fire ' indicating information or signaling that can be interpreted as such
+							Oddly enough, if our weights are too close the center value of the Sigmoid Function, the slope is essentially linear
+								Conversely, at either pole, highs and lows are pushed to their extremes rapidly
 
 ```tikz 
 \begin{document}
@@ -34,8 +34,8 @@ Sigmoid Function : $\sigma (x) = \frac{1}{1+\epsilon^{-x}}$
 
 
 TanH : Hyperbolic Tangent : $\text{tanh}(a) = \frac{\epsilon^a-\epsilon^{-a}}{\epsilon^a+\epsilon^{-a}}$
-	*derivative* : $\frac{4}{(\epsilon^a+\epsilon^{-a})^2}$
-	 ranges from -1 to 1, similar to the sigmoid function but more normally distributed over and more aggressive ' transition ' area but consequently more polarization
+	*Derivative* : $\frac{4}{(\epsilon^a+\epsilon^{-a})^2}$
+	 Ranges from -1 to 1, similar to the sigmoid function but more normally distributed over and more aggressive ' transition ' area but consequently more polarization
 
 ```tikz 
 \begin{document}
@@ -63,7 +63,7 @@ TanH : Hyperbolic Tangent : $\text{tanh}(a) = \frac{\epsilon^a-\epsilon^{-a}}{\e
 ```
 
 Softmax Function: $\sigma_i(a) = \frac{\epsilon^{a_i}}{\sum_i\epsilon^{a_i}}$
-	*derivative* : $\frac{\partial \sigma_i(a)}{\partial a_i} = \sigma_i (a) (\delta_{ij} - \sigma_i(a))$ where $\delta_{ij}$ is 1 if i = j, 0 otherwise
-			this is the normalization we would use for the outputs of the classification model as it outputs a probability ; all the results sum to 1
-				this is not used for many if any layers within the network; the distortion of values from their original is too great to retain information when feeding forward
-						basically, softmax is only ever applied to the output layer of a network for probabilities of predictions 
+	*Derivative* : $\frac{\partial \sigma_i(a)}{\partial a_i} = \sigma_i (a) (\delta_{ij} - \sigma_i(a))$ where $\delta_{ij}$ is 1 if i = j, 0 otherwise
+			This is the normalization we would use for the outputs of the classification model as it outputs a probability ; all the results sum to 1
+				This is not used for many if any layers within the network; the distortion of values from their original is too great to retain information when feeding forward
+						Basically, softmax is only ever applied to the output layer of a network for probabilities of predictions 

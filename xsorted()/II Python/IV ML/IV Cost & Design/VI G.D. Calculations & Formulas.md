@@ -10,9 +10,9 @@ Our linear model : $y = x * w[eights] + b[iases]$
 
 Linear Regression, so L2-Norm :
 	$$L(y,t)=\text{L2-Norm} = \sum(y_i - t_i)^2$$
-	For our purposes : {{ division does not affect fundamentals of this Loss Function }}
+For our purposes : {{ division does not affect fundamentals of this Loss Function }}
 	$$\frac{\text{L2-Norm}}{2} = \frac{\sum(y_i - t_i)^2}{2}$$
-*reminders* :
+*Reminders* :
 	Learning Rate : $\eta$
 	update rule:
 		$$x_{i+1} = x_i - \eta(f'(x_i))$$
@@ -27,11 +27,11 @@ $\triangledown_b$ = gradient of the loss function, with respect to $b_{biases}$
 			the goal of our model is to lower this function through adjustment of weights and biases
 
 $\triangledown_w L = \sum_i \triangledown_w \frac{1}{2} (y_i - t_i)^2$
-' the loss gradient in respect to weights of the Loss Function are equal to the sum of the gradients 1/2 times $y_i - t_i$ squared in respect to weights '
-	the $y_i$ is from $y_i = x_i*w + b$ , so plugging in these values for $y_i$ , we get :
+'The loss gradient in respect to weights of the Loss Function are equal to the sum of the gradients 1/2 times $y_i - t_i$ squared in respect to weights'
+	The $y_i$ is from $y_i = x_i*w + b$ , so plugging in these values for $y_i$ , we get :
 		$=\sum_ix_i(y_i-t_i) =$
-			because w & b are constants, so they become 0, and x is linear, so it becomes a scalar and can be simply distributed among the contents of the parenthesis
-		it can also be helpful to combine $(y_i-t_i)$ into a single variable ; delta
+			Because w & b are constants, so they become 0, and x is linear, so it becomes a scalar and can be simply distributed among the contents of the parenthesis
+		It can also be helpful to combine $(y_i-t_i)$ into a single variable ; delta
 			$\delta = (y_i-t_i)$
 				$\delta$ *is often used to denote differences
 
@@ -65,7 +65,7 @@ $\triangledown_w L = \sum_i x_i \delta_i$
 $\triangledown_b L = \sum_i \delta_i$
 
 
-so once more ; the weight / bias adjustment rules:  
+So once more ; the weight / bias adjustment rules:  
 		$w_{i+1} = w_i - \eta * \triangledown_w * L(y,t))$ *becomes* $w_{i+1} = w_i - \eta * \sum_i x_i \delta_i$
 	& :
 	     $b_{i+1} = b_i - \eta * \triangledown_b * L(y,t))$ *becomes* $b_{i+1} = b_i - \eta * \sum_i \delta_i$$

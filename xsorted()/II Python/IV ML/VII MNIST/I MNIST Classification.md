@@ -10,8 +10,8 @@ This means the input layer of the model will be 784 neurons wide. One for every 
 The model is making categorical predictions based on probabilities, so we'll use One Hot encoding for the targets and outputs and softmax activation for the outputs
 
 We need to:
-- prepare and process the data
-	- create training, validation, and testing datasets
-		- as well as batch size
-- outline the model and choose the optimizers and a loss function
-- make it learn { backpropagate } and validate after every epoch
+- Prepare and process the data
+	- Create training, validation, and testing datasets
+		- As well as batch size
+- Outline the model and choose the optimizers and a loss function
+- Make it learn { back propagate } and validate after every epoch

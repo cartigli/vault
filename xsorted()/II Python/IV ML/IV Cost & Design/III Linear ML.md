@@ -12,20 +12,20 @@ how can we have the algorithm find it?
 		this is the training data the model will ' learn ' from ; its task is to find the hypothesis function f(x) from this set of sample values of f(x)
 
 This could be done with a [Linear Model]
-	these models use the equation $f(x) = x * w + b$
-		*obviously y = m * x + b*, but in ML terms :
-			$f(x) = x * \text{weights[w]} + \text{bias[b]}$
-				the goal of the ML algorithm would be to find values for w & b such that any value of x would equal the correct output of the training data of the original function ; or as closely fit as possible 
+	These models use the equation $f(x) = x \cdot w + b$
+		*obviously $y = m \cdot x + b$*, but in ML terms :
+			$f(x) = x \cdot \text{weights[w]} + \text{bias[b]}$
+				The goal of the ML algorithm would be to find values for w & b such that any value of x would equal the correct output of the training data of the original function ; or as closely fit as possible 
 					{{ least inaccuracy / closest to all points }}
 
-	*if this were a realestate - predicition model , its would be likely given x , where x = size , and w and b are configured to predict the price of a house given the size , x
+*If this were a real estate - prediction model , its would be likely given x , where x = size , and w and b are configured to predict the price of a house given the size , x
 
 [ Multiple Variables Linear Model ]
-	what if we're determining cost of houses in Charleston?
-		an additional element for location would be introduced 
-			in the single variable model, the input $x$ is a $1x1$ scalar being multiplied with a $1x1$ scalar, added to a $1x1$ scalar
-				*in this example*, $x$ has an additional element, location, so it is $1x2$
-					to be compatible for the dot product, w needs to be in the shape $2x1$
+What if we're determining cost of houses in Charleston?
+	An additional element for location would be introduced 
+		In the single variable model, the input $x$ is a $1x1$ scalar being multiplied with a $1x1$ scalar, added to a $1x1$ scalar
+			*In this example*, $x$ has an additional element, location, so it is $1x2$
+				To be compatible for the dot product, w needs to be in the shape $2x1$
 					x.shape = $1x2$ and w.shape = $2x1$ would equal a scalar as the result ; $2x1$ by $1x2$ would result in a matrix
 						Then, the bias can remain a scalar as they can be added to vectors and matrices
 ```python
@@ -39,10 +39,10 @@ print(z)
 ```
 
 [ Multivariable Linear Model with Multiple Outputs ]
-	imagine our model designed to predict the price of houses in Charleston was also tasked with determining the rent price?
-		without modifying the input or training data, the model would need to predict two things:
-			the price of the house
-			the cost of renting the same house
+Imagine our model designed to predict the price of houses in Charleston was also tasked with determining the rent price?
+	Without modifying the input or training data, the model would need to predict two things:
+			The price of the house
+			The cost of renting the same house
 				$Y_1$ : the price as a function of the size of the house and proximity to the beach
 				$Y_2$ : the rent as a function of the size of the house and proximity to the beach
 									$Y_1 = X_1 * W_{11} + X_2 * W_{21} + B_1$
