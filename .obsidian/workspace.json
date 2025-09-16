@@ -68,8 +68,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 206.5,
-    "collapsed": true
+    "width": 206.5
   },
   "right": {
     "id": "cc49a367b9d619d7",
@@ -125,7 +124,7 @@
       "graph:Open graph view": false
     }
   },
-  "active": "b42d27b68f04197f",
+  "active": "81403f575f74443d",
   "lastOpenFiles": [
     "xVault/miscellaneous/keysncodes.md",
     "xsorted()/IV Career/Portfolio.md",
