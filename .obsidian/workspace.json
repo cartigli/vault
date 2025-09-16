@@ -13,7 +13,21 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/IV Career/Portfolio.md",
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
+            "id": "50b7d748b9c0d50e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Portfolio.md",
                 "mode": "source",
                 "source": false
               },
@@ -21,7 +35,8 @@
               "title": "Portfolio"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -68,7 +83,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 206.5
+    "width": 206.5,
+    "collapsed": true
   },
   "right": {
     "id": "cc49a367b9d619d7",
@@ -124,10 +140,11 @@
       "graph:Open graph view": false
     }
   },
-  "active": "81403f575f74443d",
+  "active": "50b7d748b9c0d50e",
   "lastOpenFiles": [
+    "README.md",
+    "Portfolio.md",
     "xVault/miscellaneous/keysncodes.md",
-    "xsorted()/IV Career/Portfolio.md",
     "xsorted()/III SQL/ZVIV Add. Practice.md",
     "xsorted()/III SQL/ZVIII Temporary Tables.md",
     "xsorted()/III SQL/ZVII Common Table Expressions.md",
@@ -152,7 +169,6 @@
     "xsorted()/III SQL/V Queries DEPRECATED.md",
     "xsorted()/II Python/II Python Core/II Functions & Flow/X test Function Syntax Clarity.md",
     "xVault/Glomerate/xcole/Art.law/Kat Vin D/Fair use X/Fair use and Copyright Law (sources).md",
-    "xVault/Glomerate/xcole/Art.law/Kat Vin D/Fair use X/Fair use and Copyright Law (sources).sync-conflict-20250228-094550-KICUZIX.md",
     "xsorted()/II Python/IV ML/II chat/III Case Study",
     "xsorted()/II Python/IV ML/II chat/II GPT Preprocessing.chopped",
     "xsorted()/II Python/III Stats in Python/II Multi-Var Regression/Five Assumptions",
