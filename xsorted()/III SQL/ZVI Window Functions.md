@@ -2,14 +2,13 @@ Performs a calculation for every row or record of a given database, using other 
 
 Aggregate Window Functions { aggregate functions used in the context of widow functions}, and Non-Aggregate Window Functions, which are comprised of Ranking Window Functions and Value Window Functions.
 
-Ranking Window Functions | Row Number()
+Ranking Window Functions | Row Number( )
 
 ```mysql
 SELECT ..., ROW NUMBER () OVER () AS . . .
 FROM ...;
 ```
-*The contents of the parenthesis relates to the window over which the function evaluation will occur. This is an empty window clause until we fill the parenthesis.*
-	*Row_Number ( ) will perform the relevant evaluations on **all** query rows with empty parenthesis.*
+*The contents of the parenthesis relates to the window over which the function evaluation will occur. This is an empty window clause until we fill the parenthesis. Row_Number ( ) will perform the relevant evaluations on **all** query rows with empty parenthesis.*
 ```mysql
 SELECT 
 	emp_no, 
@@ -27,9 +26,8 @@ SELECT
 FROM 
 	salaries;
 ```
-*Including Partition By introduces a function that organizes, or partitions, similarly to the Group By clause. However, Partition By does not modify the underlying data or table, unlike Group By.*
-	*For the query above, the return was the same third column but each emp_no had its own incrementing partition. For every emp_no in the columns on the right, the Row_Number rose by one until a new emp_no appeared and the partition and Row_Number reset.*
-		*With an empty Partition-By clause, the optimizer will default to a partition of one, where every record is its own partition and the last value of the Row_Number column will be the number of records from the Select statement.*
+*Including Partition By introduces a function that organizes, or partitions, similarly to the Group By clause. However, Partition By does not modify the underlying data or table, unlike Group By. For the query above, the return was the same third column but each emp_no had its own incrementing partition. For every emp_no in the columns on the right, the Row_Number rose by one until a new emp_no appeared and the partition and Row_Number reset.*
+*With an empty Partition-By clause, the optimizer will default to a partition of one, where every record is its own partition and the last value of the Row_Number column will be the number of records from the Select statement.*
 ```mysql
 SELECT 
 	emp_no, 
@@ -81,7 +79,7 @@ FROM
 ```
 *With identical partitions, we have no need for an exterior Group By or Order By clause.*
 
-""Retrieve the employee number (emp_no) and job title (title) from the titles table, and the salary (salary) from the salaries table. Add a column to the left, named row_num1, starting from 1 incrementing by 1 for each row from the obtained result. Also, add a fifth column, named row_num2, which provides a row position for each record per employee, starting from the total number of records obtained for that employee and continuing down to 1. Include only data about _'Staff'_ members and employees with a number no greater than 10006. Order the result by employee number (emp_no), salary, and row_num1 in ascending order.""
+""Retrieve the employee number (emp_no) and job title (title) from the titles table, and the salary (salary) from the salaries table. Add a column to the left, named row_num1, starting from 1 incrementing by 1 for each row from the obtained result. Also, add a fifth column, named row_num2, which provides a row position for each record per employee, starting from the total number of records obtained for that employee and continuing down to 1. Include only data about 'Staff' members and employees with a number no greater than 10006. Order the result by employee number (emp_no), salary, and row_num1 in ascending order.""
 ```mysql
 SELECT
     ROW_NUMBER () OVER () AS row_num1,
@@ -126,7 +124,7 @@ FROM
 *Can be re-written as:*
 ```mysql
 SELECT emp_no, salary,
-	ROW_NUMBER OVER w AS row_num
+	ROW_NUMBER () OVER w AS row_num
 FROM salaries
 WINDOW w AS (PARTITION BY emp_no ORDER BY salary DESC);
 ```
@@ -161,8 +159,7 @@ WHERE a.row_num = 2;
 *With the Partitions By emp_no and Ordered By salary, changing the row_num of the Where clause makes the query return the second row of every partition from the Select statement.*
 
 
-""Retrieve the employee number (emp_no) and the highest contract salary value (salary, using the alias max_salary) for all managers.
-_To obtain the desired output, modify the following query, which finds the department managers' lowest salaries._""
+""Retrieve the employee number (emp_no) and the highest contract salary value (salary, using the alias max_salary) for all managers. To obtain the desired output, modify the given query, which finds the department managers' lowest salaries.""
 ```mysql
 SELECT a.emp_no, 
 	a.salary AS max_salary FROM (
@@ -217,7 +214,7 @@ WHERE a.third_max_salary = 3;
 ```
 
 
-RANK ( ) and DENSE_RANK ( ) 
+RANK and DENSE_RANK
 
 Function walkthrough:
 ```mysql
@@ -263,7 +260,7 @@ WHERE emp_no = '11839'
 WINDOW w AS (PARTITION BY emp_no ORDER BY salary DESC);
 ```
 *With Rank in replace of Row_Number, we see a similar output. The behavior is similar as it counts the rows in order, resulting in the same final rank_num being 12, with the only difference being the third and fourth positions. They are both rank_num 3; Rank considers every element of the given partition individually. The third and fourth values of the salaries are ranked equally as they were the same, but they are independent of each other in the Rank.
-		The only values changed from the Row_Number Function were the fourth value of the third column and said column's name. If we wanted to see the values sequentially considered as if the third and fourth salaries were one position instead of two, Dense_Rank would be used.*
+The only values changed from the Row_Number Function were the fourth value of the third column and said column's name. If we wanted to see the values sequentially considered as if the third and fourth salaries were one position instead of two, Dense_Rank would be used.*
 ```mysql
 SELECT emp_no, salary, DENSE_RANK () OVER w AS rank_num
 FROM salaries
@@ -379,9 +376,9 @@ Other than Ranking Window Functions, there are also Value Window Functions
 As opposed to Ranking, Value Window Functions return a value that can be found in the database.
 
 
-LAG ( ) and LEAD ( ) 
-LAG ( ) returns the value from a specified field of a record that precedes the current row, i.e., the value that lags the current value
-LEAD ( ) returns the value from a specified field of a record that procedes the current row, i.e., the value that leads the current value
+LAG and LEAD
+LAG returns the value from a specified field of a record that precedes the current row, i.e., the value that lags the current value
+LEAD returns the value from a specified field of a record that procedes the current row, i.e., the value that leads the current value
 
 Now, we want a query that finds the following:
 	The salary values from all contracts that the employee 10001 had ever signed while working for the company { ASC order }
@@ -397,7 +394,7 @@ FROM salaries
 WHERE emp_no = '10001
 ```
 
-Now, to reference a value previously selected in the query, we need the Lag ( ) Window Function. Its syntax, which is similar to Rank's, is below:
+Now, to reference a value previously selected in the query, we need the Lag Window Function. Its syntax, which is similar to Rank's, is below:
 ```mysql
 SELECT ...,
 	LAG(column_name_ OVER () AS ...
@@ -445,14 +442,13 @@ Whether or not the aggregate function will be applied to the window function we 
 
 When referencing the values of a certain column, Group By is used. When referencing to partitions, Over is used, and likely a partition by Window clause.
 
-Create a query that will extract the following information about all currently employed workers registered in the Dept_emp table:
+""Create a query that will extract the following information about all currently employed workers registered in the Dept_emp table:
 	Their emp_no
 	The department they're currently working in
 	The salary they are currently being paid ( salary specified in their latest contract )
-	The all time average salary paid in the department the employee is currently working in ( use a function to create a field named average_salary_per_department )
-		*We want four columns of information to be returned; emp_no, dept_name, salary, and average_salary_per_department.*
+	The all time average salary paid in the department the employee is currently working in ( use a function to create a field named average_salary_per_department )""
 
-*Since the determining the current department of an employee requires the current date, we'll use the Sysdate function to get the current date, with which we can compare to their to_date's.*
+*We want four columns of information to be returned; emp_no, dept_name, salary, and average_salary_per_department. Since the determining the current department of an employee requires the current date, we'll use the Sysdate function to get the current date, with which we can compare to their to_date's.*
 ```mysql
 SELECT
 FROM emp_no, salary, from_date, to_date

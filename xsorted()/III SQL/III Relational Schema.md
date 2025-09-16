@@ -13,12 +13,11 @@ For the table above, the values in date-of-purchase and item-code can be seen mu
 
 [ Primary Key ]
 Purchase-No is unique, it will not repeat ever
-	this is a Primary Key - single column
-		unique identifiers of this table 
-			they also cannot contain Null values at any point within a Primary Key
+	This is a Primary Key - single column
+		Unique identifiers of this table 
+			They also cannot contain Null values at any point within a Primary Key
 
-To make a relational schema, we make a rectangle with a title over the top, and 
-	Always Underline the first value, which is always the Primary Key of this table$$\overset{\text{Sales}}{\begin{array} {|l|}
+To make a relational schema, we make a rectangle with a title over the top, and underline the first value, which is always the Primary Key of the table:$$\overset{\text{Sales}}{\begin{array} {|l|}
 \hline
 \underline{\text{purchase-no}}\\
 \text{date-of-purchase} \\
@@ -36,7 +35,7 @@ purchase-no & date-of-purchase & customer-id & item-code \\
 3 & 3.7.2019 & 3 & 10 \\
 \hline
 \end{array}$$
-	This is a Relational Schema of the table Sales which possesses the Primary Key purchase-no and contains the data for date-of-purchase, customer, and the item-code$$\overset{\text{Sales}}{\begin{array} {|l|}
+*This is a Relational Schema of the table Sales which possesses the Primary Key purchase-no and contains the data for date-of-purchase, customer, and the item-code.*$$\overset{\text{Sales}}{\begin{array} {|l|}
 \hline
 \underline{\text{Purchase No. [pk]}}\\
 \text{Date of Purchase} \\
@@ -95,4 +94,4 @@ purchase-no & date-of-purchase & customer-id & item-code \\
 ```
 
 Relationships between Tables
-Despite the fact that Customer ID is a Primary Key for Customer ID list, meaning it never repeats and every value is unique and exists. However, the same information is seen in Sales with the Foreign Key value Customer ID. In Sales, the Customer ID value can repeat and likely will, as unique customers can make multiple purchases. This is a One to Many relationship. There is also Many to One, One to One, etc., ~~||<
+Despite the fact that Customer ID is a Primary Key for Customer ID list, meaning it never repeats and every value is unique and exists. However, the same information is seen in Sales with the Foreign Key value Customer ID. In Sales, the Customer ID value can repeat and likely will, as unique customers can make multiple purchases. This is a One to Many relationship. There is also Many to One, One to One, etc., etc.,

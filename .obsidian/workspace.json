@@ -8,31 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3a7dbfabd669f33b",
+            "id": "b42d27b68f04197f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "xsorted()/II Python/XX/Files & Dir.md",
+                "file": "xsorted()/IV Career/Portfolio.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Files & Dir"
-            }
-          },
-          {
-            "id": "113fc08ab3974ad3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "xsorted()/III SQL/ZXV Common Table Expressions.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ZXV Common Table Expressions"
+              "title": "Portfolio"
             }
           }
         ]
@@ -67,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "path:\"xsorted()/III SQL/\" commit ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -82,7 +68,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 269.5,
+    "width": 206.5,
     "collapsed": true
   },
   "right": {
@@ -139,43 +125,43 @@
       "graph:Open graph view": false
     }
   },
-  "active": "3a7dbfabd669f33b",
+  "active": "b42d27b68f04197f",
   "lastOpenFiles": [
-    "xsorted()/II Python/XX/script.txt",
-    "xsorted()/III SQL/X Notation Notes.md",
-    "xsorted()/II Python/XX/Files & Dir.md",
-    "xsorted()/III SQL/VI Keys & Constraints.md",
-    "xsorted()/III SQL/Untitled.md",
-    "xsorted()/III SQL/VII OPERATORS.md",
-    "xsorted()/III SQL/V Queries DEPRECATED.md",
+    "xVault/miscellaneous/keysncodes.md",
+    "xsorted()/IV Career/Portfolio.md",
+    "xsorted()/III SQL/ZVIV Add. Practice.md",
+    "xsorted()/III SQL/ZVIII Temporary Tables.md",
+    "xsorted()/III SQL/ZVII Common Table Expressions.md",
+    "xsorted()/III SQL/VI OPERATORS.md",
+    "xsorted()/III SQL/ZVI Window Functions.md",
+    "xsorted()/III SQL/VIII Joins.md",
+    "xsorted()/IV Career",
+    "xsorted()/III SQL/V Keys & Constraints.md",
     "xsorted()/III SQL/IV Data Types.md",
+    "xsorted()/III SQL/X Notation Notes.md",
+    "xsorted()/III SQL/ZI SQL Views.md",
+    "xsorted()/III SQL/ZII Routines.md",
+    "xsorted()/III SQL/ZIII Variables.md",
+    "xsorted()/III SQL/VII INSERT.md",
+    "xsorted()/III SQL/ZIV Indexing.md",
+    "xsorted()/III SQL/ZV Case.md",
+    "xsorted()/II Python/XX/Files & Dir.md",
     "xsorted()/III SQL/III Relational Schema.md",
     "xsorted()/III SQL/II DataBase terminology.md",
-    "xVault/Glomerate/xcole/Benson/McConnel.md",
-    "xVault/Glomerate/xcole/Benson/Quotes.de.Sources.md",
-    "xVault/Glomerate/xcole/Benson/Refrences.quotes.md",
-    "xVault/Glomerate/xcole/Benson/Untitled.md",
-    "xVault/Glomerate/comput/portfolio/Rogue/Untitled.md",
-    "xVault/Glomerate/comput/portfolio/Rogue/Rogue XV/Rogue XVIII.md",
-    "xVault/Glomerate/comput/portfolio/Rogue/Rogue XV/Rogue XVII.md",
-    "xVault/Glomerate/comput/portfolio/Rogue/Rogue XV/Rogue XVI.md",
-    "xVault/Glomerate/comput/portfolio/Rogue/Rogue X-/Rogue XIV.md",
-    "xsorted()/III SQL/ZXIV Window Functions.md",
-    "xsorted()/III SQL/ZXV Common Table Expressions.md",
-    "xsorted()/III SQL/VIII INSERT.md",
-    "xsorted()/III SQL/VIIII Joins.md",
-    "xsorted()/II Python/II Python Core/II Functions & Flow/VI Methods.md",
+    "xsorted()/III SQL/I SQL Theory.md",
+    "xsorted()/III SQL/0 SQL Introduction.md",
+    "xsorted()/III SQL/V Queries DEPRECATED.md",
     "xsorted()/II Python/II Python Core/II Functions & Flow/X test Function Syntax Clarity.md",
-    "xsorted()/III SQL/ZXIII Case.md",
-    "xsorted()/II Python/XX",
-    "xsorted()/III SQL",
-    "xsorted()/II Python",
-    "xsorted()/I Stats",
-    "xsorted()/II Python/V xtra",
+    "xVault/Glomerate/xcole/Art.law/Kat Vin D/Fair use X/Fair use and Copyright Law (sources).md",
+    "xVault/Glomerate/xcole/Art.law/Kat Vin D/Fair use X/Fair use and Copyright Law (sources).sync-conflict-20250228-094550-KICUZIX.md",
+    "xsorted()/II Python/IV ML/II chat/III Case Study",
+    "xsorted()/II Python/IV ML/II chat/II GPT Preprocessing.chopped",
+    "xsorted()/II Python/III Stats in Python/II Multi-Var Regression/Five Assumptions",
+    "xsorted()/II Python/XX/script.txt",
     "xsorted()/II Python/IV ML/VIIII Case II",
     "xsorted()/II Python/IV ML/VIII Business Case",
-    "Untitled",
     "xsorted()/II Python/IV ML/VII MNIST",
-    "xsorted()/VI ML/VIII Proprocessing"
+    "xsorted()/II Python/IV ML/VI Deep ML",
+    "xsorted()/II Python/IV ML/V Linear Network, Tensors"
   ]
 }

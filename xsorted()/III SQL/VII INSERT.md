@@ -7,12 +7,12 @@ Adds values to specified columns of a table.
 INSERT_INTO table_name (column_1, column_2, . . ., column_n) # state your targets
 VALUES (value_1, value_2, . . ., value_n) # fill your targets
 ```
-If we had a table with 5 columns, but we only had 3 worth of data:
+*If we had a table with 5 columns, but we only had 3 worth of data:*
 ```mysql
 INSERT INTO table_name (column_1, column_2, column_3)
 VALUES (value_1, value_2, value_3) # where values 4 - n would be null
 ```
-*This is fine as long as the column does not have a constraint like NOT NULL. If we specified a different number of columns than the values supplied, more or less, it would return an error. We need not specify all columns of a table, but we must fill all columns we specify.*
+*This is fine as long as the column does not have a constraint like Not Null. If we specified a different number of columns than the values supplied, more or less, it would return an error. We need not specify all columns of a table, but we must fill all columns we specify.*
 ```mysql
 INSERT INTO table_name(
 	emp_no,
@@ -30,7 +30,7 @@ INSERT INTO table_name(
 	'2011-01-01'
 );
 ```
-*However, naming all columns isnt' essential.*
+*However, naming all columns isn't essential.*
 ```mysql
 INSERT INTO employees
 VALUES (
@@ -65,16 +65,17 @@ SELECT * FROM departments; # we don't need to specify values, columns, or condit
 ```
 
 
-TRANSACTIONAL CONTROL LOCK and ROLLBACK
-Similar to Github, the Commit locks in a change, and the Rollback clause reverts the database to its last commit. Unlike Github, if you have made 10 commits, you may only Rollback to the latest Commit.
+Transactional Control Lock and Rollback
+Similar to Github, the Commit locks in a change, and the Rollback clause reverts the database to its last Commit. Unlike Github, if you have made 10 Commits, you may only Rollback to the latest Commit. By default, MySQL uses auto-commit mode. ##**How do transactions work?**##
 
 ```mysql
 ROLLBACK;
 COMMIT;
 ```
-*If no commits have been made, rolling back will revert the database to its initial state. ROLLBACK's are irreversible.*
+*If no Commits have been made, rolling back will revert the database to its initial state. Rollback's are irreversible.*
 
-UPDATE Statement
+
+UPDATE
 Updates values of existing records in a table.
 
 ```mysql
@@ -95,7 +96,7 @@ WHERE
 	emp_no = 999901; # set it to update the record corresponding to emp_no 999901
 ```
 *This removes John Smith from the employees table and replaces him with Jennifer Ortega. If the where clause was referencing a non-existent value, as in there were no employee with the emp_no 999901, this would return an error.*
-	*If no condition or WHERE clause is given, the update cmd will update & replace all rows of the given table.*
+	*If no condition or Where clause is given, the update cmd will update & replace all rows of the given table.*
 
 
 DELETE
@@ -110,7 +111,7 @@ WHERE *condition[s]*
 DELETE FROM employees
 WHERE emp_no = 999903;
 ```
-*This deletes the record of the employee from the table employees. If this value corresponds to another table in which the constraint DELETE ON CASCADE was set, said value from corresponding table will also be deleted when the above is executed.*
+*This deletes the record of the employee from the table employees. If this value corresponds to another table in which the constraint On Delete Cascade was set, said value from corresponding table will also be deleted when the above is executed.*
 	*Again, if no condition is set or given, this command will be applied to the entire table.*
 
 DROP vs TRUNCATE vs DELETE

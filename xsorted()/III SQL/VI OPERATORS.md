@@ -34,13 +34,13 @@ WHERE condition;
 ```mysql
 SELECT * FROM employees WHERE first_name = 'Denis';
 ```
-*Will return only values where the condition is met ; i.e., records where the first name's value is Denis*
-	' = ' is an operator, meaning equals. Operators are used with WHERE
+*Will return only values where the condition is met ; i.e., records where the first name's value is Denis.*
+	' = ' is an operator, meaning equals. Operators are used with Where statements.
 		There is also AND, OR, IN, LIKE, BETWEEN, NOT IN, NOT LIKE, AND, etc.,
 
 
 AND
-Allows you to combine two statements in the condition block ; it narrows the returned data.
+Allows you to combine two statements in the condition block; it narrows the returned data.
 
 ```mysql
 SELECT column_1, column_2, column_3 . . . 
@@ -62,7 +62,7 @@ Like AND but the opposite.
 SELECT * FROM employees
 WHERE first_name = 'Elvis' OR first_name = 'Denis';
 ```
-*Returns all the names of records in employees who have the name Elvis OR the name Denis.
+*Returns all the names of records in employees who have the name Elvis Or the name Denis.
 ```mysql
 SELECT * FROM employees
 WHERE first_name = 'Elvis' AND first_name = 'Denis';
@@ -71,7 +71,7 @@ Would likely return nothing as there is a low likelihood of someone having two f
 
 
 ORDER PRECEDENCE
-SQL rule stating in the execution of a query, the operator AND is applied first, before the OR operator.
+SQL rule stating in the execution of a query, the operator And is applied first, before the Or operator.
 
 ```mysql
 SELECT * FROM employees
@@ -80,7 +80,8 @@ WHERE
 AND 
 	gender = 'F' OR gender = 'M'; # operator on both sides
 ```
-*This returns all records from employees where the last name recorded is Denis AND the gender is Male OR Females, so we got all the values of Male Denis's and then got all the Females recorded in employees regardless of their name.*
+*This returns all records from employees where the last name recorded is Denis And the gender is Male Or Females, so we got all the values of Male Denis's and then got all the Females recorded in employees regardless of their name.*
+
 In order to set precedence other than the default order, SQL requires parenthesis:
 ```mysql
 SELECT * FROM employees
@@ -108,13 +109,13 @@ SELECT * FROM employees
 WHERE 
 last_name IN ('Denis', 'Cathy', 'Dorothy');
 ```
-*This does the same as the overdone OR operators in the query above this one, but cleaner and considerably faster.*
+*This does the same as the overdone Or operators in the query above this one, but cleaner and considerably faster.*
 ```mysql
 SELECT * FROM employees
 WHERE 
 last_name NOT IN ('Denis', 'Cathy', 'Dorothy');
 ```
-*This would return all the employees in the database whose first name is NOT Denis, Cathy, or Dorothy.*
+*This would return all the employees in the database whose first name is Not Denis, Cathy, or Dorothy.*
 
 
 LIKE | NOT LIKE
@@ -124,7 +125,7 @@ To exclude or include values that follow an indicated pattern.
 SELECT * FROM employees
 WHERE first_name LIKE ('Mar%'); # returns first names of which start with 'Mar'
 ```
-*Returns first names of which start with 'Mar'* - *% is a substitute for the following for preceding letters of a value.*
+*Returns first names of which start with 'Mar'* - '%' *is a substitute for the following for preceding letters of a value.*
 ```mysql
 SELECT * FROM employees
 WHERE first_name LIKE ('%ar');
@@ -152,11 +153,11 @@ WILDCARD CHARACTERS
 " % " , " * " , " _ "
 " % " serves as a substitute for a varying amount of symbols preceding or following the given string.
 " _ " serves as a placeholder for a single symbol, it works the same as ' % ' but with no varying length of symbols.
-" * " serves as a wildcard only for the SELECT query's target.
+" * " serves as a wildcard only for the Select query's target.
 
 BETWEEN
-Always used with the AND operator.
-*Remember that the AND operator holds precedence and is considered before other operators.*
+Always used with the And operator.
+*Remember that the And operator holds precedence and is considered before other operators.*
 
 ```mysql
 SELECT * FROM employees
@@ -169,7 +170,7 @@ SELECT * FROM employees
 WHERE
 	hire_date NOT BETWEEN '1990-01-01' AND '2000-01-01';
 ```
-*Returns all employees hired BEFORE Jan 1st, 1990 and AFTER Jan 1st, 2000.*
+*Returns all employees hired Before Jan 1st, 1990 and After Jan 1st, 2000.*
 
 
 IS NULL | IS NOT NULL
@@ -185,12 +186,13 @@ SELECT * FROM employees
 WHERE first_name IS NULL;
 ```
 *Returns the values of first_name's from the employees table in which name is null - shows the counterpart to the query above.*
-	*One can find all values of a column or data type that are null or not null*
+
+*One can find all values of a column or data type that are null or not null:*
 ```mysql
 SELECT emp_no, first_name FROM employees
 WHERE first_name IS NOT NULL;
 ```
-*Returns all the employee numbers and first names of all employees whose first name is not null.*
+*Returns all the employee numbers and first names of all employees whose first name is Not Null.*
 
 
 ADD. COMPARISON OPERATORS
@@ -202,23 +204,22 @@ NOT EQUAL : { < > } or { ! = } = not equal, different from
 SELECT * FROM employees WHERE first_name = 'Mark'; 
 ```
 *Find all those named Mark.*
-
 ```mysql
 SELECT * FROM employees WHERE first_name <> 'Mark';
 ```
-*Find all those NOT named Mark { also could be != }.
+*Find all those Not named Mark { also could be != }.
 
 AFTER : { > } after is denoted with the ' greater than ' symbol
 ```mysql
 SELECT * FROM employees WHERE hire_date > '2000-01-01';
 ```
-*Find all those hired AFTER the specified date.*
+*Find all those hired After the specified date.*
 
 BEFORE : { < } before is the counterpart of AFTER
 ```mysql
 SELECT * FROM employees WHERE hire_date < '2000-01-01';
 ```
-*Find all those hired BEFORE the specified date.*
+*Find all those hired Before the specified date.*
 
 SELECT DISTINCT
 ```mysql
@@ -228,16 +229,16 @@ SELECT gender FROM employees;
 ```mysql
 SELECT DISTINCT gender FROM employees;
 ```
-*Returns only one M and one F, or all the distinct values in gender.*
+*Returns only one M and one F, or all the distinct values in the gender column of the given table.*
 
 
 
 AGGREGATE FUNCTIONS
-Applied on multiple rows of a single column of a table and return an output of a single value. They are commonly used with GROUP as they can be applied to any group of data values within a given column.
+Applied on multiple rows of a single column of a table and return an output of a single value. They are commonly used with Group By as they can be applied to any group of data values within a given column.
 
 
-COUNT ( )
-Counts the number of records in a field.
+COUNT
+Counts the number of records in a given field.
 
 ```mysql
 SELECT column_name COUNT(column_name)
@@ -249,7 +250,7 @@ FROM # returns two rows ; first with each group of unique values
 SELECT COUNT(emp_no)
 FROM employees;
 ```
-*This counts all the rows of the emp_no column from the employees table. emp_no = primary key, so we know it won't repeat and don't need DISTINCT.*
+*This counts all the rows of the emp_no column from the employees table. emp_no is the Primary Key, so we know it won't repeat and don't need Distinct.*
 ```mysql
 SELECT COUNT(DISTINCT first_name)
 FROM employees;
@@ -259,6 +260,7 @@ FROM employees;
 SELECT COUNT(*) FROM salaries WHERE salary >= 75405;
 ```
 *Returns all salaries from the table Salaries where the value in column salary is over or equal to $75,405.*
+
 **COUNT(column_name) ignores Null values by default. COUNT( * ) DOES NOT.**
 ```mysql
 SELECT 
@@ -266,24 +268,24 @@ SELECT
 FROM 
 	salaries;
 ```
-*This counts all rows of the given table, Null values included.*
+*This counts all rows of the given table, Null values are included.*
 
 
-SUM ( )
-Sums all the Non-Null values in a column, and only works for numerical data, never non-numeric.
+SUM
+Sums all the Non-Null values in a column, and only works for numerical data, never non-numeric values.
 
-*How much did the company spend on salaries?*
+""How much did the company spend on salaries?""
 ```mysql
 SELECT 
 	SUM(salary)
 FROM 
 	salaries;
 ```
-*How much did the company spend on salaries? This query sums all the salaries's values into one sum.*
+*This query sums all the salaries's values into one sum.*
 
 
-MIN ( ) & MAX ( )
-Returns the minimum or maximum value from the entire list, also restricted to numeric values.
+MIN & MAX
+Returns the minimum or maximum value from the entire list, also is restricted to numeric values.
 
 ```mysql
 SELECT 
@@ -301,7 +303,7 @@ FROM
 *Find the lowest salary in the company.*
 
 
-AVG()
+AVG
 Extracts the average of all the Non-Null values belonging to a specified column of a table.
 
 ```mysql
@@ -313,7 +315,7 @@ FROM salaries;
 
 
 ROUND
-Rounds the returned value (usually from an aggregate function, listed above). Only numeric values allowed.
+Rounds the returned value (usually from an aggregate function, listed above). Again, only numeric values allowed.
 
 ```mysql
 SELECT ROUND(AVG(salary))
@@ -324,7 +326,7 @@ FROM salaries;
 SELECT ROUND(AVG(salary),2)
 FROM salaries;
 ```
-*Rounds the returned average value of the salaries with two decimal points, specified by { , 2 ) }.*
+*Rounds the returned average value of the salaries with two decimal points, specified by ', 2 )'.*
 ```mysql
 SELECT ROUND(AVG(salary),2) AS average_salary
 FROM salaries;
@@ -348,7 +350,7 @@ ORDER BY first_name;
 SELECT * FROM employees 
 ORDER BY first_name ASC;
 ```
-*ASC is Ascending order, which is also the default for the ORDER BY operator.*
+*ASC is Ascending order, which is also the default for the Order By operator.*
 ```mysql
 SELECT * FROM employees 
 ORDER BY first_name DESC;
@@ -363,7 +365,7 @@ ORDER BY emp_no DESC;
 SELECT * FROM employees 
 ORDER BY first_name, last_name ASC;
 ```
-*This orders the employees returned initially by first names, and for matching names, it orders them in ascending order within those names.*
+*This orders the employees returned initially by first names, and for matching names, it orders them in Ascending order within those names.*
 
 
 GROUP BY
@@ -383,8 +385,8 @@ ORDER BY
 SELECT first_name FROM employees
 GROUP BY first_name;
 ```
-*Returns all unique first_names; multiple of the same name are grouped together on a single row, so the length of the return will be equal to the COUNT DISTINCT of the given column. Names will not be shown, only the amount of observations for each returned value.*
-	*GROUP BY must be placed immediately after any WHERE conditions, if present, and just before any ORDER BY clauses, if present.*
+*Returns all unique first_names; multiple of the same name are grouped together on a single row, so the length of the return will be equal to the Count Distinct of the given column. Names will not be shown, only the amount of observations for each returned value.*
+*Group By must be placed immediately after any Where conditions, if present, and just before any Order By clauses, if present. Having, if present, is placed between Group By and Order By. More on this soon.*
 ```mysql
 SELECT first_name, COUNT(first_name) FROM employees
 GROUP BY first_name
@@ -393,18 +395,18 @@ ORDER BY first_name ASC;
 *Returns the count of the first_names from the employees table and groups them by first name, which is ordered by first name.*
 
 
-ALIAS
+ALIASES
 ```mysql
 SELECT first_name, COUNT(first_name) AS names_count # add an alias
 FROM employees
 GROUP BY first_name
 ORDER BY first_name;
 ```
-*This returns the same as the previous query but the title over the count of the first names will be titled ' names_count ' instead of COUNT(first_name).*
+*This returns the same as the previous query but the title over the Count column of the first_name's will be titled ' names_count ' instead of Count(first_name).*
 
 
 HAVING
-Refines the outputs from records that do not satisfy a certain condition - like WHERE, but applied to the GROUP BY block.
+Refines the outputs from records that do not satisfy a certain condition - like Where, but applied to the Group By block.
 
 ```mysql
 SELECT 
@@ -432,13 +434,13 @@ SELECT dept_no, COUNT(*) AS emp_count FROM employees
 GROUP BY dept_no
 HAVING COUNT(*) > 50; # COUNT(*)>50 is applied to the returned data AFTER grouping
 ```
-*The former returns employees hired after Jan 1st, 1999 and sorts them into groups of salaries by their salaries. The latter selects the department No. and the count of employees but keeps only the departments who have over 50 employees **after** the column is selected and the HAVING COUNT( * ) > 50 is satisfied.*
+*The former returns employees hired after Jan 1st, 1999 and sorts them into groups of salaries by their salaries. The latter selects the department No. and the Count of employees but keeps only the departments who have over 50 employees **after** the column is selected and the Having Count( * ) > 50 condition is satisfied.*
 ```mysql
-SELECT employee_id, AVG(salary) FROM salaries
-GROUP BY employee_id
+SELECT emp_no, AVG(salary) FROM salaries
+GROUP BY emp_no
 HAVING AVG(salary) <= 65000; # filters AFTER grouping
 ```
-*HAVING's unique application is it can have aggregate functions for its conditions, where as WHERE cannot. Its use is for sorting or applying new conditions after the GROUP BY's return is pulled back.*
+*Having's unique application is it can have aggregate functions for its conditions, where as Where cannot. Its use is for sorting or applying new conditions after the Group By's return is retrieved.*
 
 Suppose you wanted to find all the employees names of which appear more than 250 times in the employees table:
 ```mysql
@@ -448,9 +450,9 @@ HAVING
 	COUNT(first_name) > 250 # this is proper syntax and will execute correctly
 ORDER BY first_name;
 ```
-*Count is an aggregate function, so to include it as a conditional in a query, you must use HAVING, not WHERE.*
+*Count is an aggregate function, so to include it as a conditional in a query, you must use Having, not Where.*
 
-"Retrieve the average contract salary for each employee whose average salary is higher than $70,000. Sort the output by employee number in ascending order."
+""Retrieve the average contract salary for each employee whose average salary is higher than $70,000. Sort the output by employee number in ascending order.""
 ```mysql
 SELECT emp_no, AVG(salary) FROM salaries
 GROUP BY emp_no
@@ -462,10 +464,9 @@ ORDER BY emp_no ASC;
 
 WHERE
 Allows setting of conditions that refer to subsets of individual rows. It is applied before re-organizing the output into groups.
-	*WHERE sets the conditions upon the table so the only returned values match said condition. After this, the WHERE clause looses its power and HAVING comes in.*
-	*HAVING allows us to set a condition AFTER the values that satisfy the prerequisite conditions are met. After retrieval, HAVING applies some additional condition to the retrieved data.*
+	*Where sets the conditions upon the table so the only returned values match said condition. After this, the Where clause looses its power and Having comes into play. Having allows us to set a condition After the values that satisfy the prerequisite conditions are met. After retrieval, Having applies some additional condition to the retrieved data.*
 
-Imagine we need to extract a list of all names that are encountered less than 200 times. Let the data refer to people hired after the 1st of January, 1999. 
+""Imagine we need to extract a list of all names that are encountered less than 200 times. Let the data refer to people hired after the 1st of January, 1999.""
 ```mysql
 SELECT first_name, COUNT(first_name) AS names_count FROM employees
 WHERE hire_date > '1999-01-01'
@@ -522,7 +523,7 @@ SELECT dept_no,
 FROM
 	departments;
 ```
-*Returns two columns; the first with the dept_no, the second with either the original department name, or if a null value was found, 'Department name not provided' is given in the null value's place. The only issue is the second column is named: "IFNULL(dept_name, 'Department name not provided')". Let's clean this up:*
+*Returns two columns; the first with the dept_no, the second with either the original department name, or if a null value was found, 'Department name not provided' is given in the null value's place. The only issue is the second column is named: 'Ifnull(dept_name, 'Department name not provided')'. Let's clean this up:*
 ```mysql
 SELECT dept_no,
 	IFNULL(dept_name,
@@ -555,8 +556,8 @@ FROM
 ORDER BY 
 	dept_no DESC;
 ```
-*This is a bad example, but Coalesce essentially extends Ifnull to multiple fallbacks. If the table departments had a null value for a department's name, it would return the department number instead. If the department number was also a Null entry, it would return the string  'Empty row'. This would all be under a column next to dept_no and named: "COALESCE(dept_name, dept_no, 'Empty row')".
-	Coalesce takes the list provided and for every record, it looks for the first non-Null value in the record. Whichever meets this condition first is the value seen in the corresponding column.*
+*This is a bad example, but Coalesce essentially extends Ifnull to multiple fallbacks. If the table departments had a Null value for a department's name, it would return the department number instead. If the department number was also a Null entry, it would return the string  'Empty row'. This would all be under a column next to dept_no and named: 'Coalesce( dept_name, dept_no, 'Empty row' )'.
+	Coalesce takes the list provided and for every record, it looks for the first Non Null value in the record. Whichever meets this condition first is the value seen in the corresponding column.*
 ```mysql
 SELECT 
 	dept_no, 
@@ -569,5 +570,5 @@ FROM
 ORDER BY 
 	dept_no DESC;
 ```
-*This would be identical to the previous query but the additional column would be titled: "named_depts".
-	Another small note is mixing data types in MySQL will lead to it trying to convert them into like-types; the int dept_no will be converted into a string to match dept_name and 'Empty row'.*
+*This would be identical to the previous query but the additional column would be titled 'named_depts'.
+	Another small note is mixing data types in MySQL will lead to it trying to convert them into like-types; the Int dept_no will be converted into a string to match dept_name and 'Empty row'.*

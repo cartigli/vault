@@ -1,7 +1,5 @@
 The Case
 
-
-
 ```mysql
 SELECT emp_no, first_name, last_name,
 	CASE
@@ -51,7 +49,7 @@ JOIN salaries s ON e.emp_no = s.emp_no
 GROUP BY s.emp_no;
 ```
 
-"Retrieve the employee number (`emp_no`), first name (`first_name`), and last name (`last_name`) of all employees from the `employees` table whose employee number is greater than 10005. Join this information with the data from the department manager `dept_manager` table to add a fourth column named `is_manager`, containing the string _'Manager'_if the employee number of the given employee is not a null value, and _'Employee'_ otherwise."
+""Retrieve the employee number (emp_no), first name (first_name), and last name (last_name) of all employees from the employees table whose employee number is greater than 10005. Join this information with the data from the department manager dept_manager table to add a fourth column named is_manager, containing the string 'Manager' if the employee number of the given employee is not a null value, and 'Employee' otherwise.""
 ```mysql
 SELECT e.emp_no, e.first_name, e.last_name,
         CASE 

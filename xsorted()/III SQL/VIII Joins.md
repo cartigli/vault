@@ -6,18 +6,18 @@ Joins must be constructed over a column the two tables have in common. It shows 
 ┌─────────────────┐          ┌─────────────────┐
 │  employees      ├||──────|<┤  dept_manager   ├>|┐  ┌──────────────────┐
 ├─────────────────┤          ├─────────────────┤  └||┤   departments    │
-│PK emp_no INT    ├||─────┐  │FK dept_no CHAR4 │     ├──────────────────┤
-│ birth_date DATE │       │  │FK emp_no INT    │     │PK dept_no CHR4   ├││┐
-│ first_name VCHR ├||───┐ │  │ from_date DATE  │     │ dept_name VCHR40 │  │
-│ last_name VCHR  │     │ │  │ to_date DATE    │     └──────────────────┘  │
-│ gender ENUM     ├||─┐ │ │  └─────────────────┘  ┌────────────────┐       │
-│ hire_date DATE  │   │ │ └─────────────────────|<┤   dept_emp     ├>|─────┘
-└─────────────────┘   │ │   ┌────────────────┐    ├────────────────┤
-  ┌───────────────────┘ └─|<┤     titles     │    │FK emp_no INT   │
-  │   ┌────────────────┐    ├────────────────┤    │FK dept_no CHR4 │
-  └─|<┤    salaries    │    │FK emp_no INT   │    │ from_date DATE │
-      ├────────────────┤    │ title VCHR50   │    │ to_date DATE   │
-      │FK emp_no INT   │    │ from_date DATE │    └────────────────┘
+│{PK} emp_no INT  ├||─────┐  │{FK} dept_no CHR │     ├──────────────────┤
+│ birth_date DATE │       │  │{FK} emp_no INT  │     │{PK} dept_no CHR  ├││─┐
+│ first_name VCHR ├||───┐ │  │ from_date DATE  │     │ dept_name VCHR   │   │
+│ last_name VCHR  │     │ │  │ to_date DATE    │     └──────────────────┘   │
+│ gender ENUM     ├||─┐ │ │  └─────────────────┘  ┌─────────────────┐       │
+│ hire_date DATE  │   │ │ └─────────────────────|<┤   dept_emp      ├>|─────┘
+└─────────────────┘   │ │   ┌────────────────┐    ├─────────────────┤
+  ┌───────────────────┘ └─|<┤     titles     │    │{FK} emp_no INT  │
+  │   ┌────────────────┐    ├────────────────┤    │{FK} dept_no CHR │
+  └─|<┤    salaries    │    │{FK} emp_no INT │    │ from_date DATE  │
+      ├────────────────┤    │ title VCHR     │    │ to_date DATE    │
+      │{FK} emp_no INT │    │ from_date DATE │    └─────────────────┘
       │ salary INT     │    │ to_date DATE   │
       │ from_date DATE │    └────────────────┘
       │ to_date DATE   │
@@ -26,7 +26,7 @@ Joins must be constructed over a column the two tables have in common. It shows 
 
 
 INNER JOIN
-Below we have both out tables Dept_manager  and Departments shown as circles. Together, they have the dept_no in common,; as an item of the table Dept_manager, and as the Primary Key of the Departments table. Therefore, the Result Set of these two tables is dept_no.
+Below we have both out tables Dept_manager  and Departments shown as circles. Together, they have the dept_no in common,; as an item of the table Dept_manager, and as the Primary Key of the Departments table. Therefore, the result ret of these two tables is dept_no.
 
 ```tikz
 \begin{document}
@@ -76,8 +76,9 @@ FROM
 JOIN 
 	table_2 ON table_1.column_name = table_2.column_name;
 ```
-*1. Select all columns you wish to see in the result and the tables they originate from. 2. FROM and JOIN show the tables we are matching. 3 ON relates the columns by quoting them over the equals sign to show SQL where to pull the matching values from.*
-*You can also give an alias for the table names without the AS command in this case:*
+*1. Select all columns you wish to see in the result and the tables they originate from. 2. From and Join show the tables we are matching. 3 On relates the columns by quoting them over the equals sign to show MySQL where to pull the matching values from.*
+
+*You can also give an alias for the table names without the As command in this case:*
 ```mysql
 SELECT 
 	t1.column_name[s], t2.column_name[s],
@@ -88,7 +89,7 @@ JOIN
 ```
 *This way it becomes much easier to spell out the entire relationship.*
 
-"Practice with the preconfigured dataset: Retrieve all employee numbers (emp_no) and contract start dates (from_date) from the department employees table (dept_emp). Add a third column, displaying the name of the department they have signed for (dept_name from the departments table):"
+""Practice with the preconfigured dataset: Retrieve all employee numbers (emp_no) and contract start dates (from_date) from the department employees table (dept_emp). Add a third column, displaying the name of the department they have signed for (dept_name from the departments table):""
 ```mysql
 SELECT 
 	de.emp_no, de.from_date, d.dept_name
@@ -99,13 +100,11 @@ JOIN
 ORDER BY 
 	de.emp_no;
 ```
-*We are making a Join of the two given tables over their common ground; dept_no. We also defined their aliases with From and Inner Join. The columns they are joined over need not be named the same.*
-	*In our practice set, the departments table had some Null values in both columns of its contents. Neither of either of these values are considered as only Non-Null matching values are in play. If there is a complete record in one table that is vacant in the other, it will not be shown*
-			*If the result set is empty, this simply means their are no relationships between the tables.*
+*We are making a Join of the two given tables over their common ground; dept_no. We also defined their aliases with From and Inner Join. The columns they are joined over need not be named the same. In our practice set, the Departments table had Null values in both columns of its contents. Neither of either of these values are considered as only Non Null matching values are in play. If there is a complete record in one table that is vacant in the other, it will not be shown. If the result set is empty, this simply means their are no relationships between the tables.*
 
 LEFT JOIN
-A join of the components of the primary table in the join.
-	*It is akin to all the matching values of two tables plus all the values of the primary table that match no values from the secondary values | It is the overlapping region from the inner join in addition to the left outer circle of the diagram.*
+A join of the components of the primary table in the join. It is akin to all the matching values of two tables plus all the values of the primary table that match no values from the secondary values | It is the overlapping region from the inner join in addition to the left outer circle of the diagram.
+
 ```tikz
 \begin{document}
 \begin{tikzpicture}
@@ -206,9 +205,9 @@ RIGHT JOIN
 ```
 
 
-The Old Syntax
+The Old Syntax { Deprecated }
 We have several notes here; initially, right and left joins are identical in function. If the position of both tables is swapped, using a Left Join on the original positioning will return the same result as if they were switched and a Right Join was used.
-	Furthermore, the same output as the inner join can be achieved with the outdated syntax which uses Where. This has the same effect and resulting table but is more computationally expensive and so less efficient.
+	Furthermore, the same output as the inner join can be achieved with the outdated syntax which uses Where. This has the same effect and resulting table but is more computationally expensive and so less efficient. It is also not the official method of creating joins and is unprofessional.
 
 ```mysql
 SELECT t1.column_name, t1.column_name,..., t2.column_name,...
@@ -219,13 +218,11 @@ WHERE
 	t.column_name = t2.column_name;
 ```
 
-Question:
-The new and the old join syntax - Exercise #1
-Retrieve a table containing three columns:
-1. The employee number (`emp_no`) as recorded in the departments manager table (`dept_manager`).
-2. Their contract salary value (`salary`), obtained from the `salaries` table.  
-3. The start date of their contracts (`from_date`).
-Aim to write your query using the old join syntax.
+""Retrieve a table containing three columns:
+1. The employee number (emp_no) as recorded in the departments manager table (dept_manager).
+2. Their contract salary value (salary), obtained from the salaries table.  
+3. The start date of their contracts (from_date).
+Aim to write your query using the old join syntax.""
 SOLUTION:
 ```mysql
 SELECT 
@@ -241,7 +238,7 @@ WHERE
 JOIN and WHERE
 Join is used to form the connection and where defines the conditions under which the connections are to be made.
 
-Say we want to know the first and last names of every employee who was paid over $145,000 this year. We need emp_no, first_name, and last_name from the Employees table, and salary from Salaries.
+Say we want to know the first and last names of every employee who was paid over $145,000 this year. We need emp_no, first_name, and last_name from the Employees table, and salary from the Salaries table.
 ```mysql
 SELECT e.emp_no, e.first_name, e.last_name, s.salary
 FROM employees e
@@ -249,8 +246,7 @@ JOIN salaries s ON e.emp_no = s.emp_no
 WHERE s.salary > 145000;
 ```
 
-Retrieve the employee number (`emp_no`), first name (`first_name`), last name (`last_name`), and hire date (`hire_date`) of all `employees` whose last name is _'Bamford'_. Add a fifth column displaying their job title (`title`), as recorded in the `titles` table. Sort your output by employee number in ascending order.
-Solution:
+""Retrieve the employee number (emp_no), first name (first_name), last name (last_name), and hire date (hire_date) of all employees whose last name is _'Bamford'_. Add a fifth column displaying their job title (title), as recorded in the titles table. Sort your output by employee number in ascending order.""
 ```mysql
 SELECT e.emp_no, e.first_name, e.last_name, t.title
 FROM employees e
@@ -261,19 +257,10 @@ ORDER BY e.emp_no ASC;
 
 
 CROSS JOIN
-A Cross Join takes the values from a given table and connects them with all the values from the table we want to join it with. This is in contrast to an Inner Join which connects only the matching values. A Cross Join connects all values, not just those that much. This is called the Cartesian product of two sets.$$A :\begin{bmatrix} x \\ y \\ z \end{bmatrix} \text{, B :} \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}\text{, A x B :} \begin{bmatrix} (x,1) & (x,2) & (x,3) \\ (y,1) & (y,2) & (y,3) \\ (z,1) & (z,2) & (z,3) \end{bmatrix}= \text{Cartesian Product}$$
-*This is useful when the two tables are not well connected.*
-*Not functionally different from the Inner or Old Syntax Joins.*
+A Cross Join takes the values from a given table and connects them with all the values from the table we want to join it with. This is in contrast to an Inner Join which connects only the matching values. A Cross Join produces every possible combination of rows from both tables, regardless of their relationship. This is the Cartesian product.$$A :\begin{bmatrix} x \\ y \\ z \end{bmatrix} \text{, B :} \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}\text{, A x B :} \begin{bmatrix} (x,1) & (x,2) & (x,3) \\ (y,1) & (y,2) & (y,3) \\ (z,1) & (z,2) & (z,3) \end{bmatrix}= \text{Cartesian Product}$$
+*This is useful when the two tables are not well connected - not functionally different from the Inner or Old Syntax Joins but is more modern and current.*
 
-REQ:
-Return a list with the first two employees (i.e. employees _10001_ and _10002_) with all the departments they can be assigned to. To obtain the desired output, refer to all column from the departments and department employees tables (departments, dept_emp). Order your output by employee number (emp_no) and department name (dept_name).
-The order of your field list is as follows:
-	Department number (dept_no)
-	Department name (dept_name)
-	Employee number (emp_no)
-	Start date (from_date)
-	End date (to_date)
-Solution:
+""Return a list with the first two employees (i.e. employees _10001_ and _10002_) with all the departments they can be assigned to. To obtain the desired output, refer to all column from the departments and department employees tables (departments, dept_emp). Order your output by employee number (emp_no) and department name (dept_name). The order of your field list is as follows: Department number (dept_no), Department name (dept_name), Employee number (emp_no), Start date (from_date), End date (to_date)""
 ```mysql
 SELECT d.*, de.*
 FROM departments d,
@@ -295,7 +282,7 @@ JOIN
 	salaries s ON e.emp_no = s.emp_no
 GROUP BY gender;
 ```
-*However, the above will return an error as e.emp_no is not being grouped despite the fact that it was selected first. To avoid this error, remove e.emp_no from the Selection.*
+*However, the above will return an error as e.emp_no is not being grouped despite the fact that it was selected first. To avoid this error, remove e.emp_no from the Selection:*
 ```mysql
 SELECT e.gender, AVG(s.salary) AS av_salary
 FROM employees e,
@@ -308,20 +295,20 @@ GROUP BY gender;
 
 JOINING w/ Multiple Tables
 Joins can be made over more than two tables, as long as they have values to relate across
-<u>employees</u>
+
 ```
-┌─────────────────┐       ┌─────────────────┐
-│  employees      ├||───|<┤  dept_manager   ├>|┐  ┌──────────────────┐
-├─────────────────┤       ├─────────────────┤  └||┤   departments    │
-│PK mep_no INT    │       │FK dept_no CHAR4 │     ├──────────────────┤
-│ birth_date DATE │       │FK emp_no INT    │     │PK dept_no CHR4   │
-│ first_name VCHR │       │ from_date DATE  │     │ dept_name VCHR40 │
-│ last_name VCHR  │       │ to_date DATE    │     └──────────────────┘
-│ gender ENUM     │       └─────────────────┘
+┌─────────────────┐          ┌─────────────────┐
+│  employees      ├||──────|<┤  dept_manager   ├>|┐  ┌──────────────────┐
+├─────────────────┤          ├─────────────────┤  └||┤   departments    │
+│{PK} emp_no INT  │          │{FK} dept_no CHR │     ├──────────────────┤
+│ birth_date DATE │          │{FK} emp_no INT  │     │{PK} dept_no CHR  │
+│ first_name VCHR │          │ from_date DATE  │     │ dept_name VCHR   │
+│ last_name VCHR  │          │ to_date DATE    │     └──────────────────┘
+│ gender ENUM     │          └─────────────────┘
 │ hire_date DATE  │
 └─────────────────┘
 ```
-*Say we needed all the managers' first and last names, their hire date, promotion to manager dates, and their departments. From the Employees table, we can get the first and last names, as well as the hire_date. From Dept_manager, we can find their from_date, and from Departments we can find their dept_name. Employees is connected to Dept_manager through emp_no [ Primary Key to Employees; Foreign Key to Dept_manager ] and Dept_manager is connected to Departments through dept_no [ Primary key to Departments; Foreign Key to Dept_manager ]. Therefore, we should join them as such.*
+Say we needed all the managers' first and last names, their hire date, promotion to manager dates, and their departments. From the Employees table, we can get the first and last names, as well as the hire_date. From Dept_manager, we can find their from_date, and from Departments we can find their dept_name. Employees is connected to Dept_manager through emp_no [ Primary Key to Employees; Foreign Key to Dept_manager ] and Dept_manager is connected to Departments through dept_no [ Primary key to Departments; Foreign Key to Dept_manager ]. Therefore, we should join them as such.
 ```mysql
 SELECT e.first_name, e.last_name, e.hire_date, dm.from_date, d.dept_name
 FROM employees e
@@ -330,7 +317,7 @@ JOIN departments d ON dm.dept_no = d.dept_no
 GROUP BY e.first_name;
 ```
 
-"Retrieve all _Senior Engineers_' first and last name (`first_name`, `last_name`), hire dates (`hire_date`), job titles (`title`), start dates (`from_date`), and names of the departments they are working in (`dept_name`). To obtain the desired result, you should refer to data from the following tables: `employees`, `titles`, `departments`, `dept_emp`."
+""Retrieve all Senior Engineers_' first and last name (first_name, last_name), hire dates (hire_date), job titles (title), start dates (from_date), and names of the departments they are working in (dept_name). To obtain the desired result, you should refer to data from the following tables: employees, titles, departments, dept_emp.""
 ```mysql
 SELECT e.first_name, e.last_name, e.hire_date, t.title, de.from_date, d.dept_name
 FROM employees e
@@ -340,36 +327,36 @@ JOIN departments d ON d.dept_no = de.dept_no
 WHERE t.title = 'Senior Engineer';
 ```
 
-"Let's find the names of all departments and determine the average salary paid to each of them."
+""Find the names of all departments and determine the average salary paid to each of them.""
 ```
 ┌─────────────────┐          ┌─────────────────┐
 │  employees      ├||──────|<┤  dept_manager   ├>|┐  ┌──────────────────┐
 ├─────────────────┤          ├─────────────────┤  └||┤   departments    │
-│PK mep_no INT    ├||─────┐  │FK dept_no CHAR4 │     ├──────────────────┤
-│ birth_date DATE │       │  │FK emp_no INT    │     │PK dept_no CHR4   ├││┐
-│ first_name VCHR ├||───┐ │  │ from_date DATE  │     │ dept_name VCHR40 │  │
-│ last_name VCHR  │     │ │  │ to_date DATE    │     └──────────────────┘  │
-│ gender ENUM     ├||─┐ │ │  └─────────────────┘  ┌────────────────┐       │
-│ hire_date DATE  │   │ │ └─────────────────────|<┤   dept_emp     ├>|─────┘
-└─────────────────┘   │ │   ┌────────────────┐    ├────────────────┤
-  ┌───────────────────┘ └─|<┤     titles     │    │FK emp_no INT   │
-  │   ┌────────────────┐    ├────────────────┤    │FK dept_no CHR4 │
-  └─|<┤    salaries    │    │FK emp_no INT   │    │ from_date DATE │
-      ├────────────────┤    │ title VCHR50   │    │ to_date DATE   │
-      │FK emp_no INT   │    │ from_date DATE │    └────────────────┘
+│{PK} emp_no INT  ├||─────┐  │{FK} dept_no CHR │     ├──────────────────┤
+│ birth_date DATE │       │  │{FK} emp_no INT  │     │{PK} dept_no CHR  ├││─┐
+│ first_name VCHR ├||───┐ │  │ from_date DATE  │     │ dept_name VCHR   │   │
+│ last_name VCHR  │     │ │  │ to_date DATE    │     └──────────────────┘   │
+│ gender ENUM     ├||─┐ │ │  └─────────────────┘  ┌─────────────────┐       │
+│ hire_date DATE  │   │ │ └─────────────────────|<┤   dept_emp      ├>|─────┘
+└─────────────────┘   │ │   ┌────────────────┐    ├─────────────────┤
+  ┌───────────────────┘ └─|<┤     titles     │    │{FK} emp_no INT  │
+  │   ┌────────────────┐    ├────────────────┤    │{FK} dept_no CHR │
+  └─|<┤    salaries    │    │{FK} emp_no INT │    │ from_date DATE  │
+      ├────────────────┤    │ title VCHR     │    │ to_date DATE    │
+      │{FK} emp_no INT │    │ from_date DATE │    └─────────────────┘
       │ salary INT     │    │ to_date DATE   │
       │ from_date DATE │    └────────────────┘
       │ to_date DATE   │
       └────────────────┘
 ```
-These tables are not immediately connected. Salaries hold the salaries information, and departments contains the dept_name's. We could connect Departments to Dept_manager through dept_no, connect Dept_manager to Employees through emp_no, and finally connect Salaries through emp_no, as the previous Join suggests, but this is inefficient. MySQL allows us to 'shortcut' through the emp_no's in Dept_manager and Salaries, shorting the connection created.
+*These tables are not immediately connected. Salaries hold the salaries information, and departments contains the dept_name's. We could connect Departments to Dept_manager through dept_no, connect Dept_manager to Employees through emp_no, and finally connect Salaries through emp_no, as the previous Join suggests, but this is inefficient. MySQL allows us to 'shortcut' through the emp_no's in Dept_manager and Salaries, shorting the connection created.*
 ```mysql
 SELECT d.dept_name, AVG(s.salary)
 FROM departments d
 JOIN dept_manager dm ON dm.dept_no = d.dept_no
 JOIN salaries s ON dm.emp_no = s.emp_no;
 ```
-*Without GROUP BY in this Join, MySQL automatically picks an order and grouping by the first returned dept_name. We need to include this to see the individual dept_name's with their respective average salaries.*
+*Without Group By in this Join, MySQL automatically picks an order and grouping by the first returned dept_name. We need to include this to see the individual dept_name's with their respective average salaries.*
 ```mysql
 SELECT d.dept_name, AVG(s.salary)
 FROM departments d
@@ -386,7 +373,7 @@ JOIN salaries s ON dm.emp_no = s.emp_no
 GROUP BY d.dept_name
 ORDER BY d.dept_no;
 ```
-*Or, we could order it by the Average salary we found, which is more intuitively meaningful.*
+*Or, we could order it by the average salary we found, which is more intuitively meaningful.*
 ```mysql
 SELECT d.dept_name, AVG(s.salary) AS salary
 FROM departments d
@@ -395,7 +382,7 @@ JOIN salaries s ON dm.emp_no = s.emp_no
 GROUP BY d.dept_name
 ORDER BY salary;
 ```
-*Or, we could use the Average salaries' Alias.*
+*Or, we could use the average salaries' alias.*
 *If we wanted to find only departments in which the average manager makes over x amount, we could use Having which applies a condition to a Group By clause.*
 ```mysql
 SELECT d.dept_name, AVG(s.salary) AS salary
@@ -407,7 +394,7 @@ HAVING salary > 75000
 ORDER BY salary;
 ```
 
-"Calculate the average salary (`salary`), as recorded in the `salaries` table, for each job title (`title`) as listed in the `titles` table, considering all contracts ever signed. Name the second column `avg_salary`and make sure to round the average salary to the nearest cent. Only include records where the average salary is less than $75,000. Sort the results from highest to lowest average salary."
+""Calculate the average salary (salary), as recorded in the salaries table, for each job title (title) as listed in the titles table, considering all contracts ever signed. Name the second column avg_salary and make sure to round the average salary to the nearest cent. Only include records where the average salary is less than $75,000. Sort the results from highest to lowest average salary.""
 ```mysql
 SELECT t.title, ROUND(AVG(s.salary),2) AS avg_salary
 FROM salaries s
@@ -449,9 +436,9 @@ UNION ALL SELECT
 FROM
 	dept_manager dm;
 ```
-*Union retrieves only distinct values while Union All retrieves the duplicate records. Additionally, Union's are more resource expensive than Union All.*
+*Union retrieves only distinct values while Union All retrieves the duplicate records. Additionally, Union's are more computationally expensive than Union All.*
 
-"Use UNION to combine data from two subsets in the `employees_10` database. The first subset should contain the employee number (`emp_no`), first name (`first_name`), and last name (`last_name`) of all employees whose family name is _'Bamford'_. The second subset should contain the department number (`dept_no`) and start date (`from_date`) of all managers, as recorded in the departments manager table (`dept_manager`). Ensure to provide null values in all empty columns for each subset."
+"Use Union to combine data from two subsets in the employees_10 database. The first subset should contain the employee number (emp_no), first name (first_name), and last name (last_name) of all employees whose family name is _'Bamford'_. The second subset should contain the department number (dept_no) and start date (from_date) of all managers, as recorded in the departments manager table (dept_manager). Ensure to provide null values in all empty columns for each subset.""
 ```mysql
 SELECT
     e.emp_no,
@@ -475,7 +462,6 @@ FROM
 
 
 
-
 SUBQUERIES
 Inner queries which ran inside of outer queries.
 
@@ -491,7 +477,7 @@ WHERE
 							table_2 t2);
 ```
 
-"Use a subquery with an IN operator inside a WHERE clause to obtain the employee number (`emp_no`), department number (`dept_no`), and contract start date (`from_date`) from the `dept_manager` table. Retrieve only data about managers born in or after 1955."
+""Use a subquery with an In operator inside a Where clause to obtain the employee number (emp_no), department number (dept_no), and contract start date (from_date) from the dept_manager table. Retrieve only data about managers born in or after 1955.""
 ```mysql
 SELECT d.emp_no,  d.dept_no, d.from_date
 FROM dept_manager d 
@@ -503,7 +489,7 @@ WHERE d.emp_no IN (SELECT
                     birth_date >= '1955-01-01');
 ```
 
-"Use a subquery with EXISTS inside a WHERE clause of an outer query to retrieve all data from the `salaries` table. Specify in the subquery that you are only interested in individuals whose job title is _'Engineer'_."
+""Use a subquery with Exists inside a Where clause of an outer query to retrieve all data from the salaries table. Specify in the subquery that you are only interested in individuals whose job title is 'Engineer'.""
 ```mysql
 SELECT *
 FROM salaries s
@@ -516,7 +502,7 @@ WHERE EXISTS (SELECT *
             );
 ```
 
-"Assign employee number 110022 as a manager to all employees from 10001 to 10020, and employee number 110039 as a manager to all employees from 10021 to 10040."
+""Assign employee number 110022 as a manager to all employees from 10001 to 10020, and employee number 110039 as a manager to all employees from 10021 to 10040.""
 ```mysql
 SELECT emp_no
 FROM dept_manager
@@ -540,7 +526,7 @@ WHERE e.emp_no <= 10020
 GROUP BY e.emp_no
 ORDER BY e.emp_no;
 ```
-*We were returned a table containing three rows: employee_ID, department_code, and manager_ID. Employee_ID is emp_no's 10001 - 10020, department_code is the dept_no minimum for each emp_no pulled from the dept_manager table [ to stop duplicates? ], and the manager_ID is 110022 for every record in this table. This is the second Inner most query.*
+*We were returned a table containing three rows: employee_ID, department_code, and manager_ID. Employee_ID is emp_no's 10001 - 10020, department_code is the dept_no minimum for each emp_no pulled from the dept_manager table [ to stop duplicates ], and the manager_ID is 110022 for every record in this table. This is the second Inner most query.*
 ```mysql
 SELECT A.*
 FROM
@@ -596,7 +582,7 @@ FROM
 	ORDER BY e.emp_no
 	LIMIT 20) AS B;
 ```
-*Make one more outer function for the function and duplicate it with the modifications for the second group of employees designated to be managed by the second employee. Change the Inner most function looking for the **manager**'s emp_no to be 110039, switch the directional of the greater than operator [ was less than ], and add a Limit of 20 right after the Order By clause. Finally, change the Aliases from A to B.*
+*Make one more outer function for the function and duplicate it with the modifications for the second group of employees designated to be managed by the second employee. Change the Inner most function looking for the **manager**'s emp_no to be 110039, switch the directional of the greater than operator [ was less than ], and add a Limit of 20 right after the Order By clause. Finally, change the aliases from A to B.*
 
 *Fill the Emp_manager table with data about employees, the number of the department they are working in, and their managers:*
 ```mysql

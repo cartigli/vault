@@ -29,8 +29,7 @@ FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE # 
 );
 ```
 
-ON DELETE CASCADE - this constrains the tables by defining a rule enforcing the child table to delete all associated records with a 
-customer_id if a value of the PRIMARY KEY on the Parent Table is deleted
+*On Delete Cascade - this constrains the tables by defining a rule enforcing the child table to delete all associated records with a customer_id if a value of the Primary Key on the Parent Table is deleted.*
 
 ```mysql
 CREATE TABLE sales
@@ -46,7 +45,7 @@ ALTER TABLE sales
 ADD FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE; # add key after the fact
 
 ALTER TABLE sales
-DROP FOREIGN KEY customer_id; # to remove key
+DROP FOREIGN KEY sales_ibfk_1; # to remove key
 ```
 
 UNIQUE KEYS
@@ -59,11 +58,11 @@ CREATE TABLE customers
 	last_name VARCHAR(255),
 	email_address VARCHAR(255),
 	number_of_complaints INT,
-PRIMARY KEY (custumer_id),
+PRIMARY KEY (customer_id),
 UNIQUE KEY (email_address)
 );
 ```
-add after the fact :
+*Add after the fact:*
 ```mysql
 CREATE TABLE customers
 (
@@ -78,6 +77,7 @@ PRIMARY KEY (custumer_id)
 ALTER TABLE customers
 ADD UNIQUE KEY (email_address);
 ```
+
 
 PRIMARY, FOREIGN, AND UNIQUE
 ```mysql
@@ -94,15 +94,14 @@ UNIQUE KEY (product_name)
 ```
 
 INDICES
-unique keys serve the same role is indexes , but not the reverse !
-indexing allows organization and retrieval of information but also enforces updating of all indices if one is updated
+Unique keys serve the same role is indexes , but not the reverse! Indexing allows organization and retrieval of information and enforces updating of all indices if one is updated.
 ```mysql
 ALTER TABLE customers
 DROP INDEX email_address; # drop index , not unique key , and remove parenthesis
 ```
 
 DEFAULT CONSTRAINT
-ex: No. of Complaints would default to 0 unless specified otherwise
+ex: No. of Complaints would default to 0 unless specified otherwise.
 ```mysql
 CREATE TABLE customers
 (
@@ -114,12 +113,12 @@ CREATE TABLE customers
 PRIMARY KEY (customer_id)
 );
 ```
-add in hindsight :
+*Add in hindsight:*
 ```mysql
 ALTER TABLE customers
 CHANGE COLUMN number_of_complaints number_of_complaints INT DEFAULT 0; # sets default value to 0
 ```
-remove after the fact :
+*Remove after the fact:*
 ```mysql
 ALTER TABLE customers
 ALTER COLUMN number_of_complaints DROP DEFAULT; # sets default to null
@@ -139,6 +138,7 @@ UNIQUE KEY (product_name)
 ```
 
 NOT NULL
+Constrains the given column to not accept Null values.
 
 ```mysql
 CREATE TABLE products
@@ -150,19 +150,19 @@ CREATE TABLE products
 PRIMARY KEY (product_id),
 );
 ```
-to remove :
+*To remove constraint:*
 ```mysql
 ALTER TABLE companies
 MODIFY warehouse_id VARCHAR(255) NULL; # removes NOT NULL enforcement
 ```
-to add in hindsight :
+*To add in hindsight:*
 ```mysql
 ALTER TABLE companies
 CHANGE COLUMN warehouse_id warehouse_id VARCHAR(255) NOT NULL; # adds NOT NULL enforcement rule
 ```
 
-*Null* values should not be confused with 0 or None
-	No. of Complaints : 0 means zero complaints filed, null would mean we have no information on whether or not this record has any or ever filed complaints
+*Null values should not be confused with 0 or None.
+	No. of Complaints : 0 means zero complaints filed, null would mean we have no information on whether or not this record has any or ever filed complaints.*
 
 INSERT VALUES { WITH ENUM & PRIMARY KEY }
 

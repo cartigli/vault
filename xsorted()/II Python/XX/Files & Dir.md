@@ -196,4 +196,45 @@ for root, dirs, files in os.walk(file_path):
 		except:
 			continue
 ```
-*Have this output go to a .sql file and then load it into my workbench for execution.*
+*Have this output go to a .sql file and then load it into my workbench for execution. This actually worked incredibly well. The only issue is apostrephies were included in the titles, which confused MySQL. Let's fix it:*
+```python
+import os
+
+file_path = '/Volumes/HomeXx/compuir/vault'
+files_dedir = []
+
+for root, dirs, files in os.walk(file_path):
+	for filename in files:
+		full_file_path = os.path.join(root, filename)
+		try:
+			if "'" in filename:
+				print(f"File name contains an apostrohe:{filename}")
+			else:
+				print(f"INSERT INTO n1 (title, notes)\nVALUES ('{filename}', LOAD_FILE('{full_file_path}));")
+		except:
+			continue
+```
+
+Now this deals with the two inner files seperatley:
+```python
+import os
+
+file_path_g = '/Volumes/HomeXx/compuir/vault/xVault'
+file_path_s = '/Volumes/HomeXx/compuir/vault/xsorted()'
+
+for root, dirs, files in os.walk(file_path_g):
+	for filename in files:
+		full_file_path = os.path.join(root, filename)
+		try:
+			print(f"INSERT INTO n1 (title, notes)\nVALUES ('{filename}', LOAD_FILE('{full_file_path}));")
+		except:
+			continue
+
+for root, dirs, files in os.walk(file_path_s):
+	for filename in files:
+		full_file_path = os.path.join(root, filename)
+		try:
+			print(f"INSERT INTO n1 (title, notes)\nVALUES ('{filename}', LOAD_FILE('{full_file_path}));")
+		except:
+			continue
+```

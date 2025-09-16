@@ -1,7 +1,7 @@
 [S]tructured [Q]uery [L]anguage
-designed specifically for database management
+SQL is designed specifically for relational database management
 creates, manipulates, shares data through [ queries ]
-	one can write and execute these queries through SQL
+	One can write and execute these queries through SQL
 
 Most important language for data management in 2016, 2017
 
@@ -10,7 +10,7 @@ Why MySQL?
 	MySQL is reliable, mature, and open-source 
 		used by Dropbox, Pinterest, Youtube, etc.,
 
-DataBases
+[ DataBases ]
 If the data is stored in rows and columns, it is in tabular form
 	" purchase 1 was product 14 bought on Jan 1st, 2019, by customer 23 "
 			this is one [ Record ] which is interchangeable with the word row

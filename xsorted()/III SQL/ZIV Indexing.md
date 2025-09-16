@@ -34,11 +34,11 @@ CREATE INDEX i_hire_date ON employees(first_name, last_name);
 
 To see current Indexes:
 ```mysql
-SHOW INDEX FROM database_name FROM table_name;
+SHOW INDEX FROM table_name FROM database_name;
 ```
-*For the indexes made above:*
+*Or if the database is already selected:*
 ```mysql
-SHOW INDEX FROM employees FROM employees;
+SHOW INDEX FROM employees;
 ```
 
 "Create a composite index named i_composite_salary on the emp_no and salary columns of the salaries table."
