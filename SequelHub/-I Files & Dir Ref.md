@@ -94,6 +94,9 @@ print(char_cnt_list)
 
 
 
+
+
+
 Count characters recursively through a given folder:
 ```python
 import os
