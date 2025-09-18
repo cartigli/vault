@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SequelHub/VII init upload.md",
+                "file": "SequelHub/VI init connect remote.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "VII init upload"
+              "title": "VI init connect remote"
             }
           }
         ],
@@ -125,8 +125,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 275.5,
-    "collapsed": true
+    "width": 275.5
   },
   "right": {
     "id": "cc49a367b9d619d7",
@@ -178,14 +177,16 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "command-palette:Open command palette": false,
       "graph:Open graph view": false
     }
   },
   "active": "e1cf809977877ee9",
   "lastOpenFiles": [
-    "SequelHub/IV Skeleton.md",
     "SequelHub/VII init upload.md",
+    "SequelHub/VI init connect remote.md",
+    "SequelHub/IV Skeleton.md",
     "SequelHub/VI init connect.md",
     "SequelHub/V init collect.md",
     "SequelHub/III API.md",
@@ -209,7 +210,6 @@
     "xsorted()/III SQL/VII INSERT.md",
     "xsorted()/II Python/II Python Core/II Functions & Flow/V List Slicing.md",
     "xsorted()/II Python/II Python Core/II Functions & Flow/IV Lists.md",
-    "xsorted()/II Python/II Python Core/II Functions & Flow/III Defining Functions.md",
     "SequelHub",
     "xsorted()/IV Career",
     "xsorted()/II Python/IV ML/II chat/III Case Study",
