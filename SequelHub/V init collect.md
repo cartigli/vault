@@ -2,7 +2,7 @@
 import os
 import pandas as pd
 
-LOCAL_DIR = '/home/tom/vault' # env variable
+LOCAL_DIR = '/Volumes/HomeXx/compuir/vault' # env variable
 
 def collector(LOCAL_DIR):
 	folder_path = LOCAL_DIR
@@ -40,7 +40,7 @@ def collector(LOCAL_DIR):
 				print(f"ERR {e}: {filename}.")
 				add_err.append(filename)
 
-	return guts_togo, name_togo, lo_togo, add_err
+	return guts_togo, name_togo, lo_togo
 
 def container(guts_togo, name_togo, lo_togo):
 	guts_glory = pd.DataFrame({
@@ -48,10 +48,11 @@ def container(guts_togo, name_togo, lo_togo):
 		'note_lo': lo_togo,
 		'note': guts_togo
 		})
-	guts = guts_glory.to_records()
+	ensemble = guts_glory.to_records()
 	return ensemble
 
 
 collected = collector(LOCAL_DIR)
 guts = container(*collected) # unpack the collected, contain
+print(guts)
 ```

@@ -93,7 +93,7 @@ def table_support(conn, TABLE_NAME):
 def upload(conn, TABLE_NAME, ensemble):
 	cursor = conn.cursor()
 
-	cursor.executemany((f"INSERT INTO {TABLE_NAME} (note_no, note_tl, note_lo, note_) VALUES (%s, %s, %s, %s)"),
+	cursor.execute("INSERT INTO",TABLE_NAME,"(note_no, note_tl, note_lo, note_) VALUES (%s, %s, %s, %s);"),
 		guts_glory # need index from df as well
 	)
 	cursor.commit()
