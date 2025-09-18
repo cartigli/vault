@@ -33,3 +33,5 @@ This will need to hold the following for authentication with a given user who ex
 	_ pass_phrase
 	_ data base surname
 	_ table if already exists or otherwise needed
+	_ server IP
+	_ server_host port No
