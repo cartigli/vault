@@ -56,7 +56,7 @@ SQL's Syntax:
 [ TCL ] 
 	When editing a database, the alteration or implementation to the database will only be shown globally when COMMIT is used ; reverting the commit is done with ROLLBACK;
 		COMMIT 's cannot be changed and are permanent 
-		ROLLBACK undos alterations up until the last COMMIY 
+		ROLLBACK undos alterations up until the last COMMIT
 
 SQL Keywords : ADD, CREATE, ALTER
 	objects or databases cannot be named these as they are used by SQL
