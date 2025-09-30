@@ -125,8 +125,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 275.5,
-    "collapsed": true
+    "width": 275.5
   },
   "right": {
     "id": "cc49a367b9d619d7",
@@ -178,7 +177,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:Create new base": false,
       "command-palette:Open command palette": false,
       "graph:Open graph view": false
     }
