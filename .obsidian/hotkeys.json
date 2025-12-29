@@ -81,5 +81,13 @@
       "key": "S"
     }
   ],
-  "editor:save-file": []
+  "editor:save-file": [],
+  "theme:toggle-light-dark": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "W"
+    }
+  ]
 }
