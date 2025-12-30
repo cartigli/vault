@@ -284,7 +284,6 @@ head(data1960)
 data2013 <- newData[newData$Year == 2013,]
 head(data2013)
 
-
 qplot(data=data2013, x=Region, y=Fertility.Rate, color=Region, size=I(2))
 qplot(data=data1960, x=Region, y=Fertility.Rate, color=Region, size=I(2))
 ```

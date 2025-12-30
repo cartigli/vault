@@ -145,3 +145,280 @@ s + geom_density(aes(fill=Genre))
 s + geom_density(aes(fill=Genre), position="stack")
 # now each layer is clearly visible
 ```
+
+Histogram:
+![[histogram.png]]
+
+Density Chart:
+![[density.png]]
+
+Statistical Transformations (Layering)
+```r
+
+# ---- Statistical Transformations ----
+
+?geom_smooth
+# aids the eye in seeing patterns when overplotting is present
+
+u <- ggplot(data=data, aes(x=Critic.Rating, y=Audience.Rating,
+                           color=Genre,
+                           alpha=0.2)) # slightly fade the points
+
+u + geom_point()
+
+u + geom_point() + geom_smooth()
+
+u + geom_smooth()
+
+u + geom_smooth(fill=NA)
+
+u + geom_point() + geom_smooth(fill=NA)
+
+
+# ---- Boxplots ----
+
+# categorical x-values needed
+v <- ggplot(data=data, aes(x=Genre, y=Critic.Rating,
+                           color=Genre))
+
+v + geom_boxplot()
+
+v + geom_boxplot(size=1.2)
+
+# useless/non-informative
+v + geom_boxplot() + geom_point() 
+
+# workaround for relevancy:
+v + geom_boxplot() + geom_jitter()
+# visually shows variation/outliers
+
+# or add boxplots on top of points & introduce transparency
+v + geom_jitter() + geom_boxplot(alpha=0.6)
+```
+
+Smoothed Scatter Plot:
+![[smoothed.png]]
+
+Fabricated Boxplot:
+![[boxplot.png]]
+
+
+Facets & Zooming/Cropping
+```r
+# ---- Facets ----
+
+v <- ggplot(data=data, aes(x=Budget))
+
+# illegible
+v + geom_histogram(binwidth = 10)
+
+# legible
+v + geom_histogram(binwidth=10, aes(fill=Genre))
+
+# clean
+v + geom_histogram(binwidth=10, aes(fill=Genre),
+                   color="Black")
+
+# all the genres are bundled in one histogram
+# facets allows us to make more indepent charts
+
+# rows of histograms by Genre
+v + geom_histogram(binwidth=10, aes(fill=Genre),
+                   color="Black") +
+  facet_grid(Genre~.)
+
+# columns of histograms by Genre
+v + geom_histogram(binwidth=10, aes(fill=Genre),
+                   color="Black") +
+  facet_grid(.~Genre)
+# ^ each histogram is scaled on the same value; to do otherwise:
+
+v + geom_histogram(binwidth=10, aes(fill=Genre),
+                   color="Black") +
+  facet_grid(Genre~.,scales="free")
+# ^ each histogram is scaled by their respective ranges independently
+
+# facets with scatter plots
+w <- ggplot(data=data, aes(x=Critic.Rating, y=Audience.Rating,
+                           color=Genre))
+
+w + geom_point() # generic
+
+w + geom_point() + facet_grid(Genre~.)
+# OR
+w + geom_point() + facet_grid(.~Year)
+# AND
+w + geom_point() + facet_grid(Genre~Year)
+# bada fricking boom
+
+w + geom_point() + 
+  geom_smooth() +
+  facet_grid(Genre~Year)
+
+w + geom_point() + 
+  geom_smooth(fill=NA) +
+  facet_grid(Genre~Year)
+
+w + geom_point(aes(size=Budget)) + 
+  geom_smooth() +
+  facet_grid(Genre~Year)
+
+# --- Coordinates/Cropping/Zooming ----
+
+w <- ggplot(data=data, aes(x=Critic.Rating, y=Audience.Rating,
+                           size=Budget,
+                           color=Genre))
+
+w + geom_point()
+
+# cropped view of points within x(50-100) & y(0-100)
+w + geom_point() + 
+  xlim(50,100)
+# WARNING: 304 rows removed (good)
+
+# cropped view of points within x(50-100) & y(50-100)
+w + geom_point() +
+  xlim(50,100) +
+  ylim(50,100)
+# WARNING: 335 rows removed (still good)
+
+# ^ this is like a crop more than a zoom
+# it works really well for scatter plots since they are defined by their x & y axis
+# histograms, for example, are adversely affected by the same transformation
+
+v <- ggplot(data=data, aes(x=Budget))
+
+# normal/uncropped
+v + geom_histogram(binwidth=10, aes(fill=Genre),
+                   color="Black")
+
+v + geom_histogram(binwidth=10, aes(fill=Genre),
+                   color="Black") +
+  ylim(0,50)
+# instead of zooming, the crop simply removed values outside the range, distorting the histogram
+
+# actually zoom (without cropping)
+# use Cartesian coordinates (Quadrants I, II, III, & IV on the x/y axis)
+
+v + geom_histogram(binwidth=10, aes(fill=Genre),
+                   color="Black") +
+  coord_cartesian(xlim=c(0,50), ylim=c(0,50))
+# zoom without distorting values!
+
+v + geom_histogram(binwidth=10, aes(fill=Genre),
+                   color="Black") +
+  coord_cartesian(ylim=c(0,50))
+# original data still exists, but is not shown instead of being removed
+
+# apply to faceted scatter plots from earlier:
+# original faceted scatter plots:
+
+# facets with scatter plots
+w + geom_point(aes(size=Budget)) + 
+  geom_smooth() +
+  facet_grid(Genre~Year)
+
+# zoomed in (no y-axis values below 0)
+w + geom_point(aes(size=Budget), alpha=0.5) + 
+  geom_smooth() +
+  facet_grid(Genre~Year) +
+  coord_cartesian(ylim=c(0,100))
+# I won't lie, this is cool
+```
+
+Faceted, Zoomed & Smoothed Scatter Plot:
+![[faceted_zoomed_smoothed_scatter.png]]
+
+Themes (non-data ink)
+```r
+v <- ggplot(data=data, aes(x=Budget))
+
+# add this layer to a new object: x
+x <- v + geom_histogram(binwidth=10, aes(fill=Genre),
+                   color="Black")
+
+# now, x has layers one and two inside it
+x # normal histogram
+
+# label axis
+x + xlab("Budget") # "Budget appears on the x-axis
+
+# labeling axis/altering ticks
+x + xlab("Money Axis") + 
+  ylab("Num. of Movies") + 
+  theme(axis.title.x=element_text(color="DarkGreen", size=10),
+        axis.title.y=element_text(color="Red", size=10),
+        axis.text.x=element_text(size=5), # edit tick mark sizes
+        axis.text.y=element_text(size=5)) # both axis
+
+# alter/set the legend's theme
+x + xlab("Money Axis") + 
+  ylab("Num. of Movies") + 
+  theme(axis.title.x=element_text(color="DarkGreen", size=10),
+        axis.title.y=element_text(color="Red", size=10),
+        axis.text.x=element_text(size=5),
+        axis.text.y=element_text(size=5),
+        
+        legend.title=element_text(size=10),
+        legend.text=element_text(size=5))
+
+# alter the legend's position
+x + xlab("Money Axis") + 
+  ylab("Num. of Movies") + 
+  theme(axis.title.x=element_text(color="DarkGreen", size=10),
+        axis.title.y=element_text(color="Red", size=10),
+        axis.text.x=element_text(size=5),
+        axis.text.y=element_text(size=5),
+        
+        legend.title=element_text(size=10),
+        legend.text=element_text(size=5),
+        legend.position=c(1,1)) # this alone skews the position
+
+# correct position
+x + xlab("Money Axis") + 
+  ylab("Num. of Movies") + 
+  theme(axis.title.x=element_text(color="DarkGreen", size=10),
+        axis.title.y=element_text(color="Red", size=10),
+        axis.text.x=element_text(size=5),
+        axis.text.y=element_text(size=5),
+        
+        legend.title=element_text(size=10),
+        legend.text=element_text(size=5),
+        legend.position=c(1,1),
+        legend.justification = c(1,1)) # this adjusts it correctly
+
+# add a title
+x + xlab("Money Axis") + 
+  ylab("Num. of Movies") + 
+  ggtitle("Movie Budget Distribution") +
+  theme(axis.title.x=element_text(color="DarkGreen", size=10),
+        axis.title.y=element_text(color="Red", size=10),
+        axis.text.x=element_text(size=5),
+        axis.text.y=element_text(size=5),
+        
+        legend.title=element_text(size=7),
+        legend.text=element_text(size=7),
+        legend.position=c(1,1),
+        legend.justification = c(1,1))
+
+# alter title
+x + xlab("Money Axis") + 
+  ylab("Num. of Movies") + 
+  ggtitle("Movie Budget Distribution") +
+  theme(axis.title.x=element_text(color="DarkGreen", size=10),
+        axis.title.y=element_text(color="Red", size=10),
+        axis.text.x=element_text(size=5),
+        axis.text.y=element_text(size=5),
+        
+        legend.title=element_text(size=7),
+        legend.text=element_text(size=7),
+        legend.position=c(1,1),
+        legend.justification = c(1,1),
+        
+        plot.title = element_text(size=10,
+                                  color="Black",
+                                  family="Courier"))
+```
+
+'Themed' Histogram
+![[Refined_histogram_w.Titles.png]]
